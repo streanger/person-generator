@@ -1,0 +1,8 @@
+['Nationality', 'English']
+['Sex', 'Male']
+['Name', 'Aaron']
+['Surname', 'Burden']
+['Birthdate', '24-1-1988']
+['Age', 29]
+['Email', 'nedrub@gmail.com']
+['Phone', '317631321']
