@@ -1,0 +1,8 @@
+['Nationality', 'Polish']
+['Sex', 'Female']
+['Name', 'Michalina']
+['Surname', 'Drozd']
+['Birthdate', '19-5-1998']
+['Age', 19]
+['Email', 'drozd98@gmail.com']
+['Phone', '546278770']

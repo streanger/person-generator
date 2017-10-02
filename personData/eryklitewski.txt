@@ -1,0 +1,8 @@
+['Nationality', 'Polish']
+['Sex', 'Male']
+['Name', 'Eryk']
+['Surname', 'Litewski']
+['Birthdate', '16-9-1987']
+['Age', 30]
+['Email', 'ikswetil@gmail.com']
+['Phone', '860027614']

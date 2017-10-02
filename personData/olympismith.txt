@@ -1,0 +1,8 @@
+['Nationality', 'English']
+['Sex', 'Female']
+['Name', 'Olympi']
+['Surname', 'Smith']
+['Birthdate', '31-7-1969']
+['Age', 48]
+['Email', 'smith69@gmail.com']
+['Phone', '405116273']

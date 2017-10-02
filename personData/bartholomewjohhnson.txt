@@ -1,0 +1,8 @@
+['Nationality', 'English']
+['Sex', 'Male']
+['Name', 'Bartholomew']
+['Surname', 'Johhnson']
+['Birthdate', '17-8-1967']
+['Age', 50]
+['Email', 'bjohhnson@gmail.com']
+['Phone', '613443683']

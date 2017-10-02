@@ -1,0 +1,8 @@
+['Nationality', 'Polish']
+['Sex', 'Female']
+['Name', 'Aniela']
+['Surname', 'Litewska']
+['Birthdate', '12-8-1990']
+['Age', 27]
+['Email', 'akswetil@gmail.com']
+['Phone', '883140126']

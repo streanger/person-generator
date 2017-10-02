@@ -1,0 +1,8 @@
+['Nationality', 'English']
+['Sex', 'Female']
+['Name', 'Julia']
+['Surname', 'Norton']
+['Birthdate', '4-2-1983']
+['Age', 34]
+['Email', 'jnorton@gmail.com']
+['Phone', '463666270']

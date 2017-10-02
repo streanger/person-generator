@@ -1,0 +1,8 @@
+['Nationality', 'Polish']
+['Sex', 'Female']
+['Name', 'Ewelina']
+['Surname', 'Drozdowska']
+['Birthdate', '15-9-1982']
+['Age', 35]
+['Email', 'edrozdowska@gmail.com']
+['Phone', '825583051']
