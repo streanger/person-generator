@@ -1,4 +1,6 @@
+#!/usr/bin/python3
 #it would be useful with generate random person data
+#11.02.18 -> it still need a lot of work :(
 import os
 from datetime import date, timedelta
 import datetime
@@ -19,14 +21,13 @@ def download_image(url, fileName="image.png"):
     except:
         print("Wrong url")
     del response
-    
+
 def files_list():
     #return the list of current dir files
     files = os.listdir()
-    return 
+    return
 
 def get_age(birthdate=""):
-    
     if birthdate:
         #rounding stuff but should work :)
         birthList = birthdate.split("-")
@@ -34,7 +35,6 @@ def get_age(birthdate=""):
         today = date.today()
         age = (today - dateFormat) // timedelta(days=365.2425)
         return dateFormat, birthdate, age
-        
     #random age in defined range (18-50)
     bottomYear = 1967
     topYear = 1999
@@ -48,8 +48,8 @@ def get_age(birthdate=""):
     random_day_string = day + "-" + month + "-" + year
     #age
     age = (date.today() - random_day) // timedelta(days=365.2425)
-    return random_day, random_day_string, age      
-    
+    return random_day, random_day_string, age
+
 def get_data_base():
     #read all usefull data from files
     #otherwise use data inside
@@ -67,8 +67,8 @@ def get_dir(fileName=""):
         fullPath = pathAbs + "\\" + fileName
         return fullPath
     #path = os.path.join(pathAbs, fileName)
-    return pathAbs      
-    
+    return pathAbs
+
 def remove_duplicates(someList, sort=True):
     #returns list with no duplicates
     if sort:
@@ -77,9 +77,7 @@ def remove_duplicates(someList, sort=True):
         return someList
     else:
         return list(dict.fromkeys(someList).keys())
-        
 
-    
 def read_file(fileName, rmnl=False):
     try:
 	    os.chdir(os.path.dirname(__file__))
@@ -96,8 +94,8 @@ def read_file(fileName, rmnl=False):
     except:
         fileContent = []
     #print(fileContent)
-    return fileContent    
-    
+    return fileContent
+
 def write_file(fileName, content, addNewline=True, overWrite=False, subPath="", response=True):
     if overWrite:
         #create new file each time
@@ -118,7 +116,6 @@ def write_file(fileName, content, addNewline=True, overWrite=False, subPath="", 
     #print("path:", path)
     if not os.path.exists(newpath):
         os.makedirs(newpath)
-        
     with open(path, mode) as file:
         if addNewline:
             for item in content:
@@ -138,12 +135,12 @@ def random_phone():
     for x in range(8):
         phoneNumber += str(random.randrange(0,9))
     return phoneNumber
-    
-def write_names(names):    
+
+def write_names(names):
     for key, item in enumerate(names):
         write_file("name" + str(key) + ".txt", item, addNewline=True, overWrite=True, subPath="")
     return 0
-   
+
 def get_email(personData):
     #make some algoritms
     algoNo = random.randrange(1, 6) + 1
@@ -162,7 +159,7 @@ def get_email(personData):
     else:
         fakeEmail = (personData["Name"]).lower() + "_" + (personData["Surname"]).lower() + "@gmail.com"
     return fakeEmail
- 
+
 def get_data(key, personDictio):
     #return specified data with using proper functions
     data = "Random"
@@ -200,12 +197,12 @@ def get_data(key, personDictio):
     else:
         data = "Random"
     return data
-    
+
 def generate_person(fullyRandom=False, specifiedData = {}, writeFile=True):
-    #random dictio data              
+    #random dictio data
     personDataDictio = { "Nationality" : "Random",
-                         "Sex" : "Random", 
-                         "Name" : "Random", 
+                         "Sex" : "Random",
+                         "Name" : "Random",
                          "Surname" : "Random",
                          "Birthdate" : "Random",
                          "Age" : "Random",
@@ -214,19 +211,21 @@ def generate_person(fullyRandom=False, specifiedData = {}, writeFile=True):
     if specifiedData:
         for key, value in specifiedData.items():
             if value == "Random":
+                #personDataDictio[key] = "TEST"
                 personDataDictio[key] = get_data(key, personDataDictio)
             else:
                 #if specified more than one element will choose random of it
-                if len(value) > 1:
+                if (type(value) is list) and (len(value) > 1):
+                    print(value)
+                    input("next...")
                     randomValue = get_random(value)
                     personDataDictio[key] = randomValue
                 else:
                     personDataDictio[key] = value
-    
+
     #to remember; cant use the same keys
-    #dictio = dict(zip(firstList, secondList))    
-    #specify some data; leave other as "Random" 
-    
+    #dictio = dict(zip(firstList, secondList))
+    #specify some data; leave other as "Random"
     #make list; list help with map object
     personDataList = list(map(list, personDataDictio.items()))
     if writeFile:
@@ -234,7 +233,7 @@ def generate_person(fullyRandom=False, specifiedData = {}, writeFile=True):
         write_file(fileName, personDataList, addNewline=True, overWrite=True, subPath="personData")    
         write_file("AAAllPersonData.txt", personDataList, addNewline=True, overWrite=False, subPath="personData", response=False) #collect all data
         write_file("AAAllPersonData.txt", [30*"-"], addNewline=True, overWrite=False, subPath="personData", response=False) #add separator: ---
-     
+
     #return data as dictio and list both
     return personDataDictio, personDataList
 
@@ -248,53 +247,36 @@ def entry_data():
                       "Age" : "Random",
                       "Email" : "Random",
                       "Phone" : "Random"}
-                      
     specifiedFull = { "Nationality" : "Polish",
-                      "Sex" : "Male", 
-                      "Name" : "Steve", 
+                      "Sex" : "Male",
+                      "Name" : "Steve",
                       "Surname" : "Johnnson",
                       "Birthdate" : "19.02.1998",
                       "Age" : "19",
                       "Email" : "random@gmail.com",
-                      "Phone" : "345876112"}     
-    
-    return specifiedData
-              
+                      "Phone" : "345876112"}
+    #return specifiedData
+    return specifiedFull
 
 def get_random(container):
     #get random element from list
     return random.choice(container)
 
 if __name__ == "__main__":
-
-    #generate random person
     specifiedData = entry_data()
-    for x in range(19):
-        personData = (generate_person(specifiedData = specifiedData))[1]
-        # print(42)
+    for x in range(5):
+        personData = generate_person(specifiedData=specifiedData)[1]
+        #print(personData)
 
     input("\nenter to exit...\n")
 
-    
-  
-'''
 
+'''
 18.09.17
 maybe we need to use some database
-
-for now
-age - ok
-name - ~
-
-Apart of everything above we could just copy physical data
-but this is illegal to use someones personals
-you know it :)
-
-'''  
-    
-    
-    
-    
-    
-    
-    
+11.02.17
+-thats a good idea :)
+ehhm
+-this script is kind of shit for now
+-I am gonna fix it soon
+'''

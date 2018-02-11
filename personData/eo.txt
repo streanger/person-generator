@@ -1,0 +1,8 @@
+['Email', '.']
+['Birthdate', '.']
+['Name', 'e']
+['Surname', 'o']
+['Phone', '2']
+['Age', '9']
+['Nationality', 's']
+['Sex', 'l']

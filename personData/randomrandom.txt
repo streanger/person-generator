@@ -1,0 +1,8 @@
+['Sex', 'Random']
+['Name', 'Random']
+['Email', 'Random']
+['Phone', 'Random']
+['Surname', 'Random']
+['Nationality', 'Random']
+['Age', 'Random']
+['Birthdate', 'Random']
