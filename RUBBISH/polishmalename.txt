@@ -1,3 +1,4 @@
+name,polish,male
 Adam
 Adrian
 Agapit

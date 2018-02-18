@@ -5,9 +5,11 @@ import os
 from datetime import date, timedelta
 import datetime
 import random
-
+import sys
 import shutil   #download_image
 import requests #download_image
+#own modules
+import sqlite_use as sql
 
 
 def download_image(url, fileName="image.png"):
@@ -239,8 +241,8 @@ def generate_person(fullyRandom=False, specifiedData = {}, writeFile=True):
 
 def entry_data():
     specifiedData = { "Nationality" : ["Polish", "English"],
-                      "Sex" : "Random", 
-                      "Name" : "Random", 
+                      "Sex" : "Random",
+                      "Name" : "Random",
                       #"Surname" : ["Burt", "Roland", "Johnnson"],
                       "Surname" : "Random",
                       "Birthdate" : "Random",
@@ -262,21 +264,37 @@ def get_random(container):
     #get random element from list
     return random.choice(container)
 
-if __name__ == "__main__":
-    specifiedData = entry_data()
-    for x in range(5):
-        personData = generate_person(specifiedData=specifiedData)[1]
-        #print(personData)
+def up_db(filename):
+    sql.update_db(filename)
 
-    input("\nenter to exit...\n")
+def main(argv):
+    if  ("--dbup" in argv):
+        try:
+            filename = argv[1]
+        except:
+            filename = ""
+        print(filename)
+        up_db(filename)
+        return True
+    #else:
+    #    specifiedData = entry_data()
+    #    personData = generate_person(specifiedData = specifiedData)[1]
+    #    print(personData)
+    print("exiting...")
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
 
 
 '''
 18.09.17
 maybe we need to use some database
-11.02.17
+11.02.18
 -thats a good idea :)
 ehhm
 -this script is kind of shit for now
 -I am gonna fix it soon
+
+17.02.18
+-i need to add zipcode related to address if it exists
 '''

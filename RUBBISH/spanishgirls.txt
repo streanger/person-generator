@@ -1,0 +1,102 @@
+name,spanish,female
+    Sofía
+    Isabella
+    Valentina
+    Camila
+    Valeria
+    Luciana
+    Ximena/Jimena
+    Mariana
+    María José
+    Victoria
+    Martina
+    Gabriela
+    Sara
+    Daniela
+    Samantha
+    Natalia
+    Emma
+    Renata
+    Lucia
+    Andrea
+    Regina
+    Mia
+    Catalina
+    Antonella
+    Emilia
+    Zoe
+    Julieta
+    Alejandra
+    Salome
+    Paula
+    Maria Fernanda
+    Nicole
+    María
+    Fernanda
+    Emily
+    Ana Sofía
+    Amanda
+    Abril
+    Allison
+    Elena
+    Danna
+    Ariana
+    Violeta
+    Antonia
+    Ana
+    Agustina
+    Olivia
+    Jazmín
+    Romina
+    Rafaella
+    Julia
+    Abigail
+    Fabiana
+    Laura
+    Constanza
+    Alma
+    Guadalupe
+    Valery
+    Miranda
+    Juliana
+    Alexa
+    Elisa
+    Luna
+    Carla
+    Ivanna
+    Monserrat
+    Michelle
+    María Paula
+    Ashley
+    Isabel
+    Micaela
+    Elizabeth
+    Rebeca
+    Melanie
+    Manuela
+    Noa
+    Bianca
+    Clara
+    Ana Paula
+    Paulina
+    Carolina
+    Florencia
+    Josefina
+    Paola
+    Fiorella
+    María Camila
+    Melissa
+    Maite
+    Juana
+    Vanessa
+    Alicia
+    Amy
+    Alessandra
+    Amelia
+    Kiara
+    Adriana
+    Isidora
+    María Alejandra
+    Magdalena
+    Amalia
+

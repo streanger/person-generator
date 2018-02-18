@@ -1,7 +1,7 @@
 <(*)><(*)><(*)><(*)><(*)><(*)><(*)><(*)><(*)><(*)><*>|
                                                      |
 This is very person_generator. It's still in develop.|
-What is it making for:                               |
+What is it doing for:                               |
 -to create random person data                        /
 -to crete many person data to fake groups of people /
 -to create fake families                           /
