@@ -273,7 +273,6 @@ def main(argv):
             filename = argv[1]
         except:
             filename = ""
-        print(filename)
         up_db(filename)
         return True
     #else:

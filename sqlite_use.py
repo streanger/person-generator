@@ -2,22 +2,21 @@
 import sqlite3
 import os
 
+def sql_help():
+    print("put some useful things here")
+
 def create_table(c, TABLE_NAME = "name"):
     c.execute('CREATE TABLE IF NOT EXISTS %s(name TEXT, nationality TEXT, sex TEXT)' % TABLE_NAME)
 
 def data_entry(c, DATA, TABLE_NAME):
-    #c.execute('INSERT INTO names VALUES (?,?,?)', ("Xavier", "Spain", "male"))
     c.executemany('INSERT INTO %s VALUES (?,?,?)' % TABLE_NAME, DATA)
-    #db.commit() #save changes
-    #db.close()
 
-def get_data(db, c):
-    data = c.execute('SELECT nationality FROM name WHERE sex="%s"' % "female")
-    #data = c.execute('SELECT * FROM name')
+def get_data(db, c, TABLE_NAME, COLUMN_IN, COLUMN_OUT):
+    #put some case statement to choose only what we need rather than thousands of arguments
+    #data = c.execute('SELECT %s FROM %s WHERE sex="%s"' % (COLUMN_IN, TABLE_NAME, COLUMN_OUT))
+    data = c.execute('SELECT * FROM name')
     for item in data:
         print(item)
-    db.commit()
-    db.close()
 
 def read_file(fileName, rmnl=False):
     try:
@@ -34,6 +33,8 @@ def read_file(fileName, rmnl=False):
             else:
                 fileContent = file.readlines()
     except UnicodeDecodeError as err:
+        print("Exception:\n\t", err)
+    except FileNotFoundError as err:
         print("Exception:\n\t", err)
     return fileContent
 
@@ -52,7 +53,6 @@ def sort_data(content):
     return info[0], data
 
 def update_db(filename):
-    DATA = []
     db = sqlite3.connect("ALL_DATA.db") #if 1st time it creates new db
     c = db.cursor()
     file_content = read_file(filename, rmnl=True)
@@ -63,21 +63,16 @@ def update_db(filename):
     if TABLE_NAME and DATA:
         create_table(c, TABLE_NAME)
         data_entry(c, DATA, TABLE_NAME)
-        get_data(db, c)
-        #db.executemany() #put data into db
+        get_data(db, c, TABLE_NAME, "nationality", "female")
+        db.commit()
+        db.close()
+        return True
     else:
         print("faulty file format. could not update db")
-    #in case of not exists file or bad format return False; in other case read file, sort data and update database
+        return False
+        #in case of not exists file or bad format return False
+        #in other case read file, sort data and update database
 
 if __name__ == "__main__":
-    '''
-    db = sqlite3.connect("surnames.db")
-    c = db.cursor()
-    create_table("names")
-    data_entry()
-    get_data()
-    '''
-
-    content = ["nazwa,spanish,female", "xandra", "elize", "honorita", "Anastasia", "Alba", "Agueda"]
-    data = sort_data(content)
-    print(data)
+    print("import it rather than use...")
+    sql_help()
