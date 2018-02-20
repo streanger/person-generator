@@ -1,0 +1,6 @@
+name,polish,male
+Antoni
+Ludwik
+Eryk
+Władek
+Zenon

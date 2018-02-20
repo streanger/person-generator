@@ -13,10 +13,15 @@ def data_entry(c, DATA, TABLE_NAME):
 
 def get_data(db, c, TABLE_NAME, COLUMN_IN, COLUMN_OUT):
     #put some case statement to choose only what we need rather than thousands of arguments
-    #data = c.execute('SELECT %s FROM %s WHERE sex="%s"' % (COLUMN_IN, TABLE_NAME, COLUMN_OUT))
-    data = c.execute('SELECT * FROM name')
+    data = c.execute('SELECT %s FROM %s WHERE sex="%s"' % (COLUMN_IN, TABLE_NAME, COLUMN_OUT))
+    dataOut = [x[0] for x in data]
+    return dataOut
+
+def get_all(db, c, TABLE_NAME):
+    data = c.execute('SELECT * FROM %s' % (TABLE_NAME))
     for item in data:
         print(item)
+    return data
 
 def read_file(fileName, rmnl=False):
     try:
@@ -52,9 +57,12 @@ def sort_data(content):
     #return info(1st-line-from-file), data(other-lines)
     return info[0], data
 
-def update_db(filename):
+def update_db(filename=""):
     db = sqlite3.connect("ALL_DATA.db") #if 1st time it creates new db
     c = db.cursor()
+    if not filename:
+        return db, c
+        #this is just for now; gonna create class for sql
     file_content = read_file(filename, rmnl=True)
     if not file_content:
         print("empty file...")
@@ -63,8 +71,10 @@ def update_db(filename):
     if TABLE_NAME and DATA:
         create_table(c, TABLE_NAME)
         data_entry(c, DATA, TABLE_NAME)
-        get_data(db, c, TABLE_NAME, "nationality", "female")
+        get_data(db, c, TABLE_NAME, "name", "male")
+        #get_all(db, c, TABLE_NAME)
         db.commit()
+        c.close()
         db.close()
         return True
     else:

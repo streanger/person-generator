@@ -8,9 +8,10 @@ import random
 import sys
 import shutil   #download_image
 import requests #download_image
+
 #own modules
 import sqlite_use as sql
-
+#from randEmail import get_email
 
 def download_image(url, fileName="image.png"):
     #will download&save image under specified address
@@ -31,19 +32,22 @@ def files_list():
 
 def get_age(birthdate=""):
     if birthdate:
-        #rounding stuff but should work :)
-        birthList = birthdate.split("-")
-        dateFormat = datetime.date(day=int(birthList[0]), month=int(birthList[1]), year=int(birthList[2]))
-        today = date.today()
-        age = (today - dateFormat) // timedelta(days=365.2425)
-        return dateFormat, birthdate, age
+        if birthdate == "Random":
+            pass
+        else:
+            #rounding stuff but should work :)
+            birthList = birthdate.split("-")
+            dateFormat = datetime.date(day=int(birthList[0]), month=int(birthList[1]), year=int(birthList[2]))
+            today = date.today()
+            age = (today - dateFormat) // timedelta(days=365.2425)
+            return dateFormat, birthdate, age
     #random age in defined range (18-50)
     bottomYear = 1967
     topYear = 1999
     start_date = date(day=1, month=1, year=bottomYear).toordinal()
     end_date = date(day=31, month=12, year=topYear).toordinal()
     random_day = date.fromordinal(random.randint(start_date, end_date))
-    #just for string 
+    #just for string
     day = str(random_day.day)
     month = str(random_day.month)
     year = str(random_day.year)
@@ -143,25 +147,6 @@ def write_names(names):
         write_file("name" + str(key) + ".txt", item, addNewline=True, overWrite=True, subPath="")
     return 0
 
-def get_email(personData):
-    #make some algoritms
-    algoNo = random.randrange(1, 6) + 1
-    if algoNo == 1:
-        fakeEmail = (personData["Name"]).lower() + "_" + (personData["Surname"]).lower() + "@gmail.com"
-    elif algoNo == 2:
-        fakeEmail = (personData["Surname"]).lower() + "@gmail.com"    
-    elif algoNo == 3:
-        fakeEmail = (personData["Surname"]).lower() + (personData["Birthdate"])[-2:] + "@gmail.com"  
-    elif algoNo == 4:
-        fakeEmail = ((personData["Name"]).lower())[0] + (personData["Surname"]).lower() + "@gmail.com"  
-    elif algoNo == 5:
-        fakeEmail = ((personData["Name"]).lower())[:3] + "_" + ((personData["Surname"]).lower())[0:3] + "@gmail.com"  
-    elif algoNo == 6:
-        fakeEmail = ((personData["Surname"]).lower())[::-1] + "@gmail.com"          
-    else:
-        fakeEmail = (personData["Name"]).lower() + "_" + (personData["Surname"]).lower() + "@gmail.com"
-    return fakeEmail
-
 def get_data(key, personDictio):
     #return specified data with using proper functions
     data = "Random"
@@ -175,20 +160,26 @@ def get_data(key, personDictio):
         names = read_file(names, rmnl=True)
         data = get_random(names)
     elif key == "Surname":
+        #surnames = sql.get_data(db, c, "surname", personDictio["nationality"], personDictio["sex"])
+        #read from db -> table:surname, filter:nationality,sex(male,female)
         surnames = (personDictio["Nationality"]).lower() + "surname.txt"
         surnames = read_file(surnames, rmnl=True)
         #print(surnames)
         data = get_random(surnames)
-        if ((personDictio["Nationality"]).lower() == "polish"):
-            if ((personDictio["Sex"]).lower() == "male"):
-                return data
-            else:
-                if data[-1] == "i":
-                    return data[:-1] + "a" 
-        else:
-            return data
+        return data
+
+        #this down here is to convert male to female polish surname; for now commented
+        #if ((personDictio["Nationality"]).lower() == "polish"):
+        #    if ((personDictio["Sex"]).lower() == "male"):
+        #        return data
+        #    else:
+        #        if data[-1] == "i":
+        #            return data[:-1] + "a"
+        #else:
+        #    return data
+
     elif key == "Birthdate":
-        #think about birth and age 
+        #think about birth and age
         data = str(get_age()[1])
     elif key == "Age":
         data = get_age(personDictio["Birthdate"])[2]
@@ -240,7 +231,7 @@ def generate_person(fullyRandom=False, specifiedData = {}, writeFile=True):
     return personDataDictio, personDataList
 
 def entry_data():
-    specifiedData = { "Nationality" : ["Polish", "English"],
+    specifiedData = { "Nationality" : "Polish",
                       "Sex" : "Random",
                       "Name" : "Random",
                       #"Surname" : ["Burt", "Roland", "Johnnson"],
@@ -257,8 +248,8 @@ def entry_data():
                       "Age" : "19",
                       "Email" : "random@gmail.com",
                       "Phone" : "345876112"}
-    #return specifiedData
-    return specifiedFull
+    return specifiedData
+    #return specifiedFull
 
 def get_random(container):
     #get random element from list
@@ -268,6 +259,13 @@ def up_db(filename):
     sql.update_db(filename)
 
 def main(argv):
+    #this is  just for test
+    db, c = sql.update_db()
+    data = sql.get_data(db, c, "name", "name", "male")
+    print(data)
+    return True
+
+    '''
     if  ("--dbup" in argv):
         try:
             filename = argv[1]
@@ -275,11 +273,12 @@ def main(argv):
             filename = ""
         up_db(filename)
         return True
-    #else:
-    #    specifiedData = entry_data()
-    #    personData = generate_person(specifiedData = specifiedData)[1]
-    #    print(personData)
+    else:
+        specifiedData = entry_data()
+        personData = generate_person(specifiedData = specifiedData)[1]
+        print(personData)
     print("exiting...")
+    '''
 
 if __name__ == "__main__":
     main(sys.argv[1:])

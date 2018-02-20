@@ -1,0 +1,7 @@
+surname,polish,male
+Kowalski
+Lato
+Nowak
+Borowik
+Jóźwik
+
