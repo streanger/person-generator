@@ -8,6 +8,7 @@ import random
 import sys
 import shutil   #download_image
 import requests #download_image
+import getopt
 
 #own modules
 import sqlite_use as sql
@@ -28,7 +29,7 @@ def download_image(url, fileName="image.png"):
 def files_list():
     #return the list of current dir files
     files = os.listdir()
-    return
+    return files
 
 def get_age(birthdate=""):
     if birthdate:
@@ -259,13 +260,58 @@ def up_db(filename):
     sql.update_db(filename)
 
 def main(argv):
+    log_path = None
+    try:
+        opts, args = getopt.getopt(argv, "hu:n:s:q:")
+    except getopt.GetoptError as err:
+        print(str(err))
+        sys.exit(2)
+    for opt, arg in opts:
+        if opt == "-h":
+            print("usage:")
+            print("-u <fileName> - file with data to update database")
+            print("-n <nationality> - nationality of person to generate [default=english]")
+            print("-s <sex> - gender of person to generate [default=male]")
+            print("-q <quantity> - the number of persons(s) to generate [default=1]")
+            print("---"*8)
+        elif opt in '-u':
+            print(files_list())
+            if not arg in files_list():
+                print("no such file in current dir")
+                dbData = ""
+            else:
+                dbData = arg
+            #as an argument put filename; if file not exists return False
+        elif opt in "-n":
+            nationalList = ["english", "polish", "ukrainian"]
+            if not arg.lower() in nationalList:
+                print("wrong nationality choie. Auto choose -> english")
+                national = "english"
+            else:
+                national = arg
+        elif opt in "-s":
+            if not arg.lower() in ("male", "female"):
+                print("wrong sex choice. Auto choose -> male")
+                sex = "male"
+            else:
+                sex = arg
+        elif opt in "-q":
+            if arg.isdigit():
+                quantity = arg
+            else:
+                print("put numeric type argument")
+
+    #print("opts:", opts)
+    #print("args:", args)
+
+
+    '''
     #this is  just for test
     db, c = sql.update_db()
     data = sql.get_data(db, c, "name", "name", "male")
     print(data)
     return True
 
-    '''
     if  ("--dbup" in argv):
         try:
             filename = argv[1]
