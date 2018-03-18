@@ -9,6 +9,8 @@ import sys
 import shutil   #download_image
 import requests #download_image
 import getopt
+import logging
+
 
 #own modules
 import sqlite_use as sql
@@ -21,9 +23,9 @@ def download_image(url, fileName="image.png"):
         response = requests.get(url, stream=True)
         with open(fileName, 'wb') as out_file:
             shutil.copyfileobj(response.raw, out_file)
-            print("--< image written to: %s" % fileName)
+            logging.info("--< image written to: %s" % fileName)
     except:
-        print("Wrong url")
+        logging.warning("Wrong url")
     del response
 
 def files_list():
@@ -70,6 +72,7 @@ def get_dir(fileName=""):
     except:
 	    os.path.dirname(os.path.abspath(__file__))
     pathAbs = os.getcwd()
+    logging.info("absolute path:{0}".format(pathAbs))
     if fileName:
         fullPath = pathAbs + "\\" + fileName
         return fullPath
@@ -78,12 +81,13 @@ def get_dir(fileName=""):
 
 def remove_duplicates(someList, sort=True):
     #returns list with no duplicates
-    if sort:
-        someList = list(dict.fromkeys(someList).keys())
-        someList.sort()
-        return someList
-    else:
-        return list(dict.fromkeys(someList).keys())
+    #if sort:
+    #    someList = list(dict.fromkeys(someList).keys())
+    #    someList.sort()
+    #    return someList
+    #else:
+    #    return list(dict.fromkeys(someList).keys())
+    return list(set(someList))  #try with that
 
 def read_file(fileName, rmnl=False):
     try:
@@ -100,16 +104,15 @@ def read_file(fileName, rmnl=False):
                 fileContent = file.readlines()
     except:
         fileContent = []
+    logging.info("file content:{0}".format(fileContent))
     #print(fileContent)
     return fileContent
 
 def write_file(fileName, content, addNewline=True, overWrite=False, subPath="", response=True):
     if overWrite:
-        #create new file each time
-        mode = "w"
+        mode = "w"  #create new file each time
     else:
-        #append to the file
-        mode = "a"
+        mode = "a" #appedn to the file
     #content should be a list
     result = 0
     #is it empty or not
@@ -261,6 +264,14 @@ def up_db(filename):
 
 def main(argv):
     log_path = None
+    logging.basicConfig(level=logging.DEBUG)    #init logging level at first
+    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(level=logging.WARNING)
+
+    #logging.disable(logging.DEBUG)  #disable here
+    #logging.disable(logging.INFO)
+    #logging.disable(logging.WARNING)
+
     try:
         opts, args = getopt.getopt(argv, "hu:n:s:q:")
     except getopt.GetoptError as err:
@@ -275,9 +286,9 @@ def main(argv):
             print("-q <quantity> - the number of persons(s) to generate [default=1]")
             print("---"*8)
         elif opt in '-u':
-            print(files_list())
+            #logging.info("files list:{0}".format(files_list()))
             if not arg in files_list():
-                print("no such file in current dir")
+                logging.warning("no such file in current dir: '{0}'".format(arg))
                 dbData = ""
             else:
                 dbData = arg
@@ -300,9 +311,14 @@ def main(argv):
                 quantity = arg
             else:
                 print("put numeric type argument")
+        else:
+            help()
 
-    #print("opts:", opts)
-    #print("args:", args)
+    logging.info("current opts:{0}, args:{1}".format(opts, args))
+    #logging.debug("logging - debug")
+    #logging.info("logging - info")
+    #logging.warning("logging - warning")
+
 
 
     '''
