@@ -1,3 +1,5 @@
+import random
+
 def get_email(personData):
     #make some algoritms
     algoNo = random.randrange(1, 6) + 1
@@ -12,7 +14,7 @@ def get_email(personData):
     elif algoNo == 5:
         fakeEmail = ((personData["Name"]).lower())[:3] + "_" + ((personData["Surname"]).lower())[0:3] + "@gmail.com"  
     elif algoNo == 6:
-        fakeEmail = ((personData["Surname"]).lower())[::-1] + "@gmail.com"          
+        fakeEmail = ((personData["Surname"]).lower())[::-1] + "@gmail.com"
     else:
         fakeEmail = (personData["Name"]).lower() + "_" + (personData["Surname"]).lower() + "@gmail.com"
     return fakeEmail

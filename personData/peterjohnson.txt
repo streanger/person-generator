@@ -1,0 +1,8 @@
+['Name', 'Peter']
+['Nationality', 'Polish']
+['Email', 'random@gmail.com']
+['Surname', 'Johnson']
+['Sex', 'Female']
+['Age', 34]
+['Phone', '801172577']
+['Birthdate', '29-3-1988']

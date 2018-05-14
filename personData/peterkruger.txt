@@ -1,0 +1,8 @@
+['Age', 50]
+['Birthdate', '5-1-1993']
+['Name', 'Peter']
+['Email', 'modnar@gmail.com']
+['Surname', 'Kruger']
+['Phone', '783530823']
+['Sex', 'Male']
+['Nationality', 'Polish']

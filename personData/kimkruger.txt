@@ -1,0 +1,8 @@
+['Nationality', 'Polish']
+['Phone', '124834234']
+['Surname', 'Kruger']
+['Name', 'Kim']
+['Email', 'krugerom@gmail.com']
+['Sex', 'Male']
+['Birthdate', '15-9-1984']
+['Age', 33]

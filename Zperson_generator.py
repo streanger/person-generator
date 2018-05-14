@@ -14,7 +14,7 @@ import logging
 
 #own modules
 import sqlite_use as sql
-#from randEmail import get_email
+from randEmail import get_email
 
 def download_image(url, fileName="image.png"):
     #will download&save image under specified address
@@ -160,16 +160,18 @@ def get_data(key, personDictio):
         data = get_random(["Male", "Female"])
     elif key == "Name":
         #uwaga poprzycinane imiona! skorygowac
-        names = (personDictio["Nationality"]).lower() + (personDictio["Sex"]).lower() + "name.txt"
-        names = read_file(names, rmnl=True)
-        data = get_random(names)
+        #names = (personDictio["Nationality"]).lower() + (personDictio["Sex"]).lower() + "name.txt"
+        #names = read_file(names, rmnl=True)
+        #data = get_random(names)
+        data = get_random(["Kim", "John", "Peter"])
     elif key == "Surname":
         #surnames = sql.get_data(db, c, "surname", personDictio["nationality"], personDictio["sex"])
         #read from db -> table:surname, filter:nationality,sex(male,female)
-        surnames = (personDictio["Nationality"]).lower() + "surname.txt"
-        surnames = read_file(surnames, rmnl=True)
+        #surnames = (personDictio["Nationality"]).lower() + "surname.txt"
+        #surnames = read_file(surnames, rmnl=True)
         #print(surnames)
-        data = get_random(surnames)
+        #data = get_random(surnames)
+        data = get_random(["Smith", "Johnson", "Kruger"])
         return data
 
         #this down here is to convert male to female polish surname; for now commented
@@ -257,6 +259,8 @@ def entry_data():
 
 def get_random(container):
     #get random element from list
+    print(container)
+    input()
     return random.choice(container)
 
 def up_db(filename):
@@ -264,10 +268,10 @@ def up_db(filename):
 
 def main(argv):
     log_path = None
-    logging.basicConfig(level=logging.DEBUG)    #init logging level at first
-    logging.basicConfig(level=logging.INFO)
-    logging.basicConfig(level=logging.WARNING)
-
+    #init logging with level, saving to file option, and format
+    logging.basicConfig(level=logging.DEBUG, filename="logging.txt")
+    logging.basicConfig(level=logging.INFO, filename="logging.txt")
+    logging.basicConfig(level=logging.WARNING, filename="logging.txt")
     #logging.disable(logging.DEBUG)  #disable here
     #logging.disable(logging.INFO)
     #logging.disable(logging.WARNING)
@@ -320,6 +324,9 @@ def main(argv):
     #logging.warning("logging - warning")
 
 
+    specifiedData = entry_data()
+    personData = generate_person(specifiedData = specifiedData)[1]
+    print(personData)
 
     '''
     #this is  just for test
