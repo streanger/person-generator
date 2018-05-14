@@ -65,3 +65,55 @@ INFO:root:current opts:[], args:[]
 INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
 INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
 INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:current opts:[], args:[]
+INFO:root:current opts:[], args:[]
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:current opts:[], args:[]
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:current opts:[], args:[]
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:current opts:[], args:[]
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:current opts:[], args:[]
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:current opts:[], args:[]
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:current opts:[], args:[]
+INFO:root:current opts:[], args:[]
+INFO:root:current opts:[], args:[]
+INFO:root:current opts:[], args:[]
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:current opts:[], args:[]
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:current opts:[], args:[]
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:current opts:[], args:[]
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:current opts:[], args:[]
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:current opts:[], args:[]
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator
+INFO:root:absolute path:/home/stranger/python/UPLOADS/person_generator

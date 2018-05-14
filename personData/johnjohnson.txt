@@ -1,0 +1,8 @@
+['Birthdate', '17-06-1987']
+['Phone', '310105104']
+['Email', 'ran_ran@gmail.com']
+['Nationality', 'Polish']
+['Name', 'John']
+['Surname', 'Johnson']
+['Sex', 'Male']
+['Age', 30]

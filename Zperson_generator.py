@@ -14,7 +14,8 @@ import logging
 
 #own modules
 import sqlite_use as sql
-from randEmail import get_email
+from random_data import get_email, random_date, get_age
+
 
 def download_image(url, fileName="image.png"):
     #will download&save image under specified address
@@ -32,32 +33,6 @@ def files_list():
     #return the list of current dir files
     files = os.listdir()
     return files
-
-def get_age(birthdate=""):
-    if birthdate:
-        if birthdate == "Random":
-            pass
-        else:
-            #rounding stuff but should work :)
-            birthList = birthdate.split("-")
-            dateFormat = datetime.date(day=int(birthList[0]), month=int(birthList[1]), year=int(birthList[2]))
-            today = date.today()
-            age = (today - dateFormat) // timedelta(days=365.2425)
-            return dateFormat, birthdate, age
-    #random age in defined range (18-50)
-    bottomYear = 1967
-    topYear = 1999
-    start_date = date(day=1, month=1, year=bottomYear).toordinal()
-    end_date = date(day=31, month=12, year=topYear).toordinal()
-    random_day = date.fromordinal(random.randint(start_date, end_date))
-    #just for string
-    day = str(random_day.day)
-    month = str(random_day.month)
-    year = str(random_day.year)
-    random_day_string = day + "-" + month + "-" + year
-    #age
-    age = (date.today() - random_day) // timedelta(days=365.2425)
-    return random_day, random_day_string, age
 
 def get_data_base():
     #read all usefull data from files
@@ -186,9 +161,12 @@ def get_data(key, personDictio):
 
     elif key == "Birthdate":
         #think about birth and age
-        data = str(get_age()[1])
+        #data = str(get_age()[1])
+        data = random_date()
+        print(data)
     elif key == "Age":
-        data = get_age(personDictio["Birthdate"])[2]
+        #data = get_age(personDictio["Birthdate"])[2]
+        data = get_age(personDictio["Birthdate"])
     elif key == "Email":
         data = get_email(personDictio)
     elif key == "Phone":
