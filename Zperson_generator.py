@@ -39,6 +39,14 @@ def get_data_base():
     #otherwise use data inside
     return 0
 
+def script_path(fileName=''):
+    path = os.path.realpath(os.path.dirname(sys.argv[0]))
+    os.chdir(path)  #it seems to be quite important
+    if fileName:
+        fullPath = os.path.join(path, fileName)
+        return fullPath
+    return path
+
 def get_dir(fileName=""):
     #return our current path
     #if fileName -> return full path
@@ -55,14 +63,7 @@ def get_dir(fileName=""):
     return pathAbs
 
 def remove_duplicates(someList, sort=True):
-    #returns list with no duplicates
-    #if sort:
-    #    someList = list(dict.fromkeys(someList).keys())
-    #    someList.sort()
-    #    return someList
-    #else:
-    #    return list(dict.fromkeys(someList).keys())
-    return list(set(someList))  #try with that
+    return list(set(someList))
 
 def read_file(fileName, rmnl=False):
     try:
@@ -128,55 +129,39 @@ def write_names(names):
 
 def get_data(key, personDictio):
     #return specified data with using proper functions
-    data = "Random"
+    #data = "Random"
     if key == "Nationality":
-        data = get_random(read_file("national.txt", rmnl=True))
+        #data = get_random(read_file("national.txt", rmnl=True))
+        data = random.choice(["polish", "english"])
     elif key == "Sex":
-        data = get_random(["Male", "Female"])
+        data = random.choice(["Male", "Female"])
     elif key == "Name":
-        #uwaga poprzycinane imiona! skorygowac
-        #names = (personDictio["Nationality"]).lower() + (personDictio["Sex"]).lower() + "name.txt"
-        #names = read_file(names, rmnl=True)
-        #data = get_random(names)
-        data = get_random(["Kim", "John", "Peter"])
+        national = personDictio["Nationality"]
+        sex = personDictio["Sex"]
+        #fileName = national + sex + ".txt"
+        #names read_file(fileName)   #or just use database
+        #choose name dependent from national
+        data = random.choice(["Kim", "John", "Peter"])
     elif key == "Surname":
-        #surnames = sql.get_data(db, c, "surname", personDictio["nationality"], personDictio["sex"])
-        #read from db -> table:surname, filter:nationality,sex(male,female)
-        #surnames = (personDictio["Nationality"]).lower() + "surname.txt"
-        #surnames = read_file(surnames, rmnl=True)
-        #print(surnames)
-        #data = get_random(surnames)
-        data = get_random(["Smith", "Johnson", "Kruger"])
-        return data
-
-        #this down here is to convert male to female polish surname; for now commented
-        #if ((personDictio["Nationality"]).lower() == "polish"):
-        #    if ((personDictio["Sex"]).lower() == "male"):
-        #        return data
-        #    else:
-        #        if data[-1] == "i":
-        #            return data[:-1] + "a"
-        #else:
-        #    return data
-
+        national = personDictio["Nationality"]
+        fileName = national + "sunrmaes.txt"
+        #surnames = read_file(fileName)  #or go to db
+        #choose name dependent from national
+        data = random.choice(["Smith", "Johnson", "Kruger"])
     elif key == "Birthdate":
-        #think about birth and age
-        #data = str(get_age()[1])
         data = random_date()
-        print(data)
     elif key == "Age":
         #data = get_age(personDictio["Birthdate"])[2]
         data = get_age(personDictio["Birthdate"])
     elif key == "Email":
         data = get_email(personDictio)
     elif key == "Phone":
-        data = str(random_phone())         
+        data = str(random_phone())
     else:
         data = "Random"
     return data
 
-def generate_person(fullyRandom=False, specifiedData = {}, writeFile=True):
-    #random dictio data
+def generate_person(national="Random", sex="Random", writeFile=True):
     personDataDictio = { "Nationality" : "Random",
                          "Sex" : "Random",
                          "Name" : "Random",
@@ -185,80 +170,30 @@ def generate_person(fullyRandom=False, specifiedData = {}, writeFile=True):
                          "Age" : "Random",
                          "Email" : "Random",
                          "Phone" : "Random"}
-    if specifiedData:
-        for key, value in specifiedData.items():
-            if value == "Random":
-                #personDataDictio[key] = "TEST"
-                personDataDictio[key] = get_data(key, personDataDictio)
-            else:
-                #if specified more than one element will choose random of it
-                if (type(value) is list) and (len(value) > 1):
-                    print(value)
-                    input("next...")
-                    randomValue = get_random(value)
-                    personDataDictio[key] = randomValue
-                else:
-                    personDataDictio[key] = value
-
-    #to remember; cant use the same keys
-    #dictio = dict(zip(firstList, secondList))
-    #specify some data; leave other as "Random"
-    #make list; list help with map object
-    personDataList = list(map(list, personDataDictio.items()))
-    if writeFile:
-        fileName = personDataDictio["Name"].lower() + personDataDictio["Surname"].lower() + ".txt"
-        write_file(fileName, personDataList, addNewline=True, overWrite=True, subPath="personData")    
-        write_file("AAAllPersonData.txt", personDataList, addNewline=True, overWrite=False, subPath="personData", response=False) #collect all data
-        write_file("AAAllPersonData.txt", [30*"-"], addNewline=True, overWrite=False, subPath="personData", response=False) #add separator: ---
-
-    #return data as dictio and list both
-    return personDataDictio, personDataList
-
-def entry_data():
-    specifiedData = { "Nationality" : "Polish",
-                      "Sex" : "Random",
-                      "Name" : "Random",
-                      #"Surname" : ["Burt", "Roland", "Johnnson"],
-                      "Surname" : "Random",
-                      "Birthdate" : "Random",
-                      "Age" : "Random",
-                      "Email" : "Random",
-                      "Phone" : "Random"}
-    specifiedFull = { "Nationality" : "Polish",
-                      "Sex" : "Male",
-                      "Name" : "Steve",
-                      "Surname" : "Johnnson",
-                      "Birthdate" : "19.02.1998",
-                      "Age" : "19",
-                      "Email" : "random@gmail.com",
-                      "Phone" : "345876112"}
-    return specifiedData
-    #return specifiedFull
-
-def get_random(container):
-    #get random element from list
-    print(container)
-    input()
-    return random.choice(container)
+    personData = {}
+    if national == "Random":
+        personData["Nationality"] = get_data("Nationality", personData)
+    else:
+        personData["Nationality"] = national
+    if sex == "Random":
+        personData["Sex"] = random.choice(["Male", "Female"])
+    else:
+        personData["Sex"] = sex
+    otherData = ["Name", "Surname", "Birthdate", "Age", "Email", "Phone"]
+    for key in otherData:
+        personData[key] = get_data(key, personData)
+    return personData
 
 def up_db(filename):
     sql.update_db(filename)
 
 def main(argv):
-    log_path = None
-    #init logging with level, saving to file option, and format
-    logging.basicConfig(level=logging.DEBUG, filename="logging.txt")
-    logging.basicConfig(level=logging.INFO, filename="logging.txt")
-    logging.basicConfig(level=logging.WARNING, filename="logging.txt")
-    #logging.disable(logging.DEBUG)  #disable here
-    #logging.disable(logging.INFO)
-    #logging.disable(logging.WARNING)
-
     try:
         opts, args = getopt.getopt(argv, "hu:n:s:q:")
     except getopt.GetoptError as err:
         print(str(err))
         sys.exit(2)
+    quantity = 1
     for opt, arg in opts:
         if opt == "-h":
             print("usage:")
@@ -268,9 +203,7 @@ def main(argv):
             print("-q <quantity> - the number of persons(s) to generate [default=1]")
             print("---"*8)
         elif opt in '-u':
-            #logging.info("files list:{0}".format(files_list()))
             if not arg in files_list():
-                logging.warning("no such file in current dir: '{0}'".format(arg))
                 dbData = ""
             else:
                 dbData = arg
@@ -278,7 +211,7 @@ def main(argv):
         elif opt in "-n":
             nationalList = ["english", "polish", "ukrainian"]
             if not arg.lower() in nationalList:
-                print("wrong nationality choie. Auto choose -> english")
+                print("wrong nationality choice. Auto choose -> english")
                 national = "english"
             else:
                 national = arg
@@ -290,21 +223,16 @@ def main(argv):
                 sex = arg
         elif opt in "-q":
             if arg.isdigit():
-                quantity = arg
+                quantity = int(arg)
             else:
                 print("put numeric type argument")
         else:
             help()
 
-    logging.info("current opts:{0}, args:{1}".format(opts, args))
-    #logging.debug("logging - debug")
-    #logging.info("logging - info")
-    #logging.warning("logging - warning")
 
-
-    specifiedData = entry_data()
-    personData = generate_person(specifiedData = specifiedData)[1]
-    print(personData)
+    for x in range(quantity):
+        personData = generate_person()
+        print(x+1, "-->", personData)
 
     '''
     #this is  just for test
