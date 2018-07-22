@@ -2,8 +2,6 @@
 #it would be useful with generate random person data
 #11.02.18 -> it still need a lot of work :(
 import os
-from datetime import date, timedelta
-import datetime
 import random
 import sys
 import shutil   #download_image
@@ -11,10 +9,9 @@ import requests #download_image
 import getopt
 import logging
 
-
 #own modules
 import sqlite_use as sql
-from random_data import get_email, random_date, get_age
+from random_data import get_email, random_date, get_age, random_phone
 
 
 def download_image(url, fileName="image.png"):
@@ -28,17 +25,7 @@ def download_image(url, fileName="image.png"):
     except:
         logging.warning("Wrong url")
     del response
-
-def files_list():
-    #return the list of current dir files
-    files = os.listdir()
-    return files
-
-def get_data_base():
-    #read all usefull data from files
-    #otherwise use data inside
-    return 0
-
+    
 def script_path(fileName=''):
     path = os.path.realpath(os.path.dirname(sys.argv[0]))
     os.chdir(path)  #it seems to be quite important
@@ -47,31 +34,11 @@ def script_path(fileName=''):
         return fullPath
     return path
 
-def get_dir(fileName=""):
-    #return our current path
-    #if fileName -> return full path
-    try:
-	    os.chdir(os.path.dirname(__file__))
-    except:
-	    os.path.dirname(os.path.abspath(__file__))
-    pathAbs = os.getcwd()
-    logging.info("absolute path:{0}".format(pathAbs))
-    if fileName:
-        fullPath = pathAbs + "\\" + fileName
-        return fullPath
-    #path = os.path.join(pathAbs, fileName)
-    return pathAbs
-
 def remove_duplicates(someList, sort=True):
     return list(set(someList))
 
 def read_file(fileName, rmnl=False):
-    try:
-	    os.chdir(os.path.dirname(__file__))
-    except:
-	    os.path.dirname(os.path.abspath(__file__))
-    pathAbs = os.getcwd()
-    path = os.path.join(pathAbs, fileName)
+    path = os.path.join(PATH, fileName)
     try:
         with open(path, "r") as file:
             if rmnl:
@@ -80,47 +47,35 @@ def read_file(fileName, rmnl=False):
                 fileContent = file.readlines()
     except:
         fileContent = []
-    logging.info("file content:{0}".format(fileContent))
-    #print(fileContent)
     return fileContent
-
-def write_file(fileName, content, addNewline=True, overWrite=False, subPath="", response=True):
-    if overWrite:
-        mode = "w"  #create new file each time
-    else:
-        mode = "a" #appedn to the file
-    #content should be a list
-    result = 0
-    #is it empty or not
+    
+def write_file(fileName, content, endline="\n", overWrite=False, response=True, rmSign=[]):
     if not content:
-        result = 1
-        return result
-
-    #will create subPath
-    newpath = os.path.join(get_dir(), subPath)
-    path = os.path.join(newpath, fileName)
-    #print("path:", path)
-    if not os.path.exists(newpath):
-        os.makedirs(newpath)
+        return False
+    contentType = type(content)
+    if contentType in (list, tuple):
+        pass
+    elif contentType in (int, str):
+        content = [str(content)]
+    elif contentType is (dict):
+        content = list(content.items())
+    else:
+        return False
+    if overWrite:
+        mode="w"
+    else:
+        mode="a"
+    path = os.path.join(PATH, fileName)
     with open(path, mode) as file:
-        if addNewline:
-            for item in content:
-                #print("item:", item)
-                file.writelines(str(item)+"\n")
-        else:
-            for item in content:
-                file.writelines(str(item))
+        for item in content:
+            if rmSign:
+                for sign in rmSign:
+                    item = (str(item)).replace(sign, "")
+            file.writelines(str(item)+endline)
         file.close()
         if response:
-            print("--< written to: %s" % fileName)
-    return result
-
-def random_phone():
-    firstDigit = random.randrange(1,9)
-    phoneNumber = str(firstDigit)
-    for x in range(8):
-        phoneNumber += str(random.randrange(0,9))
-    return phoneNumber
+            print("--< written to: {0} | contentType: {1}".format(fileName, contentType))
+    return True
 
 def write_names(names):
     for key, item in enumerate(names):
@@ -131,27 +86,29 @@ def get_data(key, personDictio):
     #return specified data with using proper functions
     #data = "Random"
     if key == "Nationality":
-        #data = get_random(read_file("national.txt", rmnl=True))
-        data = random.choice(["polish", "english"])
-    elif key == "Sex":
-        data = random.choice(["Male", "Female"])
+        nationalList = sql.data_from_db("names", "national") + sql.data_from_db("surnames", "national")
+        nationalList = list(set(nationalList))
+        if not nationalList:
+            nationalList = ["Random"]
+        data = random.choice(nationalList)
     elif key == "Name":
         national = personDictio["Nationality"]
         sex = personDictio["Sex"]
-        #fileName = national + sex + ".txt"
-        #names read_file(fileName)   #or just use database
-        #choose name dependent from national
-        data = random.choice(["Kim", "John", "Peter"])
+        names = sql.data_from_db(TABLE_NAME="names", toGet="data", getBy=[national, sex])
+        if not names:
+            names = ["Random"]
+        #print(names)
+        data = random.choice(names)
     elif key == "Surname":
         national = personDictio["Nationality"]
-        fileName = national + "sunrmaes.txt"
-        #surnames = read_file(fileName)  #or go to db
-        #choose name dependent from national
-        data = random.choice(["Smith", "Johnson", "Kruger"])
-    elif key == "Birthdate":
-        data = random_date()
+        surnames = sql.data_from_db(TABLE_NAME="surnames", toGet="data", getBy=[national])
+        if not surnames:
+            surnames = ["Random"]
+        #print(surnames)
+        data = random.choice(surnames)
+    #elif key == "Birthdate":
+    #    data = random_date(age=val)
     elif key == "Age":
-        #data = get_age(personDictio["Birthdate"])[2]
         data = get_age(personDictio["Birthdate"])
     elif key == "Email":
         data = get_email(personDictio)
@@ -161,7 +118,27 @@ def get_data(key, personDictio):
         data = "Random"
     return data
 
-def generate_person(national="Random", sex="Random", writeFile=True):
+def capitalize_dictio(dictio):
+    for key,val in dictio.items():
+        if key == "Email":
+            continue
+        if type(val) is str:
+            dictio[key] = val.capitalize()
+    return dictio
+    
+def usage():
+    print("usage:")
+    print("-u <fileName> - file with data to update database")
+    print("-n <nationality> - nationality of person to generate [default=english]")
+    print("-s <sex> - gender of person to generate [default=male]")
+    print("-q <quantity> - the number of persons(s) to generate [default=1]")
+    print("-a <age> - age of person(s)")
+    print("-r - random nationality and sex")
+    print("-h - this usage help")
+    print("--"*35)
+    return True
+    
+def generate_person(national="Random", sex="Random", age=0, writeFile=True):
     personDataDictio = { "Nationality" : "Random",
                          "Sex" : "Random",
                          "Name" : "Random",
@@ -176,86 +153,106 @@ def generate_person(national="Random", sex="Random", writeFile=True):
     else:
         personData["Nationality"] = national
     if sex == "Random":
-        personData["Sex"] = random.choice(["Male", "Female"])
+        personData["Sex"] = random.choice(["male", "female"])
     else:
         personData["Sex"] = sex
-    otherData = ["Name", "Surname", "Birthdate", "Age", "Email", "Phone"]
+    personData["Birthdate"] = random_date(age=age)
+    otherData = ["Name", "Surname", "Age", "Email", "Phone"]
     for key in otherData:
         personData[key] = get_data(key, personData)
+    personData = capitalize_dictio(personData)
     return personData
 
-def up_db(filename):
-    sql.update_db(filename)
-
+def show_data(dictio, dataType=0):
+    if dataType == 0:
+        return "\n".join(dictio.values())
+    elif dataType == 1:
+        return "\n".join("{}".format(item) for item in dictio.items())
+    elif dataType == 2:
+        return "\n".join("{}: {}".format(key, item) for key, item in dictio.items())
+    else:
+        return "\n".join(dictio.values())
+        
 def main(argv):
+    #check if db exists and
+    tables = sql.get_tables("zperson_stuff.db")
+    if tables != [("names",), ("surnames",)]:
+        print("--< incorrect tables: {}\n--< check if database file exists".format(tables))
+        return False
+        
+    argv = ["-h"]
+    #argv = ["-u", "names.txt"]
+    #argv = ["-r"]
+    #argv = ["-n", "polish", "-q", "20", "-a", "10"]
     try:
-        opts, args = getopt.getopt(argv, "hu:n:s:q:")
+        opts, args = getopt.getopt(argv, "hru:n:s:q:a:")
     except getopt.GetoptError as err:
         print(str(err))
-        sys.exit(2)
+        return False
+        
+    #parameters at start
+    national = "Random"
+    sex = "Random"
     quantity = 1
+    age = 0
+    
     for opt, arg in opts:
         if opt == "-h":
-            print("usage:")
-            print("-u <fileName> - file with data to update database")
-            print("-n <nationality> - nationality of person to generate [default=english]")
-            print("-s <sex> - gender of person to generate [default=male]")
-            print("-q <quantity> - the number of persons(s) to generate [default=1]")
-            print("---"*8)
+            usage()
+            return True
+        elif opt in '-r':
+            #fully random:
+            national = "Random"
+            sex = "Random"
+            #quantity = 1
+            #break
         elif opt in '-u':
-            if not arg in files_list():
-                dbData = ""
-            else:
-                dbData = arg
-            #as an argument put filename; if file not exists return False
+            if arg in os.listdir():
+                status = sql.update_db(arg)
+                if status:
+                    print("--< database updated succesfully")
+                    return True
+                else:
+                    print("--< failed to update database")
+                    return False
         elif opt in "-n":
-            nationalList = ["english", "polish", "ukrainian"]
-            if not arg.lower() in nationalList:
-                print("wrong nationality choice. Auto choose -> english")
-                national = "english"
-            else:
+            #nationalList = ["english", "polish", "ukrainian"]
+            nationalList = sql.data_from_db("names", "national") + sql.data_from_db("surnames", "national")
+            nationalList = list(set(nationalList))
+            if arg.lower() in nationalList:
                 national = arg
-        elif opt in "-s":
-            if not arg.lower() in ("male", "female"):
-                print("wrong sex choice. Auto choose -> male")
-                sex = "male"
             else:
+                print("--< wrong nationality choice. Auto choose -> english")
+                #national = "english"
+        elif opt in "-s":
+            if arg.lower() in ("male", "female"):
                 sex = arg
+            else:
+                print("--< wrong sex choice. Auto choose -> male")
         elif opt in "-q":
             if arg.isdigit():
                 quantity = int(arg)
             else:
-                print("put numeric type argument")
+                print("--< put numeric type argument")
+        elif opt in "-a":
+            if arg.isdigit():
+                age = int(arg)
         else:
-            help()
+            usage()
+            return True
 
+    #args there: national, sex, quantity, age            
 
     for x in range(quantity):
-        personData = generate_person()
-        print(x+1, "-->", personData)
+        personData = generate_person(national=national, sex=sex, age=age, writeFile=False)
+        personData = show_data(personData, 2)
+        print("---"*10 + "\n" + personData)
 
-    '''
-    #this is  just for test
-    db, c = sql.update_db()
-    data = sql.get_data(db, c, "name", "name", "male")
-    print(data)
-    return True
-
-    if  ("--dbup" in argv):
-        try:
-            filename = argv[1]
-        except:
-            filename = ""
-        up_db(filename)
-        return True
-    else:
-        specifiedData = entry_data()
-        personData = generate_person(specifiedData = specifiedData)[1]
-        print(personData)
-    print("exiting...")
-    '''
+        
+        
 
 if __name__ == "__main__":
+    global PATH; PATH = script_path()
     main(sys.argv[1:])
 
 
@@ -270,4 +267,12 @@ ehhm
 
 17.02.18
 -i need to add zipcode related to address if it exists
+
+22.07.18
+-comeback with new ideas :)
+
+how about add:
+-flags?
+-country on the map?
+-fake address?
 '''

@@ -3,6 +3,12 @@ import datetime
 import random
 from dateutil.relativedelta import relativedelta
 
+def rm_pl_signs(plString):
+    plSigns = {'ą':'a', 'ć':'c', 'ę':'e', 'ł':'l', 'ń':'n', 'ó':'o', 'ś':'s', 'ź':'z', 'ż':'z'}
+    for key, val in plSigns.items():
+        if key in plString:
+            plString = plString.replace(key, val)
+    return plString
 
 def get_email(personData):
     #make some algoritms
@@ -21,19 +27,36 @@ def get_email(personData):
         fakeEmail = ((personData["Surname"]).lower())[::-1] + "@gmail.com"
     else:
         fakeEmail = (personData["Name"]).lower() + "_" + (personData["Surname"]).lower() + "@gmail.com"
-    return fakeEmail
+    return rm_pl_signs(fakeEmail)
 
-def random_date(start="1-1-1970", end="1-1-1999", format="%d-%m-%Y", prop=random.random()):
-    stime = time.mktime(time.strptime(start, format))
-    etime = time.mktime(time.strptime(end, format))
-    ptime = stime + prop * (etime - stime)
-    return time.strftime(format, time.localtime(ptime))
-
+def random_date(age=0):
+    if not age:
+        age = random.randrange(18,51)
+    format = "%Y-%m-%d"
+    stime = time.mktime(time.strptime(str((datetime.datetime.now() - relativedelta(years=1)).date()), format))
+    etime = time.mktime(time.strptime(str(datetime.datetime.now().date()), format))
+    ptime = stime + random.random()*(etime - stime)
+    randomTime = time.strftime(format, time.localtime(ptime))
+    
+    date = (datetime.datetime.strptime(randomTime, format) - relativedelta(years=age)).strftime("%d-%m-%Y")
+    return date
+    
 def get_age(start):
     today = time.strftime("%d-%m-%Y")
     d1 = datetime.datetime.strptime(start, "%d-%m-%Y")
     d2 = datetime.datetime.strptime(today, "%d-%m-%Y")
-    #return abs((d2 - d1).days)
     diffYears = relativedelta(d2, d1).years
-    return diffYears
+    return str(diffYears)
+
+def random_phone():
+    firstDigit = random.randrange(1,9)
+    phoneNumber = str(firstDigit)
+    for x in range(8):
+        phoneNumber += str(random.randrange(0,9))
+    return "-".join([phoneNumber[x:x+3] for x in range(0, len(phoneNumber), 3)])
+    
+    
+if __name__ == "__main__":
+    print("import this rather than use")
+    print(random_date())
 

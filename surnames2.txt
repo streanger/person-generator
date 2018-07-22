@@ -1,7 +1,0 @@
-surname,english,male
-Kowaltzki
-Largo
-Nowitzki
-Borowitch
-Jouzefe
-

@@ -1,6 +1,11 @@
-name,polish,male
+﻿name,polish,male
+
 Antoni
+
 Ludwik
+
 Eryk
+
 Władek
+
 Zenon

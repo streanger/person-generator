@@ -1,7 +1,11 @@
-surname,polish,male
-Kowalski
-Lato
-Nowak
-Borowik
-Jóźwik
+surnames,croatia
 
+Kovalowitch
+Novakowich
+
+Levovich
+Dudich
+Norickich
+Stefanovich
+
+Menelevich

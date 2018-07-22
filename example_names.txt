@@ -1,6 +1,13 @@
 name,slovakia,female
+
 Anna
+
 Lydia
+
 Erika
+
 Wala
+
 Zara
+
+
