@@ -1,8 +1,0 @@
-['Nationality', 'English']
-['Sex', 'Male']
-['Name', 'Aaron']
-['Surname', 'Smith']
-['Birthdate', '16-5-1993']
-['Age', 24]
-['Email', 'aar_smi@gmail.com']
-['Phone', '507058836']

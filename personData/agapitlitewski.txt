@@ -1,8 +1,0 @@
-['Nationality', 'Polish']
-['Sex', 'Male']
-['Name', 'Agapit']
-['Surname', 'Litewski']
-['Birthdate', '21-9-1986']
-['Age', 31]
-['Email', 'alitewski@gmail.com']
-['Phone', '870064323']

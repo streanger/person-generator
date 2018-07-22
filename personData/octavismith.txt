@@ -1,8 +1,0 @@
-['Nationality', 'English']
-['Sex', 'Female']
-['Name', 'Octavi']
-['Surname', 'Smith']
-['Birthdate', '17-10-1974']
-['Age', 42]
-['Email', 'smith@gmail.com']
-['Phone', '132507453']

@@ -1,8 +1,0 @@
-['Name', 'v']
-['Email', 'a']
-['Birthdate', '1']
-['Sex', 'l']
-['Age', '9']
-['Surname', 'J']
-['Nationality', 'l']
-['Phone', '6']

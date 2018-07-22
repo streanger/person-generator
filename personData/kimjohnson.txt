@@ -1,8 +1,0 @@
-['Phone', '863874547']
-['Email', 'modnar@gmail.com']
-['Sex', 'Male']
-['Birthdate', '17-11-1977']
-['Surname', 'Johnson']
-['Nationality', 'Polish']
-['Name', 'Kim']
-['Age', 40]

@@ -1,8 +1,0 @@
-['Nationality', 'English']
-['Sex', 'Female']
-['Name', 'Yowit']
-['Surname', 'Johhnson']
-['Birthdate', '23-9-1984']
-['Age', 33]
-['Email', 'johhnson@gmail.com']
-['Phone', '163151467']

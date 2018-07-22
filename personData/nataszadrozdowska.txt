@@ -1,8 +1,0 @@
-['Nationality', 'Polish']
-['Sex', 'Female']
-['Name', 'Natasza']
-['Surname', 'Drozdowska']
-['Birthdate', '1-6-1974']
-['Age', 43]
-['Email', 'akswodzord@gmail.com']
-['Phone', '771224682']

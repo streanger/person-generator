@@ -1,8 +1,0 @@
-['Birthdate', '05-12-1975']
-['Name', 'Peter']
-['Phone', '334065806']
-['Age', 42]
-['Surname', 'Johnson']
-['Nationality', 'Polish']
-['Sex', 'Male']
-['Email', 'pet_joh@gmail.com']

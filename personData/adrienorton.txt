@@ -1,8 +1,0 @@
-['Nationality', 'English']
-['Sex', 'Male']
-['Name', 'Adrie']
-['Surname', 'Norton']
-['Birthdate', '26-6-1973']
-['Age', 44]
-['Email', 'notron@gmail.com']
-['Phone', '575463180']

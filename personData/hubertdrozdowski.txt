@@ -1,8 +1,0 @@
-['Nationality', 'Polish']
-['Sex', 'Male']
-['Name', 'Hubert']
-['Surname', 'Drozdowski']
-['Birthdate', '8-4-1970']
-['Age', 47]
-['Email', 'drozdowski70@gmail.com']
-['Phone', '372264553']

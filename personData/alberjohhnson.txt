@@ -1,8 +1,0 @@
-['Nationality', 'English']
-['Sex', 'Male']
-['Name', 'Alber']
-['Surname', 'Johhnson']
-['Birthdate', '19-1-1979']
-['Age', 38]
-['Email', 'johhnson79@gmail.com']
-['Phone', '467654814']

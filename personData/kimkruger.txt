@@ -1,8 +1,0 @@
-['Birthdate', '30-03-1991']
-['Age', 27]
-['Name', 'Kim']
-['Email', 'modnar@gmail.com']
-['Nationality', 'Polish']
-['Surname', 'Kruger']
-['Phone', '268718164']
-['Sex', 'Female']

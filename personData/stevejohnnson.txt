@@ -1,8 +1,0 @@
-['Name', 'Steve']
-['Phone', '345876112']
-['Surname', 'Johnnson']
-['Age', '19']
-['Email', 'random@gmail.com']
-['Birthdate', '19.02.1998']
-['Sex', 'Male']
-['Nationality', 'Polish']

@@ -1,8 +1,0 @@
-['Email', 'rrandom@gmail.com']
-['Birthdate', '16-07-1977']
-['Age', 40]
-['Surname', 'Kruger']
-['Name', 'John']
-['Nationality', 'Polish']
-['Phone', '332532426']
-['Sex', 'Female']
