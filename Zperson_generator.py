@@ -8,6 +8,7 @@ import shutil   #download_image
 import requests #download_image
 import getopt
 import logging
+import csv
 
 #own modules
 import sqlite_use as sql
@@ -48,6 +49,14 @@ def read_file(fileName, rmnl=False):
     except:
         fileContent = []
     return fileContent
+
+def csv_writer(personList):
+    path = os.path.join(PATH, "persons.csv")
+    with open(path, "w", newline='') as csv_file:
+        writer = csv.writer(csv_file, delimiter=",")
+        for person in personList:
+            writer.writerow(person)
+    return True
     
 def write_file(fileName, content, endline="\n", overWrite=False, response=True, rmSign=[]):
     if not content:
@@ -170,6 +179,9 @@ def show_data(dictio, dataType=0):
         return "\n".join("{}".format(item) for item in dictio.items())
     elif dataType == 2:
         return "\n".join("{}: {}".format(key, item) for key, item in dictio.items())
+    elif dataType == 3:
+        return [dictio["Name"], dictio["Surname"], dictio["Sex"], dictio["Nationality"],
+                dictio["Birthdate"], dictio["Age"], dictio["Email"], dictio["Phone"]]
     else:
         return "\n".join(dictio.values())
         
@@ -180,9 +192,9 @@ def main(argv):
         print("--< incorrect tables: {}\n--< check if database file exists".format(tables))
         return False
         
-    argv = ["-h"]
+    #argv = ["-h"]
     #argv = ["-u", "names.txt"]
-    #argv = ["-r"]
+    argv = ["-r", "-q", "99", "-a", "25"]
     #argv = ["-n", "polish", "-q", "20", "-a", "10"]
     try:
         opts, args = getopt.getopt(argv, "hru:n:s:q:a:")
@@ -242,13 +254,15 @@ def main(argv):
             return True
 
     #args there: national, sex, quantity, age            
-
+    personList = [["Name", "Surname", "Sex", "Nationality", "Birthdate", "Age", "Email", "Phone"]]
     for x in range(quantity):
         personData = generate_person(national=national, sex=sex, age=age, writeFile=False)
-        personData = show_data(personData, 2)
-        print("---"*10 + "\n" + personData)
+        personData = show_data(personData, 3)
+        personList.append(personData)
+        print("---"*10 + "\n", personData)
 
-        
+    #write data to csv
+    csv_writer(personList)
         
 
 if __name__ == "__main__":
@@ -275,4 +289,8 @@ how about add:
 -flags?
 -country on the map?
 -fake address?
+
+todo:
+-usuniecie duplikatow z bazy danych
+-weryfikacja obecnosci rekordu przed zapisem
 '''

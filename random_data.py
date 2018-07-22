@@ -12,21 +12,22 @@ def rm_pl_signs(plString):
 
 def get_email(personData):
     #make some algoritms
+    post = random.choice(["gmail.com", "wp.pl", "o2.pl", "yahoo.com", "hotmail"])
     algoNo = random.randrange(1, 6) + 1
     if algoNo == 1:
-        fakeEmail = (personData["Name"]).lower() + "_" + (personData["Surname"]).lower() + "@gmail.com"
+        fakeEmail = (personData["Name"]).lower() + "_" + (personData["Surname"]).lower() + "@" + post
     elif algoNo == 2:
-        fakeEmail = (personData["Surname"]).lower() + "@gmail.com"    
+        fakeEmail = (personData["Surname"]).lower() + "@" + post   
     elif algoNo == 3:
-        fakeEmail = (personData["Surname"]).lower() + (personData["Birthdate"])[-2:] + "@gmail.com"  
+        fakeEmail = (personData["Surname"]).lower() + (personData["Birthdate"])[-2:] + "@" + post
     elif algoNo == 4:
-        fakeEmail = ((personData["Name"]).lower())[0] + (personData["Surname"]).lower() + "@gmail.com"  
+        fakeEmail = ((personData["Name"]).lower())[0] + (personData["Surname"]).lower() + "@" + post  
     elif algoNo == 5:
-        fakeEmail = ((personData["Name"]).lower())[:3] + "_" + ((personData["Surname"]).lower())[0:3] + "@gmail.com"  
+        fakeEmail = ((personData["Name"]).lower())[:3] + "_" + ((personData["Surname"]).lower())[0:3] + "@" + post  
     elif algoNo == 6:
-        fakeEmail = ((personData["Surname"]).lower())[::-1] + "@gmail.com"
+        fakeEmail = ((personData["Surname"]).lower())[::-1] + "@" + post
     else:
-        fakeEmail = (personData["Name"]).lower() + "_" + (personData["Surname"]).lower() + "@gmail.com"
+        fakeEmail = (personData["Name"]).lower() + "_" + (personData["Surname"]).lower() + "@" + post
     return rm_pl_signs(fakeEmail)
 
 def random_date(age=0):
