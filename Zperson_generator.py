@@ -9,23 +9,54 @@ import requests #download_image
 import getopt
 import logging
 import csv
+import re
 
 #own modules
 import sqlite_use as sql
 from random_data import get_email, random_date, get_age, random_phone
 
+def download_flags():
+    #just run this function to get flags & countries
+    flagsUrl = "https://www.nationsonline.org"
+    urls = ["https://www.nationsonline.org/oneworld/flags_of_africa.htm",
+            "https://www.nationsonline.org/oneworld/flags_of_the_americas.htm",
+            "https://www.nationsonline.org/oneworld/flags_of_asia.htm",
+            "https://www.nationsonline.org/oneworld/flags_of_australia_oceania.htm",
+            "https://www.nationsonline.org/oneworld/flags_of_europe.htm"]
+    gifs = []
+    for url in urls:
+        res = requests.get(url)
+        content = res.text
+        gifs.extend(re.findall(r'[\/][\S]+flag.gif', content))
+    gifs = list(set(gifs))
+    countries = [item[7:-9].lower() for item in gifs]
+    countries.sort()        #in place
+    
+    #write countries to .txt
+    path = script_path()
+    simple_write("countries.txt", "\n".join(countries))
+    
+    #write gifs to flags dir
+    gifsDir = "flags"
+    if not os.path.exists(gifsDir):
+        os.makedirs(gifsDir)
+    path = os.path.join(path, gifsDir)
+    for gif in gifs:
+        gifUrl = flagsUrl + gif
+        gifPath = os.path.join(path, gif[7:])       #need to cut gif subpath
+        print(gifUrl)
+        download_image(gifUrl, gifPath)
+    return gifs, countries
 
 def download_image(url, fileName="image.png"):
-    #will download&save image under specified address
-    #url = 'http://ontheedge.hol.es/codeEffects/chooseBg.png'
     try:
         response = requests.get(url, stream=True)
         with open(fileName, 'wb') as out_file:
             shutil.copyfileobj(response.raw, out_file)
-            logging.info("--< image written to: %s" % fileName)
     except:
-        logging.warning("Wrong url")
+        pass
     del response
+    return True
     
 def script_path(fileName=''):
     path = os.path.realpath(os.path.dirname(sys.argv[0]))
@@ -38,6 +69,12 @@ def script_path(fileName=''):
 def remove_duplicates(someList, sort=True):
     return list(set(someList))
 
+def simple_write(file, strContent):
+    with open(file, "w") as f:
+        f.write(strContent + "\n")
+        f.close()
+    return True    
+    
 def read_file(fileName, rmnl=False):
     path = os.path.join(PATH, fileName)
     try:
@@ -56,6 +93,7 @@ def csv_writer(personList):
         writer = csv.writer(csv_file, delimiter=",")
         for person in personList:
             writer.writerow(person)
+        print("--< person data written to csv file")
     return True
     
 def write_file(fileName, content, endline="\n", overWrite=False, response=True, rmSign=[]):
@@ -180,8 +218,7 @@ def show_data(dictio, dataType=0):
     elif dataType == 2:
         return "\n".join("{}: {}".format(key, item) for key, item in dictio.items())
     elif dataType == 3:
-        return [dictio["Name"], dictio["Surname"], dictio["Sex"], dictio["Nationality"],
-                dictio["Birthdate"], dictio["Age"], dictio["Email"], dictio["Phone"]]
+        return [dictio["Name"], dictio["Surname"], dictio["Sex"], dictio["Nationality"], dictio["Birthdate"], dictio["Age"], dictio["Email"], dictio["Phone"]]
     else:
         return "\n".join(dictio.values())
         
@@ -257,9 +294,10 @@ def main(argv):
     personList = [["Name", "Surname", "Sex", "Nationality", "Birthdate", "Age", "Email", "Phone"]]
     for x in range(quantity):
         personData = generate_person(national=national, sex=sex, age=age, writeFile=False)
-        personData = show_data(personData, 3)
-        personList.append(personData)
-        print("---"*10 + "\n", personData)
+        showPerson = show_data(personData, 2)
+        print("---"*10 + "\n" + showPerson)        
+        personList.append(show_data(personData, 3))
+
 
     #write data to csv
     csv_writer(personList)
@@ -286,7 +324,7 @@ ehhm
 -comeback with new ideas :)
 
 how about add:
--flags?
+-flags? (+-)
 -country on the map?
 -fake address?
 
