@@ -1,0 +1,31 @@
+surnames,slovenia
+1	11,196	Novak	new man; from a newly established farm
+2	9,762	Horvat	Croat
+3	5,640	Kovaèiè	son of blacksmith
+4	5,585	Krajnc	from Carniola
+5	5,019	Zupanèiè	son of farmer or the village elder
+6	4,729	Potoènik	near stream
+7	4,729	Kovaè	blacksmith
+8	3,957	Mlakar	near puddle
+9	3,905	Kos	blackbird
+10	3,885	Vidmar	farmer belonging to the ruler's estate
+11	3,855	Golob	pigeon
+12	3,506	Turk	Turk
+13	3,421	Božiè	Christmas
+14	3,418	Kralj	King
+15	3,285	Korošec	from Carinthia
+16	3,256	Zupan	mayor (originally, village elder)
+17	3,209	Bizjak	archaic term for refugee; usually applied  to Slavic Christian families that had fled from the Ottoman Empire
+18	3,136	Hribar	from the hill
+19	3,069	Kotnik	from a remote area (literally, from a  corner)
+20	3,003	Kavèiè	weaver
+21	2,992	Rozman
+22	2,873	Kastelic	from a castle
+23	2,841	Oblak	cloud
+24	2,828	Žagar	sawer
+25	2,821	Petek	Friday
+26	2,808	Hoèevar	from Koèevje or from Gottschee County
+27	2,807	Kolar
+28	2,738	Košir
+29	2,598	Koren
+30	2,399	Klemenèiè	son of Klemen

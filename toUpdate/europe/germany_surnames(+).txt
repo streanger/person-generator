@@ -1,0 +1,11 @@
+surnames,germany
+1	Müller	miller	0.95[21]
+2	Schmidt	blacksmith	0.69[22]
+3	Schneider	tailor	0.40
+4	Fischer	fisher	0.35
+5	Meyer	farmer, originally estate administrator (lit. "mayor")	0.33[23]
+6	Weber	weaver	0.30
+7	Schulz	constable or mayor	0.27
+8	Wagner	wainwright, worn-down form of 'wagoner', one who makes wagons/wheels	0.27
+9	Becker	baker	0.27
+10	Hoffmann	'man of the court'	0.26

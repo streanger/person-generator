@@ -1,0 +1,21 @@
+surnames,thailand
+1	Yilmaz	intrepid/dauntless
+2	Kaya	rock
+3	Demir	iron
+4	ªahin	falcon/hawk
+5	Çelik	steel
+6	Yildiz	star
+7	Yildirim	thunderbolt
+8	Öztürk	pure Turk
+9	Aydin	cultured/enlightened
+10	Özdemir	pure iron
+11	Arslan	lion
+12	Dogan	falcon
+13	Kiliç	sword
+14	Aslan	lion
+15	Çetin	stiff/tough
+16	Kara	black
+17	Koç	ram
+18	Kurt	wolf
+19	Özkan	pure blood
+20	ªimºek	lightning

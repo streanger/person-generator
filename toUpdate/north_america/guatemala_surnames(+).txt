@@ -1,0 +1,21 @@
+surnames,guatemala
+1	López	371,525	2.5%
+2	García	285,670	1.9%
+3	Morales	228,167	1.5%
+4	Hernández	222,755	1.5%
+5	Pérez	209,963	1.4%
+6	González	208,795	1.4%
+7	Rodríguez	135,978	0.9%
+8	De León	134,010	0.9%
+9	Ramírez	131,796	0.9%
+10	Martínez	123,186	0.8%
+11	Castillo	116,298	0.8%
+12	Estrada	115,252	0.8%
+13	Marroquín	113,961	0.8%
+14	Gómez	110,824	0.7%
+15	Vásquez	102,153	0.7%
+16	Méndez	98,462	0.7%
+17	Reyes	95,449	0.6%
+18	Díaz	94,403	0.6%
+19	Aguilar	94,096	0.6%
+20	Velásquez	89,975	0.6%

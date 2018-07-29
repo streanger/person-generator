@@ -1,0 +1,21 @@
+surnames,australia
+1	Smith	114,997	English
+2	Jones	55,679	English, Welsh
+3	Williams	55,555	English, Welsh
+4	Brown	54,896	English
+5	Wilson	46,961	English, Scottish
+6	Taylor	45,328	English
+7	Johnson	33,435	English
+8	White	31,099	English
+9	Martin	31,058	English
+10	Anderson	30,910	English, Scottish
+11	Thompson	29,931	English, Scottish
+12	Nguyen	29,798	Vietnamese
+13	Turner	27,276	English
+14	Walker	26,688	English
+15	Harris	26,025	English, Scottish
+16	Lee	25,612	English, Chinese, Korean
+17	Ryan	25,526	Irish
+18	Robinson	25,168	English
+19	Kelly	25,014	Irish
+20	King	24,870	English

@@ -1,0 +1,51 @@
+surnames,korea
+1	?	?	Kim, Gim, Ghim
+2	?	?	Lee, Yi
+3	?	?	Park, Pak, Bak
+4	?	?	Choi, Choe, Choy, Joy
+5	?	?	Jeong, Chung, Cheong, Jung, Young
+6	?	?	Kang, Gang, Ghang
+7	?	?	Cho, Jo, Joe
+8	?	?	Yoon, Yun, Youn
+9	?	?	Jang, Chang
+10	?	?	Lim, Rim, Im, Rhim
+11	?	?	Han
+12	?	?	O, Oh
+13	?	?	Shin, Sin
+14	?	?	Seo, Suh, Seoh
+15	?	?	Kwon, Gwon, Kuen
+16	?	?	Hwang, Huang
+17	?	?	Ahn, An
+18	?	?	Song
+19	?	?	Yoo, Yu, Ryu, Ryoo
+20	?	?	Hong
+21	?	?	Jeon, Jun, Chun, Cheon
+22	?	?	Ko, Koh, Go, Goh
+23	?	?	Mun, Moon, Mon, Munn
+24	?	?	Son, Sohn, Sonn
+25	?	?	Yang, Ryang
+26	?	?	Bae, Bai, Pai, Pae
+27	?	?	Baek, Paik, Pak, Bak, Bhak, Phak
+28	?	?	Jo, Cho
+29	?	?	Hur, Heo, Her, Hui
+30	?	?	Nam, Nan, Nham
+31	?	?	Sim, Shim, Shen
+32	?	?	Yu, Yoo, Liu, Lau, Yau
+33	?	?	No, Noh, Roh
+34	?	?	Ha, Hah
+35	?	?	Jeon, Jun
+36	?	?	Jeong, Jung
+37	?	?	Gwak, Kwak, Koak
+38	?	?	Seong, Sung, Shong, Shung
+39	?	?	Cha
+40	?	?	Yu, Yoo
+41	?	?	Gu, Koo, Goo
+42	?	?	U, Woo
+43	?	?	Ju, Joo, Chu, Zhu, Zuu, Juu, Choo
+44	?	?	Im, Yim
+45	?	?	Na, Ra, La
+46	?	?	Sin, Shin
+47	?	?	Min
+48	?	?	Jin, Jean, Chen, Jen
+49	?	?	Ji, Jee
+50	?	?	Eom, Uhm, Um

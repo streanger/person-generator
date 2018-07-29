@@ -1,0 +1,11 @@
+surnames,czech_republic
+1	Novák/Nováková	new man/woman	34,168	35,558
+2	Svoboda/Svobodová	freeholder	25,292	26,569
+3	Novotný/Novotná	newman	24,320	25,328
+4	Dvoøák/Dvoøáková	grange owner	22,299	23,445
+5	Èerný/Èerná	black man/woman	17,813	18,504
+6	Procházka/Procházková	walker	16,074	16,817
+7	Kuèera/Kuèerová	curly man/woman	15,187	15,689
+8	Veselý/Veselá	cheerful, merry man/woman	12,882	13,494
+9	Horák/Horáková	highlander	12,165	12,796
+10	Nìmec/Nìmcová	German	11,192	11,563

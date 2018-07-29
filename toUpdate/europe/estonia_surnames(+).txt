@@ -1,0 +1,11 @@
+surnames,estonia
+1	5,241	Tamm	oak
+2	4,352	Saar	island/ash (tree)
+3	3,624	Sepp	smith
+4	3,613	Mägi	hill, mountain
+5	2,847	Kask	birch
+6	2,728	Kukk	rooster
+7	2,265	Rebane	fox
+8	2,165	Ilves	lynx
+9	1,933	Pärn	linden tree
+10	1,882	Koppel	paddock

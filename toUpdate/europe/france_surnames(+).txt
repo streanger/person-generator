@@ -1,0 +1,31 @@
+surnames,france
+1	235,846	Martin	son of Martin
+2	105,132	Bernard	son of Bernard
+3	95,998	Dubois	one who dwells in the woods
+4	95,387	Thomas	son of Thomas
+5	91,393	Robert	son of Robert
+6	90,689	Richard	son of Richard
+7	88,318	Petit	short
+8	84,252	Durand	
+9	78,868	Leroy	one called a king
+10	78,177	Moreau	dark complexion
+11	76,655	Simon	son of Simon
+12	75,307	Laurent	son of Laurent
+13	74,564	Lefebvre	blacksmith
+14	74,318	Michel	son of Michel
+15	68,720	Garcia	
+16	61,762	David	son of David
+17	59,817	Bertrand	son of Bertrand
+18	59,440	Roux	redhead
+19	57,351	Vincent	son of Vincent
+20	57,047	Fournier	baker
+21	56,760	Morel	dark complexion
+22	55,642	Girard	son of Gérard
+23	55,228	André	son of André
+24	53,670	Lefevre	blacksmith
+25	53,622	Mercier	one trading in textiles
+26	53,405	Dupont	one who dwells by a bridge
+27	51,543	Lambert	son of Lambert
+28	50,999	Bonnet	
+29	50,612	François	son of François
+30	49,762	Martinez	

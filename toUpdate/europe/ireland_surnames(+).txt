@@ -1,0 +1,21 @@
+surnames,ireland
+1	Murphy	Ó Murchú	Ó Murchadha Mac Murchaidh	Descendant of Murchadh (a personal name meaning "Sea hound/warrior")
+2	(O')Kelly	Ó Ceallaigh	Descendant of Ceallach ("strife")
+3	(O')Sullivan	Ó Súilleabháin	Descendant of Súilleabhán ("dark-eyed one", "one-eyed" or "hawk-eyed")
+4	Walsh	Breathnach	Breatnach	"Breton", "Welshman"
+5	Smith	Mac Gabhann	Son of a smith
+6	O'Brien	Ó Briain	Descendant of Brian
+7	(O')Byrne	Ó Broin	Descendant of Bran
+8	(O')Ryan	Ó Riain	Ó Riain Ó Maoilriain Ó Ruaidhín	Descendant of Rian (possibly meaning "king") Descendant of Maoilriaghan ("bald king") Descendant of Ruaidhín ("little red-haired one")
+9	O'Connor	Ó Conchobhair	Descendant of Conchobhar ("hound/chief assistance")
+10	O'Neill	Ó Néill	Descendant of Niall (possibly meaning "cloud", "passionate" or "champion")
+11	(O')Reilly	Ó Raghallaigh	Descendant of Raghallach
+12	Doyle	Ó Dubhghaill	Descendant of Dubhghall ("dark-haired foreigner")
+13	McCarthy	Mac Cárthaigh	Son of Cárthach ("loving")
+14	(O')Gallagher	Ó Gallchóir	Ó Gallchobhair	Descendant of Gallchobhar ("foreign assistance")
+15	(O')Doherty	Ó Dochartaigh	Descendant of Dochartach ("hurtful")
+16	Kennedy	Ó Cinnéide	Ó Ceannéidigh	Descendant of Cinnéide ("ugly head")
+17	Lynch	Ó Loingsigh	Descendant of Loingseach ("longboat")
+18	Murray	Ó Muireadhaigh	Mac Muireadhaigh Mac Giolla Mhuire	Descendant of Muireadhach ("chieftain") Descendant of a servant of Mary
+19	(O')Quinn	Ó Cuinn/Coinne	Descendant of Conn ("hound/chief")
+20	(O')Moore	Ó Mórdha	Descendant of Mórdha ("majestic")

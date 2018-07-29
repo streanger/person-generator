@@ -1,0 +1,11 @@
+surnames,mexico
+1	Hernández	5,526,929
+2	García	4,129,360
+3	Martínez	3,886,887
+4	González	3,188,693
+5	López	3,148,024
+6	Rodriguez	2,744,179
+7	Pérez	2,746,468
+8	Sánchez	2,234,625
+9	Ramírez	2,070,723
+10	Flores	1,392,707

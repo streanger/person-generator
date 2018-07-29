@@ -1,0 +1,31 @@
+surnames,dominican_republic
+1	Hernandez	225,321	N/A	Spanish
+2	Pérez	158,059	N/A	Spanish
+3	Martínez	141,259	N/A	Spanish
+4	García	137,124	N/A	Spanish
+5	Reyes	104,892	N/A	Spanish
+6	Sánchez	104,392	N/A	Spanish
+7	Díaz	95,106	N/A	Spanish
+8	Pena	94,396	N/A	Spanish
+9	Jiménez	92,978	N/A	Spanish
+10	Ramírez	92,863	N/A	Spanish
+11	Rodriguez	91,080	N/A	Spanish
+12	Rosario	89,630	N/A	Spanish
+13	González	85,757	N/A	Spanish
+14	Santana	81,973	N/A	Portuguese/Spanish
+15	Núnez	79,374	N/A	Spanish
+16	Castillo	78,338	N/A	Spanish
+17	De la Cruz	76,977	N/A	Spanish
+18	Cruz	64,613	N/A	Portuguese/Spanish
+19	Guzmán	63,073	N/A	Spanish
+20	Gómez	62,310	N/A	Spanish
+21	Santos	60,613	N/A	Portuguese/Spanish
+22	López	59,566	N/A	Spanish
+23	Féliz	58,518	N/A	Spanish
+24	Vásquez	56,149	N/A	Spanish
+25	De los Santos	54,634	N/A	Spanish
+26	Mejía	51,605	N/A	Spanish
+27	Polanco	49,952	N/A	Spanish
+28	Fernández	49,712	N/A	Spanish
+29	Vargas	49,353}	N/A	Portuguese/Spanish
+30	Almonte	48,574	N/A	Spanish

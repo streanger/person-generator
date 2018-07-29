@@ -1,0 +1,4 @@
+2018-07-25 23:21:40,936 - generate_person - INFO - Running function: generate_person
+2018-07-25 23:21:40,941 - generate_person - INFO - Result: {'Nationality': 'Polish', 'Sex': 'Male', 'Birthdate': '05-03-1996', 'Name': 'S³awomir', 'Surname': 'Kwiatkowski', 'Age': '22', 'Email': 'kwiatkowski96@wp.pl', 'Phone': '830-882-146'}
+2018-07-25 23:22:00,554 - generate_person - INFO - Running function: generate_person
+2018-07-25 23:22:00,559 - generate_person - INFO - Result: {'Nationality': 'Polish', 'Sex': 'Male', 'Birthdate': '22-10-1995', 'Name': 'Jan', 'Surname': 'Stefaniak', 'Age': '22', 'Email': 'stefaniak@yahoo.com', 'Phone': '560-040-705'}

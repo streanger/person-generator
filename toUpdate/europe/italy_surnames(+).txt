@@ -1,0 +1,101 @@
+surnames,italy
+1	Rossi	60.487	Lazio
+2	Russo	42.877	Campania
+3	Ferrari	33.707	Emilia Romagna
+4	Esposito	31.980	Campania
+5	Bianchi	25.121	Lombardy
+6	Romano	24.062	Lazio
+7	Colombo	23.484	Lombardy
+8	Bruno	20.509	Piedmont
+9	Ricci	19.879	Tuscany
+10	Greco	18.225	Apulia
+11	Marino	17.939	Sicily
+12	Gallo	17.622	Campania
+13	De Luca	17.438	Campania
+14	Conti	17.173	Tuscany
+15	Costa	16.875	Sicily
+16	Mancini	16.784	Lazio
+17	Giordano	16.636	Campania
+18	Rizzo	16.394	Campania
+19	Lombardi	15.220	Lombardy
+20	Barbieri	14.304	Emilia Romagna
+21	Moretti	14.255	Lombardy
+22	Fontana	14.214	Lombardy
+23	Caruso	13.756	Sicily
+24	Mariani	13.652	Lombardy
+25	Ferrara	13.236	Campania
+26	Santoro	13.141	Campania
+27	Rinaldi	12.861	Lombardy
+28	Leone	12.661	Campania
+29	D'Angelo	12.620	Abruzzo
+30	Longo	12.273	Apulia
+31	Galli	12.240	Lombardy
+32	Martini	12.090	Lazio
+33	Martinelli	11.819	Lombardy
+34	Serra	11.484	Sardinia
+35	Conte	11.347	Campania
+36	Vitale	11.266	Campania
+37	De Santis	11.208	Abruzzo
+38	Marchetti	11.115	Lazio
+39	Messina	11.113	Sicily
+40	Gentile	11.019	Apulia
+41	Villa	11.011	Lombardy
+42	Marini	10.875	Lazio
+43	Lombardo	10.803	Sicily
+44	Coppola	10.783	Campania
+45	Ferri	10.679	Emilia Romagna
+46	Parisi	10.675	Lombardy
+47	De Angelis	10.509	Abruzzo
+48	Bianco	10.467	Piedmont
+49	Amato	10.449	Campania
+50	Fabbri	10.330	Emilia Romagna
+51	Gatti	10.303	Lombardy
+52	Sala	10.283	Lombardy
+53	Morelli	10.181	Tuscany
+54	Grasso	10.076	Sicily
+55	Pellegrini	10.027	Veneto
+56	Ferraro	10.020	Campania
+57	Monti	10.007	Lombardy
+58	Palumbo	9.775	Campania
+59	Grassi	9.749	Lombardy
+60	Testa	9.728	Campania
+61	Valentini	9.435	Umbria
+62	Carbone	9.293	Campania
+63	Benedetti	9.258	Lazio
+64	Silvestri	9.250	Lazio
+65	Farina	9.168	Campania
+66	D'Amico	9.125	Abruzzo
+67	Martino	8.877	Calabria
+68	Bernardi	8.849	Veneto
+69	Caputo	8.826	Apulia
+70	Mazza	8.756	Calabria
+71	Sanna	8.740	Sardinia
+72	Fiore	8.734	Apulia
+73	De Rosa	8.727	Campania
+74	Pellegrino	8.678	Sicily
+75	Giuliani	8.647	Lazio
+76	Rizzi	8.594	Lombardy
+77	Di Stefano	8.521	Abruzzo
+78	Cattaneo	8.479	Piedmont
+79	Rossetti	8.454	Lombardy
+80	Orlando	8.423	Sicily
+81	Basile	8.368	Sicily
+82	Neri	8.358	Emilia Romagna
+83	Barone	8.344	Sicily
+84	Palmieri	8.297	Campania
+85	Riva	8.203	Lombardy
+86	Romeo	8.074	Calabria
+87	Franco	8.047	Calabria
+88	Sorrentino	8.017	Campania
+89	Pagano	8.007	Campania
+90	D'Agostino	7.904	Abruzzo
+91	Piras	7.889	Sardinia
+92	Ruggiero	7.812	Campania
+93	Montanari	7.795	Emilia Romagna
+94	Battaglia	7.713	Sicily
+95	Bellini	7.690	Lombardy
+96	Castelli	7.671	Lombardy
+97	Guerra	7.572	Veneto
+98	Poli	7.538	Lombardy
+99	Valente	7.493	Campania
+100	Ferretti	7.489	Lazio

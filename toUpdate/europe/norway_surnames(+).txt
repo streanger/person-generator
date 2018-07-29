@@ -1,0 +1,25 @@
+surnames,norway
+1	53,011	Hansen	patronymic; son of Hans
+2	50,088	Johansen	patronymic; son of Johan or Johannes
+3	49,303	Olsen	patronymic; son of Olav, Ole, Olaf or Ola
+4	37.869	Larsen	patronymic; son of Lars, Lauritz or Laurits
+5	37,206	Andersen	patronymic; son of Anders (or Andres)
+6	35,402	Pedersen	patronymic; son of Peder, (Petter, Peter or Per)
+7	34,941	Nilsen	patronymic; son of Nils (or Niels)
+8	23,595	Kristiansen	patronymic; son of Kristian (or Christian)
+9	23,079	Jensen	patronymic; son of Jens
+10	21,330	Karlsen	patronymic; son of Karl (or Carl)
+11	20,755	Johnsen	patronymic; son of John (or Jon)
+12	20,226	Pettersen	patronymic; son of Petter, (Peter, Peder or Per)
+13	19,241	Eriksen	patronymic; son of Erik, (Eirik or Erich)
+14	18,133	Berg	toponymic; a hill
+15	14,392	Haugen	toponymic; the mound
+16	14,126	Hagen	toponymic; the garden
+17	13,387	Johannessen	patronymic; son of Johannes (or Johan)
+18	12,139	Andreassen	patronymic; son of Andreas
+19	11,925	Jacobsen	patronymic; son of Jacob (or Jakob)
+20	11,540	Dahl	toponymic; a valley
+21	11,481	Jorgensen	patronymic; son of Jorgen
+22	11,477	Halvorsen	patronymic; son of Halvor (or Hallvard)
+23	11,364	Henriksen	patronymic; son of Henrik (or Henrich)
+24	11,282	Lund	toponymic; a grove

@@ -1,0 +1,46 @@
+------------------------------
+Nationality: Japan
+Sex: Female
+Birthdate: 02-12-1968
+Name: Random
+Surname: Fujii
+Age: 49
+Email: rfujii@hotmail
+Phone: 134-276-701
+------------------------------
+Nationality: Texas
+Sex: Male
+Birthdate: 22-10-1994
+Name: Random
+Surname: Sanchez
+Age: 23
+Email: zehcnas@yahoo.com
+Phone: 825-508-340
+------------------------------
+Nationality: Colombia
+Sex: Male
+Birthdate: 01-09-1990
+Name: Random
+Surname: Díaz
+Age: 27
+Email: díaz@yahoo.com
+Phone: 610-214-633
+------------------------------
+Nationality: Argentina
+Sex: Female
+Birthdate: 07-02-1994
+Name: Random
+Surname: Villalba
+Age: 24
+Email: ablalliv@gmail.com
+Phone: 516-323-521
+------------------------------
+Nationality: Thailand
+Sex: Female
+Birthdate: 18-11-1998
+Name: Random
+Surname: Kurt
+Age: 19
+Email: kurt@hotmail
+Phone: 235-043-678
+--< person data written to csv file

@@ -1,0 +1,21 @@
+surnames,hungary
+1	235,400 (2.4%)	Nagy	Big
+2	228,210 (2.3%)	Horváth	Croat
+3	217,359 (2.2%)	Kovács	Smith (occupational name)
+4	209,549 (2.1%)	Szabó	Tailor (occupational name)
+5	206,954 (2.1%)	Tóth	Slavic (non-Orthodox)
+6	137,847 (1.4%)	Varga	Leatherworker (occupational name)
+7	131,435 (1.3%)	Kiss	Small
+8	106,942 (1.1%)	Molnár	Miller (occupational name)
+9	91,878 (0.9%)	Németh	German/Germanic
+10	83,188 (0.8%)	Farkas	Wolf
+11	80,575 (0.8%)	Balogh	Left-handed
+12	52,766 (0.5%)	Papp	Priest (occupational name)
+13	52,131 (0.5%)	Takács	Weaver (occupational name)
+14	51,224 (0.5%)	Juhász	Shepherd (occupational name)
+15	47,151 (0.5%)	Lakatos	Locksmith (occupational name)
+16	40,079 (0.4%)	Mészáros	Butcher (occupational name)
+17	38,330 (0.4%)	Oláh	Vlach/Romanian
+18	37,960 (0.4%)	Simon	Simon
+19	35,008 (0.4%)	Rácz	Serb, South Slavic
+20	34,496 (0.3%)	Fekete	Black(-haired)

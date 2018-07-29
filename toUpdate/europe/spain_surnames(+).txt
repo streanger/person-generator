@@ -1,0 +1,41 @@
+surnames,spain
+García - 1,378,000 people (3.48%) Pre-Roman, Basque.
+Fernández - 851,000 (2.15%) Son of Fernando, Fredenand, or Fridnand; Germanic
+González - 839,000 (2.12%) Son of Gonzalo, from the Latinised form Gundisalvus; Germanic
+Rodríguez - 804,000 (2.03%) Son of Rodrigo, Roderic; Germanic
+López - 796,000 (2.01%) Son of Lope, Latin Lupus, meaning wolf
+Martínez - 788,000 (1.97%) Son of Martin, Latin Martis, genitive form of Mars
+Sánchez - 725,000 (1.83%) Son of Sancho, Latin Sanctius
+Pérez - 709,000 (1.79%) Son of Pedro, Latin Petrus
+Martín - 459,000 (1.16%)
+Gómez - 440,000 (1.11%) Son of Gomes, Gomo, or Gomaro; Germanic
+Ruiz - 321,000 (0.81%) Son of Rui, variation or short for Rodrigo
+Hernández - 305,000 (0.77%) Son of Hernando, variation of Fernando
+Jiménez - 293,000 (0.74%) son of Jimeno, Xemeno, or Ximeno
+Díaz - 293,000 (0.74%) Son of Diego
+Álvarez - 273,000 (0.69%) Son of Alvaro, from Alvar; Germanic
+Moreno - 261,000 (0.66%) Brown-haired, tanned, brunet
+Munoz - 241,000 (0.61%) Son of Munio; Pre-Roman
+Alonso - 206,000 (0.52%) Variation of Alfonso; Germanic
+Gutiérrez - 170,000 (0.43%) Son of Gutier, Gutierre, or Gualtierre; Germanic
+Romero - 170,000 (0.43%) (pilgrim)
+Navarro - 158,400 (0.40%) Navarrese, "from Navarre"; toponym
+Torres - 134,600 (0.34%) Towers; toponym
+Domínguez - 134,600 (0.34%) Son of Domingo, from Latin Domenicus, Dominus, "master"
+Gil - 134,600 (0.34%) From older form Egidio; patronymic
+Vázquez - 130,000 (0.33%) Son of Vasco or Velasco
+Serrano - 122,700 (0.31%) "Highlander"
+Ramos - 118,000 (0.30%) Branches; meaning born during Christian festivity Palm Sunday
+Blanco - 118,000 (0.30%) "White"
+Sanz - 106,900 (0.27%)
+Castro - 102,900 (0.26%) "village". See castro and castrum
+Suárez - 102,900 (0.26%) Son of Suero or Suaro; unknown origin
+Ortega - 99,000 (0.25%) From Ortiga, nettle plant
+Rubio - 99,000 (0.25%) Blond, fair-haired; Latin Rubeus, meaning ruddy, reddish
+Molina - 99,000 (0.25%) (Mill, place with mills)
+Delgado - 95,000 (0.24%) "Thin man"
+Ramírez - 95,000 (0.24%) Son of Ramiro, Radamir, or Radmir; Germanic
+Morales - 95,000 (0.24%) Blackberry groves
+Ortiz - 87,120 (0.22%) Son of Ortún; Latin Fortunius, meaning fortunate one
+Marín - 83,160 (0.21%) Latin Marinus, meaning sailor
+Iglesias - 83,160 (0.21%) "Churches"

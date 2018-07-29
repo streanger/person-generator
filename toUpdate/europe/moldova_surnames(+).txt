@@ -1,0 +1,16 @@
+surnames,moldova
+1	Rusu	from Rus	23,028
+2	Ceban	shepherd	20,929
+3	Ciobanu	shepherd	17,167
+4	?urcan	(archaic) farmer	16,984
+5	Cebotari	shoemaker	15,464
+6	Sîrbu	Serb	14,171
+7	Lungu	long	14,090
+8	Munteanu	from the mountain	13,904
+9	Rotari	from roatã = wheel	13,511
+10	Popa	priest	12,923
+11	Ursu	bear	11,456
+12	Gu?u	dove	11,433
+13	Ro?ca	red-haired, ginger	11,194
+14	Melnic	miller	10,632
+15	Cojocari	coat crafter	10,526

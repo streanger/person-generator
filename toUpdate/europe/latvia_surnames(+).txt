@@ -1,0 +1,16 @@
+surnames,latvia
+1	Berzinš	birch (diminutive)
+2	Kalninš	hill (diminutive)
+3	Ozolinš	oak (diminutive)
+4	Jansons	son of Janis (Germanized)
+5	Ozols	oak
+6	Liepinš	linden (diminutive)
+7	Kruminš	bush (diminutive)
+8	Balodis	pigeon
+9	Eglitis	fir (diminutive)
+10	Zarinš	branch (diminutive)
+11	Petersons	son of Peteris (Germanized)
+12	Vitols	willow
+13	Klavinš	maple (diminutive)
+14	Karklinš	willow (diminutive form of Karkls)
+15	Vanags	hawk

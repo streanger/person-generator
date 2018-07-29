@@ -1,0 +1,11 @@
+surnames,turkey
+1	Yilmaz	unbeatable/dauntless
+2	Kaya	rock
+3	Demir	iron
+4	ªahin	falcon
+5	Çelik	steel
+6	Yildiz	star
+7	Yildirim	thunderbolt
+8	Öztürk	pure Turk
+9	Aydin	enlightened
+10	Özdemir	pure iron

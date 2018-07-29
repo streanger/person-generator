@@ -1,0 +1,16 @@
+surnames,colombia
+1	Rodríguez	707,789
+2	Gómez	537,843
+3	González	531,484
+4	Martínez	530,721
+5	García	524,835
+6	López	509,880
+7	Hernández	454,471
+8	Sánchez	449,750
+9	Ramírez	427,404
+10	Pérez	418,660
+11	Díaz	388,419
+12	Munoz	293,759
+13	Rojas	286,038
+14	Moreno	265,374
+15	Jiménez	261,391

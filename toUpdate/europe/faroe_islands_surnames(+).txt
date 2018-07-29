@@ -1,0 +1,21 @@
+surnames,faroe_islands
+1	Joensen	2,512
+2	Hansen	2,339
+3	Jacobsen	2,169
+4	Olsen	1,784
+5	Poulsen	1,400
+6	Petersen	1,312
+7	Johannesen	1,091
+8	Thomsen	722
+9	Nielsen	682
+10	Johansen	584
+11	Rasmussen	565
+12	Simonsen	543
+13	Djurhuus	528
+14	Jensen	523
+15	Danielsen	518
+16	Mortensen	488
+17	Mikkelsen	457
+18	Dam	433
+19	Hojgaard	429
+20	Andreasen	420

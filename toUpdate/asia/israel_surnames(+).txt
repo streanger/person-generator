@@ -1,0 +1,31 @@
+surnames,israel
+1	???	Cohen	"priest"	1.93%
+2	???	Levi Levy	"Levite"	1.12%
+3	?????	Mizrachi Mizrahi	"easterner"	0.33%
+4	???	Peretz	from Perez from Pérez	0.32%
+5	?????	Biton	from Chaim "life"	0.30%
+6	???	Dahan	"oil merchant"	0.23%
+7	?????	Avraham	from Abraham from Abramowicz & al.	0.22%
+8	??????	Friedman	from Solomon[9]	0.21%
+9	????	Malka Malcah	from Málaga "queen"	0.19%
+10	??????	Azoulay	"of a priestly dynasty" "blue eyed"	0.19%
+11	??	Katz	"priest of righteousness"[10] "priest of Zadok"[11]	0.19%
+12	????	Yosef	from Joseph	0.18%
+13	???	David	from David from Davidson & al.	0.17%
+14	???	Amar Omer	"farmer" "sheaf"	0.17%
+15	??????	Ohayon Ochion
+16	???	Hadad Chadad	"smith"	0.16%
+17	????	Gabai	synagogue warden; sexton	0.16%
+18	?? ???	Ben-David	"son of David"	0.14%
+19	????	Adrei Edry/Edri Adary	from Draa valley in Morocco	0.14%
+20	????	Levin	"Levite"	0.14%
+21	??	Tal	"dew"	0.13%
+22	?????	Klein	"small"	0.13%
+23	??	Chen Khen	"loveliness" "grace"	0.13%
+24	?????	Shapira	"Speyerer"	0.13%
+25	???	Chazan Hazan	"cantor"	0.13%
+26	???	Moshe	from Moses	0.13%
+27	??????	Ashkenazi	"German"	0.12%
+28	?????	Ohana	"Son of Hannah"	0.12%
+29	???	Segal Segel	"assistant to the Levites" (S'gan Levi)	0.12%
+30	????	Golan	

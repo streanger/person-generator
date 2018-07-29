@@ -1,0 +1,42 @@
+surnames,austria
+1	Gruber	miner	0.3991
+2	Huber	land-owning farmer	0.3873
+3	Bauer	farmer	0.3373
+4	Wagner	wainwright	0.3100
+5	Müller	miller	0.3012
+6	Pichler	'one who lives on or by a hill'	0.2753
+7	Steiner	'one who dwells by the stone'	0.2713
+8	Moser	'moss person'	0.2674
+9	Mayer	a privileged farmer	0.2653
+10	Hofer	probably for steward, property or horse maintenance, even blacksmith or related	0.2479
+11	Leitner	'one who lives at a hillside'	0.2429
+12	Berger	mountaineer	0.2383
+13	Fuchs	fox	0.2250
+14	Eder	'one who lives in a barren land	0.2144
+15	Fischer	fisher	0.2141
+16	Schmid	blacksmith	0.2115
+17	Winkler	an owner of a small shop	0.2015
+18	Weber	weaver	0.1995
+19	Schwarz	black	0.1961
+20	Maier	farmer	0.1946
+21	Schneider	tailor	0.1915
+22	Reiter	rider (only horses, no bikes)	0.1790
+23	Mayr	farmer	0.1751
+24	Schmidt	blacksmith	0.1740
+25	Wimmer	vintner	0.1628
+26	Egger	ploughman	0.1610
+27	Brunner	'water well person'	0.1602
+28	Lang	long	0.1599
+29	Baumgartner	'tree gardener'	0.1586
+30	Auer		0.1555
+31	Binder	cooper	0.1458
+32	Lechner		0.1435
+33	Wolf	wolf	0.1395
+34	Wallner		0.1394
+35	Aigner	allodial title	0.1386
+36	Ebner		0.1342
+37	Koller		0.1301
+38	Lehner	a function in feudalism	0.1268
+39	Haas		0.1261
+40	Schuster	shoemaker	0.1168
+41	Heilig	holy	0.1161

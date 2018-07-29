@@ -1,0 +1,27 @@
+surnames,bulgaria
+Dimitrov ('Dimitar's')
+Petrov ('Petar's')
+Ivanov ('Ivan's')
+Stoyanov ('Stoyan's')
+Stefanov ('Stefan's')
+Boyanov ('Boyan's')
+Trifonov ('Trifon's')
+Tasev
+Metodiev ('Metodiy's')
+Iliev ('Iliya's')
+Gospodinov ('Gospodin's')
+Apostolov ('Apostol's')
+Hristov
+Hasanov ('Hasan's')
+Nikolov (Nikola's')
+Bojidarov ('Bojidar's')
+Stoichkov
+Yanev ('Yane's')
+Yankov ('Yanko's')
+Stoev
+Konstantinov ('Konstantin's')
+Grigorov ('Grigor's')
+Gruev
+Georgiev ('Georgi's')
+Mihaylov ('Mikhail's')
+Blagoev ('Blagoy's')

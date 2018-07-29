@@ -1,0 +1,21 @@
+surnames,new_zealand
+1	Smith	English
+2	Wilson	English, Scottish
+3	Williams	English, Welsh
+4	Brown	English
+5	Taylor	English
+6	Jones	English, Welsh
+7	Singh	Punjabi
+8	Wang	Chinese
+9	Anderson	English, Scottish
+10	Li	Chinese
+11	Thompson	English, Scottish
+12	Walker	English
+13	Lee	English, Chinese, Korean
+14	Chen	Chinese
+15	Patel	Gujarati
+16	Zhang	Chinese
+17	Martin	English
+18	King	English
+19	Harris	English, Scottish
+20	Kumar	Hindi

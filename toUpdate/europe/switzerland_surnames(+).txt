@@ -1,0 +1,32 @@
+surnames,switzerland
+1	Bianchi	white
+2	Bernasconi	
+3	Fontana	one who dwells by a fountain
+4	Crivelli	sieve
+5	Galli	Gaul; Frenchman
+6	Cereghetti	
+7	Colombo	dove (often bestowed upon orphans)
+8	Rossi	red, redhead
+9	Ferrari	blacksmith
+10	Cavadini	
+11	Sante	
+12	Ravelli	
+13	Giovanni	John
+14	Piero	Peter
+
+
+1	Müller	miller
+2	Meier	tenant of a large farm
+3	Schmid	blacksmith
+4	Keller	winemaker
+5	Weber	weaver
+6	Huber	tenant of a small large farm
+7	Meyer	tenant of a large farm
+8	Schneider	tailor
+9	Steiner	'stone person'
+10	Fischer	fisherman
+11	Brunner	'water well person'
+12	Baumann	'constructionman'
+13	Gerber	tanner
+14	Frei	free (in terms of freedom)
+15	Moser	'bog person'

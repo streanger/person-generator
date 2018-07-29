@@ -1,0 +1,31 @@
+surnames,croatia
+1	21,618	Horvat	ethnic name for a Croat
+2	15,160	Kovaèeviæ	patronymic, from kovaè "blacksmith"
+3	12,840	Babiæ	matronymic, or nickname, from baba "(old) woman", "grandmother"
+4	11,555	Mariæ	1. matronymic, from Mara - short variant of Marija "Mary"; 2. patronymic, from Maro - short variant of Marije "Marius" or Marijan "Marianus"
+5	11,163	Juriæ	patronymic, from Jure or Juro - regional variants of Juraj "George"
+6	10,794	Novak	1. a newcomer, from novy "new"; 2. topographic name, for peasant who settled on newly cleared land
+7	10,546	Kovaèiæ	patronymic, from kovaè "blacksmith"
+8	10,334	Kneževiæ	from knez "prince" or "duke"
+9	10,191	Vukoviæ	patronymic, from Vuk - ancient Slavic name meaning "wolf"
+10	9,854	Markoviæ	patronymic, from Marko "Marcus"
+11	9,614	Petroviæ	patronymic, from Petar and Peter
+12	9,960	Matiæ	patronymic, from Matija "Matthias" or Matej "Matthew"; or possibly from their short variants Mate or Mato
+13	9,464	Tomiæ	patronymic, from Tomo or Toma "Thomas"
+14	8,601	Pavloviæ	patronymic, from Pavao, Pavle, and Pavel "Paul"
+15	8,542	Kovaè	occupational name, from kovaè "blacksmith"
+16	8,258	Božiæ	patronymic, from Božo (from bozhy meaning of God)
+17	8,152	Blaževiæ	patronymic, from Blaž lat. Blasius "Blaise"
+18	8,010	Grgiæ	patronymic, from Grga or Grgo - short variants of Grgur "Gregory"
+19	7,538	Paviæ	patronymic, from Pavo - short or regional variant of Pavao "Paul"
+20	7,406	Radiæ	patronymic, from Rade (Slavic name meaning happy)
+21	7,351	Periæ	patronymic, from Pero (Peter)
+22	7,321	Filipoviæ	patronymic, from Filip
+23	7,184	Šariæ	
+24	7,131	Lovriæ	patronymic, from Lovro (Lawrence)
+25	6,986	Vidoviæ	patronymic, from Vid (Vitus)
+26	6,903	Perkoviæ	patronymic, from Perko (Peter)
+27	6,797	Popoviæ	patronymic, from Pop (priest)
+28	6,760	Bošnjak	ethnic name for a Bosniak
+29	6,653	Jukiæ	patronymic, from Juko or Juka - regional variants of Juraj "George"
+30	6,417	Barišiæ	patronymic, from Bariša - short or regional variant of Bartol, Bartul, Bartolomej "Bartholomew"

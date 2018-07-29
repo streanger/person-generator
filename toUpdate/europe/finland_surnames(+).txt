@@ -1,0 +1,31 @@
+surnames,finland
+1	Korhonen	Uncertain meaning; see article	23,312	0.425
+2	Virtanen	virta = stream	23,020	0.420
+3	Mäkinen	mäki = hill	21,014	0.383
+4	Nieminen	niemi = cape	20,969	0.382
+5	Mäkelä	hill place	19,538	0.356
+6	Hämäläinen	Tavastian, comes from Tavastia	19,129	0.349
+7	Laine	wave	18,752	0.342
+8	Heikkinen	first name Heikki, "Henry", "Henrik"	17,926	0.327
+9	Koskinen	koski = rapids	17,737	0.324
+10	Järvinen	järvi = lake	16,802	0.306
+11	Lehtonen	lehto = grove	16,649	0.304
+12	Lehtinen	lehti = leaf	15,602	0.285
+13	Saarinen	saari = island	15,295	0.279
+14	Salminen	salmi = strait	15,087	0.275
+15	Heinonen	heinä = hay	14,957	0.273
+16	Niemi	cape	14,951	0.273
+17	Heikkilä	first name Heikki, "Henry", "Henrik"	14,558	0.266
+18	Kinnunen	from Swedish word skinnare = skinner	14,319	0.261
+19	Salonen	salo = backwoods	14,270	0.260
+20	Turunen	turku = market, selling place, nowadays only the name of a city	13,802	0.252
+21	Salo	backwoods	13,487	0.246
+22	Laitinen	laita = side, margin	13,085	0.239
+23	Tuominen	tuomi = bird cherry	12,852	0.234
+24	Rantanen	ranta = shore, beach	12,834	0.234
+25	Karjalainen	Karelian, comes from Karelia	12,830	0.234
+26	Jokinen	joki = river	12,514	0.228
+27	Mattila	first name Matti, "Matt", "Mathew", -la = place	12,330	0.225
+28	Savolainen	Savonian, comes from Savonia	11,592	0.211
+29	Lahtinen	lahti = bay	11,470	0.209
+30	Ahonen	aho = meadow	11,238	0.205

@@ -1,0 +1,11 @@
+surnames,cuba
+1	Rodríguez	301,136
+2	Pérez	300,189
+3	González	262,311
+4	Hernández	215,593
+5	García	208,965
+6	Martinez	148,674
+7	Diaz	136,364
+8	Fernández	134,470
+9	López	127,525
+10	Álvarez	101,010

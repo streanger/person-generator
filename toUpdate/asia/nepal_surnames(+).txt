@@ -1,0 +1,16 @@
+surnames,nepal
+1	Shrestha		Œre??ha	Excellent[15]	2,195,182	1:12	Newar
+2	Thapa	????	Thapa	Warrior[16]	803,119	1:33	Chhetri, Magar
+3	Adhikari	???????	Adhikari	Officer[17]	569,179	1:47	Bahun, Chhetri
+4	Maharjan				564,392	1:47	Newar
+5	Gurung				500,309	1:53	Gurung
+6	Karki	??????	Karki	Revenue Officer[18]	413,836	1:64	Chhetri
+7	Ghimire	??????		Residents of Ghamirau village[citation needed]	354,077	1:75	Bahun, Chhetri
+8	Rai		Rai	King[citation needed]	347,746	1:76	Kirant Rai
+9	Lama	????	Lama	High Priest[19]	338,017	1:78	Tamang, Sherpa
+10	Acharya	??????	Acarya	Teacher[20]	333,076	1:80	Bahun
+11	Shakya		Œakya	One who is capable[21]	326,127	1:81	Newar
+12	Khadka	?????		Sword bearer[citation needed]	322,421	1:82	Chhetri
+13	Bhattarai	???????	Bha??arai		306,980	1:86	Bahun, Chhetri
+14	Bhandari	???????	Bha??ari	Treasurer[22]	303,428	1:87	Chhetri, Bahun
+15	Subedi

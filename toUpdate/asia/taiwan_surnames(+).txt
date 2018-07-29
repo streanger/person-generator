@@ -1,0 +1,11 @@
+surnames,taiwan
+1	5	?	?	Chén	Ch'en2	Can4	Chan	Chun	Tân	Ting		11.14%
+2	19	?	Lín	Lin2	Lam4	Lam	Lum	Lîm	Lim, Liem		8.31%
+3	7	?	?	Huáng	Huang2	Wong4	Wong	Wang Vang	Ng	Eng, Ung Wee, Oei Ooi, Uy Bong		6.05%
+4	3	?	?	Zhang	Chang1	Zoeng1	Cheung	Chong5 Cheong4	Tiu	Teo, Teoh Tio, Thio Tiew	Tiong	5.27%
+5	2	?	Li	Li3	Lei5	Lee Li	Le Lei4	Lí	Lee Lie Dee		5.13%
+6	1	?	Wáng	Wang2	Wong4	Wong	Vong	Ông	Heng		4.11%
+7	9	?	?	Wú	Wu2	Ng4	Ng	Ung4, Eng	Gô• Ngô•	Goh, Gouw	Woo	4.04%
+8	4	?	?	Liú	Liu2	Lau4	Lau	Lao4 Lou	Lâu	Low Lao, Lauw		3.16%
+9	40	?	Cai	Ts'ai4	Coi3	Choi	Choy Tsoi Toy	Chhoa	Chua, Choa Tjoa	Tsay Chai	2.91%
+10	6	?	?	Yáng	Yang2	Joeng4	Yeung	Yeong Ieong4	Iu	Eaw Yeo, Yeoh Yong Joe, Yo	Young	2.6

@@ -17,19 +17,26 @@ def script_path(fileName=''):
 
 def clear_db(dbName="zperson_stuff.db"):
     #it will remove all data and create new db
-    db = sqlite3.connect(dbName)
-    c = db.cursor()
-    tables = get_tables(dbName)
-    print(tables)
-    for table in tables:
-        print(table[0])
-        c.execute('''DROP TABLE {}'''.format(table[0]))
-    c.execute('CREATE TABLE IF NOT EXISTS {}(data TEXT, national TEXT, sex TEXT)'.format("names"))
-    c.execute('CREATE TABLE IF NOT EXISTS {}(data TEXT, national TEXT)'.format("surnames"))
-    db.commit()
-    c.close()
-    db.close()        
-    return True
+    try:
+        if os.path.exists(dbName):
+            os.remove(dbName)       #physically remove db file
+        db = sqlite3.connect(dbName)
+        c = db.cursor()
+        #for table in tables:
+        #    print(table[0])
+        #    c.execute('''DROP TABLE {}'''.format(table[0]))
+        c.execute('CREATE TABLE IF NOT EXISTS {}(data TEXT, national TEXT, sex TEXT)'.format("names"))
+        c.execute('CREATE TABLE IF NOT EXISTS {}(data TEXT, national TEXT)'.format("surnames"))
+        tables = get_tables(dbName)
+        print("<db> database tables: {}".format(tables))
+        db.commit()
+        c.close()
+        db.close()
+        print("<db> database file remove and created at new: {}".format(dbName))
+        return True
+    except:
+        print("failed to remove db file: {}".format(dbName))
+        return False
     
 def get_tables(database):
     conn = sqlite3.connect(database)
@@ -102,8 +109,8 @@ def parse_config(config):
     else:
         print("<db> no config to parse: {}".format(config))
         return "", []
-        
-def update_db(file):
+
+def update_db(file, interactive=False):
     if not os.path.isfile(file):
         print("<db> you specified wrong file: {}".format(file))
         return False
@@ -114,7 +121,32 @@ def update_db(file):
     else:
         config = content[0].split(",")
         data = content[1:]
-
+        
+    if interactive:
+        data = [item.replace("/", " ") for item in data]
+        print("<db> data format in file:")
+        if len(data) > 2:
+            for x in range(3):
+                print(data[x])
+        for item in data:
+            #to catch first non-blanc line
+            columns = len(item.split())
+            if columns:
+                break                
+        print("<db> columns number:", columns)
+        columnNo = input("<db> choose column to update with: 0-{}\n".format(columns))
+        if not str(columnNo) in [str(x) for x in range(columns)]:
+            print("<db> wrong column specified")
+            return False
+        else:
+            columnNo = int(columnNo)
+        data = [item.split()[columnNo] for item in data if item]    #'if item' helps with empty lines
+        print("<db> data to update:", data)
+        if input("<db> do you want to update with? (y/n)\n").lower() in "y":
+            pass
+        else:
+            return False
+        
     db = sqlite3.connect("zperson_stuff.db") #if 1st time it creates new db
     c = db.cursor()
     c.execute('CREATE TABLE IF NOT EXISTS {}(data TEXT, national TEXT, sex TEXT)'.format("names"))
@@ -126,7 +158,7 @@ def update_db(file):
     if not table_name or not additional:
         print("<db> wrong config file")
         print("<db> write 1st line, and other data like in example below")
-        print("\tnames,polish,male")
+        print("\tnames,poland,male")
         print("\tZenon")
         print("\tLudwik")
         return False
@@ -153,6 +185,24 @@ if __name__ == "__main__":
     #clear_db()
     sql_help()
     
+   
+'''names & surnames:
+https://en.wikipedia.org/wiki/Lists_of_most_common_surnames
+
+https://en.wikipedia.org/wiki/List_of_most_common_surnames_in_Asia
+https://en.wikipedia.org/wiki/List_of_most_common_surnames_in_Europe
+https://en.wikipedia.org/wiki/List_of_most_common_surnames_in_North_America
+https://en.wikipedia.org/wiki/List_of_most_common_surnames_in_Oceania
+https://en.wikipedia.org/wiki/List_of_most_common_surnames_in_South_America
+
+https://en.wikipedia.org/wiki/List_of_most_popular_given_names#Americas
+
+'''
+
+
+
+
+   
     
     
     

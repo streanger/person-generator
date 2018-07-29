@@ -1,0 +1,6 @@
+surnames,armenia
+Hovhannisyan	Son of Hovhannes (John)
+Harutyunyan	Son of Harutyun ("resurrection")
+Sargsyan	Son of Sargis
+Khachatryan	Son of Khachatur ("given by cross")
+Grigoryan	Son of Grigor (Gregory)

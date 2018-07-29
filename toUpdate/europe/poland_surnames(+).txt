@@ -1,0 +1,21 @@
+surnames,poland
+1	Nowak	"newman"	207,348
+2	Kowalski	from kowal "smith"	140,471
+3	Wiœniewski	from wiœnia "cherry"	111,174
+4	Wójcik	from wójt, a noun describing chief officer of a municipality (gmina), from a popular name Wojciech; from the word "wojak" (warrior)	100,064
+5	Kowalczyk	from kowal "smith", literally "smith's son"	98,739
+6	Kamiñski	from kamieñ "stone"	95,816
+7	Lewandowski	from lawenda "lavender"	93,404
+8	Zieliñski	from zielony "green"; from zio³o, ziele "herb"	91,522
+9	Szymañski	from Szymon, equivalent to Simon	89,698
+10	WoŸniak	from woŸny, "usher"	89,015
+11	D¹browski	from d¹browa "oak grove"	87,304
+12	Koz³owski	from kozio³ "buck"	76,657
+13	Jankowski	from Janek, a diminutive of John	69,280
+14	Mazur	Formerly, 'a man from Mazovia'	68,090
+15	Kwiatkowski	from kwiatek "flower (dim.)"	66,917
+16	Wojciechowski	from the name Wojciech; from the word "wojak" (warrior)	66,879
+17	Krawczyk	from krawiec "tailor", "tailor's son"	64,543
+18	Kaczmarek	from karczmarz "innkeeper"	62,399
+19	Piotrowski	from Piotr (Peter)	61,844
+20	Piecyk	from piec "bake"	60,001

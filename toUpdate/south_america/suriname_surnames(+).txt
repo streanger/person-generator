@@ -1,0 +1,11 @@
+surnames,suriname
+1	Tjon
+2	Pinas
+3	Wong
+4	Chin
+5	Mohan
+6	Kalloe
+7	Singh
+8	Lie
+9	van Dijk
+10	Tjin

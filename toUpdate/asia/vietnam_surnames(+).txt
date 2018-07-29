@@ -1,0 +1,15 @@
+surnames,vietnam
+1	Nguyen	?	38%
+2	Tran	?	11%
+3	Le	?	9.5%
+4	Pham	?	7.1%
+5	Huynh /Hoang	?	5.1%
+6	Phan	?	4.5%
+7	Vu /Vo	?	3.9%
+8	Dang	?	2.1%
+9	Bui	?	2%
+10	Do	?	1.4%
+11	Ho	?	1.3%
+12	Ngo	?	1.3%
+13	Duong	?	1%
+14	Ly	?	0.5%

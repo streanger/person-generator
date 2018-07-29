@@ -1,0 +1,16 @@
+surnames,azerbajan
+1	Memmedov	Mammadov	"Son of Mammad"
+2	?liyev	Aliyev	"Son of Ali"
+3	H?s?nov	Hasanov	"Son of Hasan"
+4	Hüseynov	Huseynov	"Son of Hussein"
+5	Quliyev	Guliyev	"Son of Qulu"
+6	Haciyev	Hajiev	"Son of Haji"
+7	R?sulov	Rasulov	"Son of Rasoul"
+8	Süleymanov	Suleymanov	"Son of Suleyman"
+9	Musayev	Musayev	"Son of Musa"
+10	Abbasov	Abbasov	"Son of Abbas"
+11	Babayev	Babayev	"Son of Baba"
+12	V?liyev	Valiyev	"Son of Vali"
+13	Orucov	Orujov	"fasting"[citation needed]
+14	Ismayilov	Ismayilov	"Son of Ismayil"
+15	Ibrahimov	Ibrahimov	"Son of Ibrahim"

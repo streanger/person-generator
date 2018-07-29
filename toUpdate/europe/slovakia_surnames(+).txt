@@ -1,0 +1,11 @@
+surnames,slovakia
+1	30,813	Horv·th	"Croat"	Croatian through Hungarian
+2	29,079	Kov·Ë	"Blacksmith"	Slavic, Indo-European
+3	21,650	Varga	"Leatherworker, cobbler"	Hungarian [26]
+4	21,604	TÛth	"Slovak (Slav)"	Germanic through Hungarian [26][45]
+5	19,341	Nagy	"Large/Tall"	Hungarian[26]
+6	14,114	Bal·û	"Blessed"	Hungarian via Latin Blasius  and Old Church Slavonic "blessed", from Indo-European
+7	13,998	SzabÛ	"Tailor"	Hungarian[26]
+8	12,632	Moln·r	"Miller"	Croatian through Hungarian [26]
+9	10,872	Balog	"Left-handed"	Hungarian,[26] or from  Slavic "marsh", or both
+10	9,718	Luk·Ë	"Luke" Latin Lucas,	Greek

@@ -1,0 +1,21 @@
+surnames,united_kingdom
+1	Smith	1.26
+2	Jones	0.75
+3	Taylor	0.59
+4	Brown	0.56
+5	Williams	0.39
+6	Wilson	0.39
+7	Johnson	0.37
+8	Davies	0.34
+9	Robinson	0.32
+10	Wright	0.32
+11	Thompson	0.31
+12	Evans	0.30
+13	Walker	0.30
+14	White	0.30
+15	Roberts	0.28
+16	Green	0.28
+17	Hall	0.28
+18	Wood	0.27
+19	Jackson	0.27
+20	Clarke	0.26

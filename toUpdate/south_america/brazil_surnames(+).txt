@@ -1,0 +1,31 @@
+surnames,brazil
+1	Silva	10,4%	20,882,120	Portuguese
+2	Santos	6,7%	13,433,982	Portuguese/Spanish
+3	Sousa	4,9%	9,810,832	Portuguese
+4	Oliveira	3,1%	6,209,493	Portuguese
+5	Pereira	2,9%	5,892,937	Portuguese
+6	Lima	2,5%	5,007,393	Portuguese
+7	Carvalho	2,33%	4,630,387	Portuguese
+8	Ferreira	2,29%	4,590,010	Portuguese
+9	Rodrigues		4,510,002	Portuguese/Spanish
+10	Almeida	2,16%	4,393,398	Portuguese
+11	Costa	1,94%	3,905,800	Portuguese
+12	Gomes	1,92%	3,848,000	Portuguese/Spanish
+13	Martins	1,83%	3,650,200	Portuguese
+14	Araújo	1,69%	3,320,780	Portuguese
+15	Melo		3,209,000	Portuguese
+16	Barbosa	1,52%	3,040,300	Portuguese/Spanish
+17	Ribeiro	1,503%	3,010,000	Portuguese
+18	Alves	1,48%	2,960,500	Portuguese/Spanish
+19	Cardoso	1,41%	2,830,120	Portuguese
+20	Schmitz or Schmidt	1,33%	2,673,000	German
+21	Rocha	1,27%	2,540,600	Portuguese
+22	Correia, Correa	1,25%	2,505,070	Portuguese/Spanish
+23	Dias	1,23%	2,467,000	Portuguese/Spanish
+24	Teixeira	1,2%	2,408,500	Portuguese
+25	Fernandes	1,195%	2,379,700	Portuguese/Spanish
+26	Azevedo	1,192%	2,370,000	Portuguese
+27	Cavalcante or Cavalcanti	1,188%	2,366,300	Italian
+28	Montes	1,183%	2,362,000	Portuguese/Spanish
+29	Morais			Portuguese
+30	Gonçalves	1,174%	2,348,000	Portuguese/Spanish

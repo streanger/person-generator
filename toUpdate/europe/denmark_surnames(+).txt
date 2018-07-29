@@ -1,0 +1,21 @@
+surnames,denmark
+Nielsen – 255,138
+Jensen – 254,675
+Hansen – 213,339
+Pedersen – 161,074
+Andersen – 157,753
+Christensen – 118,117
+Larsen – 114,711
+Sorensen – 109,746
+Rasmussen – 93,723
+Jorgensen – 87,466
+Petersen – 78,329
+Madsen – 63,723
+Kristensen – 60,116
+Olsen – 47,579
+Thomsen – 39,117
+Christiansen – 36,656
+Poulsen – 31,874
+Johansen – 31,001
+Moller – 30,059
+Mortensen – 29,258

@@ -1,0 +1,26 @@
+surnames,netherlands
+1	De_Jong	86,534	0.53%	55,256	the young
+2	Jansen	75,699	0.46%	49,213	Johnson
+3	De_Vries	73,157	0.45%	49,298	the Frisian
+4	Van_den_Berg *	60,130	0.37%	37,678	of/from the mountain
+5	Van_Dijk , Van Dyk	57,944	0.35%	36,578	of/from the dike
+6	Bakker	56,864	0.35%	37,483	Baker
+7	Janssen	55,394	0.34%	32,824	Johnson
+8	Visser	50,929	0.31%	34,721	Fisher
+9	Smit	43,493	0.27%	29,783	Smith
+10	Meijer, Meyer	41,497	0.25%	28,256	Bailiff or steward
+11	De_Boer	39,576	0.24%	25,662	the farmer
+12	Mulder	37,250	0.23%	24,665	Miller
+13	De_Groot	37,221	0.23%	24,724	The big/great/large
+14	Bos	36,478	0.22%	23,790	Bush or Woods
+15	Vos	31,154	0.19%	19,461	Fox
+16	Peters	30,864	0.19%	18,583	Peters
+17	Hendriks	30,199	0.18%	18,538	Henderson
+18	Van_Leeuwen	28,774	0.18%	17,754	From Leeuwen/Leuven; Levi (leeuwen is the plural of lion)
+19	Dekker	28,682	0.17%	18,782	Thatcher
+20	Brouwer	26,224	0.16%	17,468	Brewer
+21	De_Wit	24,904	0.15%	15,156	the white
+22	Dijkstra	24,175	0.15%	15,647	(Frisian) of/from the dike
+23	Smits	23,816	0.15%	15,151	Smith
+24	De_Graaf	21,699	0.13%	13,718	The count/earl/administrator
+25	Van_der_Meer	21,354	0.13%	13,011	of/from the lake

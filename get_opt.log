@@ -1,0 +1,7 @@
+2018-07-25 23:20:09,506 - get_opt - INFO - Running function: get_opt
+2018-07-25 23:20:41,839 - get_opt - INFO - Running function: get_opt
+2018-07-25 23:20:41,850 - get_opt - INFO - Result: ('polish', 'Random', 3, 22)
+2018-07-25 23:20:41,851 - get_opt - INFO - Running function: get_opt
+2018-07-25 23:20:41,851 - get_opt - INFO - Running function: get_opt
+2018-07-25 23:20:41,862 - get_opt - INFO - Result: ('polish', 'Random', 3, 22)
+2018-07-25 23:20:41,862 - get_opt - INFO - Result: ('polish', 'Random', 3, 22)

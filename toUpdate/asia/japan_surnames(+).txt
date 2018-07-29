@@ -1,0 +1,101 @@
+surnames,japan
+1	??	Sato	1,990,000	1.57
+2	??	Suzuki	1,900,000	1.50
+3	??	Takahashi	1,470,000	1.16
+4	??	Tanaka	1,340,000	1.06
+5	??	Watanabe	1,200,000	0.95
+6	??	Ito	1,150,000	0.91
+7	??	Nakamura	1,080,000	0.85
+8	??	Kobayashi	1,060,000	0.84
+9	??	Yamamoto	1,020,000	0.81
+10	??	Kato	920,000	0.73
+11	??	Yoshida	850,000	—
+12	??	Yamada	820,000	—
+13	???	Sasaki	710,000	—
+14	??	Yamaguchi	640,000	—
+15	??	Matsumoto	630,000	—
+16	??	Inoue	600,000	—
+17	??	Kimura	580,000	—
+18	??	Shimizu	560,000	—
+19	?	Hayashi	550,000	—
+20	??	Saito	530,000	—
+21	??	Saito	520,000	—
+22	??	Yamazaki Yamasaki	490,000	—
+23	??	Nakajima Nakashima	480,000	—
+24	?	Mori	470,000	—
+25	??	Abe	470,000	—
+26	??	Ikeda	450,000	—
+27	??	Hashimoto	450,000	—
+28	??	Ishikawa	440,000	—
+29	??	Yamashita	410,000	—
+30	??	Ogawa	410,000	—
+31	??	Ishii	400,000	—
+32	???	Hasegawa	390,000	—
+33	??	Goto	390,000	—
+34	??	Okada	380,000	—
+35	??	Kondo	370,000	—
+36	??	Maeda	370,000	—
+37	??	Fujita	370,000	—
+38	??	Endo	360,000	—
+39	??	Aoki	350,000	—
+40	??	Sakamoto	350,000	—
+41	??	Murakami	340,000	—
+42	??	Ota	320,000	—
+43	??	Kaneko	310,000	—
+44	??	Fujii	310,000	—
+45	??	Fukuda	300,000	—
+46	??	Nishimura	300,000	—
+47	??	Miura	300,000	—
+48	??	Takeuchi	290,000	—
+49	??	Nakagawa	290,000	—
+50	??	Okamoto	290,000	—
+51	??	Matsuda	290,000	—
+52	??	Harada	290,000	—
+53	??	Nakano
+54	??	Ono	280,000
+55	??	Tamura	280,000
+56	??	Fujiwara Fujihara	270,000
+57	??	Nakayama	270,000
+58	??	Ishida	270,000
+59	??	Kojima	260,000
+60	??	Wada	260,000
+61	??	Morita	250,000
+62	??	Uchida	250,000
+63	??	Shibata	250,000
+64	??	Sakai	240,000
+65	?	Hara	240,000
+66	??	Takagi Takaki	240,000
+67	??	Yokoyama	240,000
+68	??	Ando	240,000
+69	??	Miyazaki Miyasaki	240,000
+70	??	Ueda Ueta	240,000
+71	??	Shimada	230,000
+72	??	Kudo	230,000
+73	??	Ono	220,000
+74	??	Miyamoto	220,000
+75	??	Sugiyama	220,000
+76	??	Imai	220,000
+77	??	Maruyama	210,000
+78	??	Masuda	210,000
+79	??	Takada Takata	210,000
+80	??	Murata	210,000
+81	??	Hirano	210,000
+82	??	Otsuka	210,000
+83	??	Sugawara Sugahara	210,000
+84	??	Takeda Taketa	200,000
+85	??	Arai	200,000
+86	??	Koyama Oyama	200,000
+87	??	Noguchi	200,000
+88	??	Sakurai	200,000
+89	??	Chiba	200,000
+90	??	Iwasaki	200,000
+91	??	Sano	200,000
+92	??	Taniguchi	200,000
+93	??	Ueno	200,000
+94	??	Matsui	190,000
+95	??	Kono Kawano	190,000
+96	??	Ichikawa	190,000
+97	??	Watanabe Watabe	190,000
+98	??	Nomura	180,000
+99	??	Kikuchi	180,000
+100	??	Kinoshita	180,000

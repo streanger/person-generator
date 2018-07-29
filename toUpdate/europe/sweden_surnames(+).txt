@@ -1,0 +1,21 @@
+surnames,sweden
+1	251,621	Andersson	son of Anders
+2	251,495	Johansson	son of Johan
+3	223,151	Karlsson	son of Karl
+4	171,360	Nilsson	son of Nils
+5	147,514	Eriksson	son of Erik
+6	124,686	Larsson	son of Lars
+7	114,280	Olsson	son of Olof, Olov, Ola, Ole or Olle (usually a nickname)
+8	107,911	Persson	son of Per
+9	101,834	Svensson	son of Sven
+10	97,536	Gustafsson	son of Gustaf
+11	96,011	Pettersson	son of Petter
+12	73,869	Jonsson	son of Jon
+13	50,170	Jansson	son of Jan
+14	43,926	Hansson	son of Hans
+15	34,302	Bengtsson	son of Bengt
+16	32,249	Jönsson	son of Jöns
+17	27,533	Lindberg	compound of lind (the tree tilia cordata) and berg (mountain)
+18	26,793	Jakobsson	son of Jakob
+19	26,562	Magnusson	son of Magnus
+20	26,424	Olofsson	son of Olof

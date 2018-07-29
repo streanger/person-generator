@@ -1,0 +1,13 @@
+surnames,romania
+1	Popa	['popa]	Priest
+2	Popescu	[po'pesku]	from Popa (Priest)
+3	Pop	[pop]	short form of Popa
+4	Radu	['radu]	
+5	Dumitru	[du'mitru]	
+6	Stan	[stan]	shortened form of Stanislav
+7	Stoica	['stojka]	
+8	Gheorghe	['ge?orge]	form of George
+9	Matei	[ma'tej]	Romanian form of Matthew
+10	Ciobanu	[t??jo'banu]	Shepherd
+11	Ionescu	[io'nesku]	from Ion (Romanian form of John)
+12	Rusu	[rusu]	Russian

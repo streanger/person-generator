@@ -15,6 +15,11 @@ import re
 import sqlite_use as sql
 from random_data import get_email, random_date, get_age, random_phone
 
+#gui
+import tkinter as tk
+from PIL import ImageTk, Image
+
+
 def download_flags():
     #just run this function to get flags & countries
     flagsUrl = "https://www.nationsonline.org"
@@ -172,10 +177,11 @@ def capitalize_dictio(dictio):
         if type(val) is str:
             dictio[key] = val.capitalize()
     return dictio
-    
+   
 def usage():
     print("usage:")
-    print("-u <fileName> - file with data to update database")
+    print("-u <fileName> - update db with specified file")
+    print("-i <fileName> - interactive update")
     print("-n <nationality> - nationality of person to generate [default=english]")
     print("-s <sex> - gender of person to generate [default=male]")
     print("-q <quantity> - the number of persons(s) to generate [default=1]")
@@ -184,7 +190,7 @@ def usage():
     print("-h - this usage help")
     print("--"*35)
     return True
-    
+   
 def generate_person(national="Random", sex="Random", age=0, writeFile=True):
     personDataDictio = { "Nationality" : "Random",
                          "Sex" : "Random",
@@ -221,20 +227,68 @@ def show_data(dictio, dataType=0):
         return [dictio["Name"], dictio["Surname"], dictio["Sex"], dictio["Nationality"], dictio["Birthdate"], dictio["Age"], dictio["Email"], dictio["Phone"]]
     else:
         return "\n".join(dictio.values())
+
+class Application(tk.Frame):
+    def __init__(self, master=None, diaryName="DIARY.txt", sex="male"):
+        super().__init__(master)
+        self.pack()
+        self.sex = sex
+        self.name = diaryName
+        self.root = master
+        self.create_widgets()
+
+    def create_widgets(self):     
+        self.info_natio = tk.Label(text="Nationality: Random").pack(expand="yes", fill="both", side="bottom")
+        self.info_sex = tk.Label(text="Sex: {}".format(self.sex)).pack(expand="yes", fill="both", side="bottom")
+        self.info_birth = tk.Label(text="Birthdate: {}".format(self.sex)).pack(expand="yes", fill="both", side="bottom")
+        self.info_age = tk.Label(text="Age: {}".format(self.sex)).pack(expand="yes", fill="both", side="bottom")
+        self.info_name = tk.Label(text="Name: {}".format(self.sex)).pack(expand="yes", fill="both", side="bottom")
+        self.info_surname = tk.Label(text="Surname: {}".format(self.sex)).pack(expand="yes", fill="both", side="bottom")
+        self.info_mail = tk.Label(text="Mail: {}".format(self.sex)).pack(expand="yes", fill="both", side="bottom")
+        self.info_phone = tk.Label(text="Phone: {}".format(self.sex)).pack(expand="yes", fill="both", side="bottom")
+          
+
+        self.save = tk.Button(self)
+        self.save["text"] = "OK"
+        self.save["fg"] = "green"
+        #self.save["command"] = self.save_data
+        self.save.pack(side="left")
+
+        self.read = tk.Button(self)
+        self.read["text"] = "Next"
+        self.read["fg"] = "green"
+        #self.read["command"] = self.get_post_by_date
+        self.read.pack(side="left")        
+
+        self.quit = tk.Button(self, text="QUIT", fg="red", command=self.root.destroy).pack(side="left")        
         
-def main(argv):
-    #check if db exists and
-    tables = sql.get_tables("zperson_stuff.db")
-    if tables != [("names",), ("surnames",)]:
-        print("--< incorrect tables: {}\n--< check if database file exists".format(tables))
-        return False
         
-    #argv = ["-h"]
-    #argv = ["-u", "names.txt"]
-    argv = ["-r", "-q", "99", "-a", "25"]
-    #argv = ["-n", "polish", "-q", "20", "-a", "10"]
+        '''
+        self.scroll = tk.Scrollbar(self)    #self instead of root - it matters
+        self.text = tk.Text(self, height=20, width=20)
+        self.scroll.pack(side="left", fill=tk.Y)
+        self.text.pack()
+        self.scroll.config(command=self.text.yview)
+        self.text.config(yscrollcommand=self.scroll.set)
+        '''
+        
+        #create image
+        self.image = ImageTk.PhotoImage(Image.open(self.sex + ".png"))    
+        self.panel = tk.Label(self.root, image=self.image)
+        self.panel.pack(side = "right")
+        
+        
+def gui_app():        
+    root = tk.Tk()
+    root.geometry('{}x{}'.format(500, 400))
+    root.resizable(width=False, height=False)
+    root.wm_title("diary app by stranger")
+    app = Application(master=root, diaryName="DIARY.txt", sex="male")
+    app.mainloop()
+
+def get_opt(argv):
     try:
-        opts, args = getopt.getopt(argv, "hru:n:s:q:a:")
+        opts, args = getopt.getopt(argv, "hru:n:s:q:a:i:")
     except getopt.GetoptError as err:
         print(str(err))
         return False
@@ -248,7 +302,7 @@ def main(argv):
     for opt, arg in opts:
         if opt == "-h":
             usage()
-            return True
+            return False
         elif opt in '-r':
             #fully random:
             national = "Random"
@@ -260,19 +314,39 @@ def main(argv):
                 status = sql.update_db(arg)
                 if status:
                     print("--< database updated succesfully")
-                    return True
+                    return False
                 else:
                     print("--< failed to update database")
                     return False
+            else:
+                print("no such file: '{}'".format(arg))
+                return False
+        elif opt in '-i':
+            #if arg in os.listdir():
+            try:
+                status = sql.update_db(arg, interactive=True)
+                if status:
+                    print("--< database updated succesfully")
+                    return False
+                else:
+                    print("--< failed to update database")
+                    return False
+            #else:
+            except:
+                print("no such file: '{}'".format(arg))
+                return False
         elif opt in "-n":
             #nationalList = ["english", "polish", "ukrainian"]
             nationalList = sql.data_from_db("names", "national") + sql.data_from_db("surnames", "national")
             nationalList = list(set(nationalList))
+            if not nationalList:
+                print("--< empty national list. Please update your database")
+                return False
             if arg.lower() in nationalList:
                 national = arg
             else:
-                print("--< wrong nationality choice. Auto choose -> english")
-                #national = "english"
+                national = random.choice(nationalList)
+                print("--< wrong nationality choice. Auto choose -> {}".format(national))
         elif opt in "-s":
             if arg.lower() in ("male", "female"):
                 sex = arg
@@ -288,9 +362,28 @@ def main(argv):
                 age = int(arg)
         else:
             usage()
-            return True
+            return False
+    return national, sex, quantity, age
+    
+def main(argv):
+    #check if db exists and
+    tables = sql.get_tables("zperson_stuff.db")
+    if tables != [("names",), ("surnames",)]:
+        print("--< incorrect tables: {}\n--< check if database file exists".format(tables))
+        return False
+        
+    #argv = ["-h"]
+    #argv = ["-u", "names.txt"]
+    #argv = ["-r", "-q", "99", "-a", "25"]
+    #argv = ["-n", "polish", "-q", "3", "-a", "22"]
 
-    #args there: national, sex, quantity, age            
+    correctOpts = get_opt(argv)
+    if correctOpts:
+        #national, sex, quantity, age = get_opt(argv)
+        national, sex, quantity, age = correctOpts
+    else:
+        return False
+
     personList = [["Name", "Surname", "Sex", "Nationality", "Birthdate", "Age", "Email", "Phone"]]
     for x in range(quantity):
         personData = generate_person(national=national, sex=sex, age=age, writeFile=False)
@@ -301,7 +394,7 @@ def main(argv):
 
     #write data to csv
     csv_writer(personList)
-        
+    #gui_app()           #to show data and flag, map, photo 
 
 if __name__ == "__main__":
     global PATH; PATH = script_path()
@@ -331,4 +424,9 @@ how about add:
 todo:
 -usuniecie duplikatow z bazy danych
 -weryfikacja obecnosci rekordu przed zapisem
+-gui wraz ze zdjęciem(schematyczne-płeć, bądź prawdzie), flagą, oraz mapką kraju pochodzenia
+
+30.07.18
+to_do:
+-need to add africa surnames and names for all continents
 '''

@@ -1,0 +1,11 @@
+surnames,lithuania
+1	Kazlauskas	Kazlauskiene
+2	Jankauskas	Jankauskiene
+3	Petrauskas	Petrauskiene
+4	Stankevièius	Stankevièiene
+5	Vasiliauskas	Vasiliauskiene
+6	Butkus	Butkiene
+7	ukauskas	ukauskiene
+8	Paulauskas	Paulauskiene
+9	Urbonas	Urboniene
+10	Kavaliauskas	Kavaliauskiene

@@ -1,0 +1,21 @@
+surnames,ukraine
+1	Melnyk	miller
+2	Shevchenko	shoemaker's
+3	Boyko	the Boyko (a member of a group of Ukrainian highlanders)
+4	Kovalenko	smith's
+5	Bondarenko	cooper's
+6	Tkachenko	weaver's
+7	Kovalchuk	smith's
+8	Kravchenko	tailor's
+9	Oliynyk	oil maker
+10	Shevchuk	shoemaker's
+11	Koval	smith
+12	Polishchuk	the Polesian, a man from Polesia
+13	Bondar	cooper
+14	Tkachuk	weaver's
+15	Moroz	frost
+16	Marchenko	Mark's
+17	Lysenko	fox's (from Lys) or baldhead's (from Lysyi)
+18	Rudenko	redhead's
+19	Savchenko	Savka's (Savka is a form of Sava or Savva)
+20	Petrenko	Petro's

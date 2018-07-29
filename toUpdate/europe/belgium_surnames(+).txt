@@ -1,0 +1,16 @@
+surnames,belgium
+1	Peeters	32,657	1	67	2
+2	Janssens	30,296	2	56	1
+3	Maes	25,524	3	63	8
+4	Jacobs	19,999	4	97	4
+5	Mertens	18,518	6	72	5
+6	Willems	18,498	5	68	17
+7	Claes	16,553	7		43
+8	Goossens	15,883	9		15
+9	Wouters	15,732	8		35
+10	De Smet	14,259	10		25
+13	Dubois	12,975		1	3
+17	Lambert	11,802		2	11
+21	Dupont	10,369		4	12
+31	Martin	9,008		3	10
+37	Simon	7,774		5	13

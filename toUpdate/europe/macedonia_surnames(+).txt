@@ -1,0 +1,35 @@
+surnames,macedonia
+Andov – son of Ande
+Angelov – son of Angel
+Bogdanov – son of Bogdan
+Bozinov – son of Bozhin
+Brankov – son of Branko
+Damcevski
+Davidov – son of David
+Dimitrov – son of Dimitar
+Donev – son of Doncho
+Filipov – son of Filip
+Georgiev – son of Georgi
+Ivanov – son of Ivan
+Ivanovski – son of Ivan
+Janev – son of Jane
+Kitanovski
+Kostovski – son of Kosta
+Kostov
+Manasievski – son of Manas
+Markov – son of Marko
+Matovski – son of Mato
+Mladenovski – son of Mladen
+Nikolovski – son of Nikola
+Pavlovski
+Penov – son of Peni
+Petkov – son of Petko
+Petrevski – son of Petar
+Petrovski
+Popoff – Priest
+Popovski
+Ristevski – son of Risto
+Stojanov – son of Stojan
+Trajanovski – son of Trajan
+Trajcevski
+Trajkovski

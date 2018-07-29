@@ -1,0 +1,51 @@
+surnames,portugal
+1	Silva	woodland	9.44%	995
+2	Santos	saints	5.96%	628
+3	Ferreira	blacksmith	5.25%	553
+4	Pereira	pear tree	4.88%	514
+5	Oliveira	olive tree	3.71%	391
+6	Costa	[from the] coast	3.68%	387
+7	Rodrigues	son of Rodrigo	3.57%	376
+8	Martins	son of Martim	3.23%	340
+9	Jesus	Jesus	2.99%	315
+10	Sousa	[from] Sousa (toponym)	2.95%	311
+11	Fernandes	son of Fernando	2.82%	297
+12	Gonçalves	son of Gonçalo	2.76%	291
+13	Gomes	son of Gome/Gomo	2.57%	271
+14	Lopes	son of Lopo	2.52%	265
+15	Marques	son of Marcos	2.51%	265
+16	Alves	abbreviated form of Álvares, son of Álvaro	2.37%	250
+17	Almeida	toponymic	2.27%	239
+18	Ribeiro	from the riverside	2.27%	239
+19	Pinto		2.09%	220
+20	Carvalho	oak tree	1.97%	208
+21	Teixeira	toponymic, yew tree related	1.69%	178
+22	Moreira	mulberry	1.54%	162
+23	Correia		1.53%	161
+24	Mendes	son of Mendo	1.39%	146
+25	Nunes	son of Nuno	1.32%	139
+26	Soares	son of Soeiro	1.28%	135
+27	Vieira	scallop	1.2%	127
+28	Monteiro		1.11%	117
+29	Cardoso	spiny, having to do with teazels	1.07%	113
+30	Rocha	rock	1.04%	110
+31	Neves	snows (devotion to Our Lady of the Snows)	0.98%	103
+32	Coelho	rabbit	0.97%	102
+33	Cruz	cross (of Jesus)	0.94%	99
+34	Cunha	wedge	0.93%	98
+35	Pires	son of Pero (Peter)	0.92%	97
+36	Ramos	tree branches or related to Passover Friday	0.86%	91
+37	Reis	devotion to the Three Kings ("Reis")	0.85%	90
+38	Simoes	son of Simao (Simon)	0.85%	90
+39	Antunes	son of António	0.82%	86
+40	Matos	bush	0.82%	86
+41	Fonseca		0.81%	86
+42	Machado	axe	0.76%	80
+43	Araújo	toponymic	0.69%	73
+44	Barbosa	toponymic	0.69%	72
+45	Tavares	toponymic	0.67%	71
+46	Lourenço	Laurent, related to laurels	0.65%	68
+47	Castro	castrum	0.62%	66
+48	Figueiredo		0.62%	65
+49	Azevedo		0.60%	64
+50	Freitas		0.60%	63
