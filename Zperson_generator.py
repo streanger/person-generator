@@ -182,11 +182,13 @@ def usage():
     print("usage:")
     print("-u <fileName> - update db with specified file")
     print("-i <fileName> - interactive update")
-    print("-n <nationality> - nationality of person to generate [default=english]")
+    print("-n <nationality> - nationality of person to generate [default=england]")
     print("-s <sex> - gender of person to generate [default=male]")
     print("-q <quantity> - the number of persons(s) to generate [default=1]")
     print("-a <age> - age of person(s)")
     print("-r - random nationality and sex")
+    print("-g - gui output")
+    print("-l - print list of all nationalities")
     print("-h - this usage help")
     print("--"*35)
     return True
@@ -246,7 +248,7 @@ class Application(tk.Frame):
 
     def create_widgets(self):     
         self.info_phone = tk.Label(text="Phone: {}".format(self.phone)).pack(expand="yes", fill="both", side="bottom")     
-        self.info_email = tk.Label(text="Mail: {}".format(self.email)).pack(expand="yes", fill="both", side="bottom")
+        self.info_email = tk.Label(text="Email: {}".format(self.email)).pack(expand="yes", fill="both", side="bottom")
         self.info_age = tk.Label(text="Age: {}".format(self.age)).pack(expand="yes", fill="both", side="bottom")
         self.info_birth = tk.Label(text="Birthdate: {}".format(self.birth)).pack(expand="yes", fill="both", side="bottom")
         self.info_sex = tk.Label(text="Sex: {}".format(self.sex)).pack(expand="yes", fill="both", side="bottom")
@@ -286,7 +288,7 @@ class Application(tk.Frame):
         
 def gui_app(person):        
     root = tk.Tk()
-    root.geometry('{}x{}'.format(500, 400))
+    root.geometry('{}x{}'.format(600, 500))
     root.resizable(width=False, height=False)
     root.wm_title("zperson")
     app = Application(master=root, data=person)
@@ -294,7 +296,7 @@ def gui_app(person):
 
 def get_opt(argv):
     try:
-        opts, args = getopt.getopt(argv, "hru:n:s:q:a:i:")
+        opts, args = getopt.getopt(argv, "hrglu:n:s:q:a:i:")
     except getopt.GetoptError as err:
         print(str(err))
         return False
@@ -304,9 +306,10 @@ def get_opt(argv):
     sex = "Random"
     quantity = 1
     age = 0
+    gui = False
     
     for opt, arg in opts:
-        if opt == "-h":
+        if opt in "-h":
             usage()
             return False
         elif opt in '-r':
@@ -315,6 +318,14 @@ def get_opt(argv):
             sex = "Random"
             #quantity = 1
             #break
+        elif opt in '-g':
+            gui = True
+        elif opt in '-l':
+            nationalList = sql.data_from_db("names", "national") + sql.data_from_db("surnames", "national")
+            nationalList = list(set(nationalList))
+            nationalList.sort()
+            print("--< list of nationalities:\n{}".format("\n".join(nationalList)))
+            return False
         elif opt in '-u':
             if arg in os.listdir():
                 status = sql.update_db(arg)
@@ -357,7 +368,8 @@ def get_opt(argv):
             if arg.lower() in ("male", "female"):
                 sex = arg
             else:
-                print("--< wrong sex choice. Auto choose -> male")
+                sex = random.choice(["male", "female"])
+                print("--< wrong sex choice. Random set to: {}".format(sex))
         elif opt in "-q":
             if arg.isdigit():
                 quantity = int(arg)
@@ -369,7 +381,7 @@ def get_opt(argv):
         else:
             usage()
             return False
-    return national, sex, quantity, age
+    return national, sex, quantity, age, gui
     
 def main(argv):
     #check if db exists and
@@ -386,7 +398,7 @@ def main(argv):
     correctOpts = get_opt(argv)
     if correctOpts:
         #national, sex, quantity, age = get_opt(argv)
-        national, sex, quantity, age = correctOpts
+        national, sex, quantity, age, gui = correctOpts
     else:
         return False
 
@@ -400,7 +412,8 @@ def main(argv):
         
     #write data to csv
     csv_writer(personList)
-    gui_app(personData)           #to show data and flag, map, photo 
+    if gui:
+        gui_app(personData)           #to show data and flag, map, photo 
 
 if __name__ == "__main__":
     global PATH; PATH = script_path()
