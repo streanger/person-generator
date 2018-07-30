@@ -121,9 +121,13 @@ def update_db(file, interactive=False):
     else:
         config = content[0].split(",")
         data = content[1:]
-        
+    #replace rubbish:
+    toReplace = [",", ".", "/"]
+    for sign in toReplace:
+        data = [item.replace(sign, " ") for item in data] 
+    
     if interactive:
-        data = [item.replace("/", " ") for item in data]
+        #data = [item.replace("/", " ") for item in data]
         print("<db> data format in file:")
         if len(data) > 2:
             for x in range(3):
