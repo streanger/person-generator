@@ -4,15 +4,12 @@ import os
 import sys
 
 def sql_help():
-    print("import it rather than use...")
-    print("put some useful things here")
+    print("<db> import it rather than use...")
+    print("<db> put some useful things here")
 
-def script_path(fileName=''):
+def script_path():
     path = os.path.realpath(os.path.dirname(sys.argv[0]))
     os.chdir(path)  #it seems to be quite important
-    if fileName:
-        fullPath = os.path.join(path, fileName)
-        return fullPath
     return path
 
 def clear_db(dbName="zperson_stuff.db"):
@@ -66,9 +63,10 @@ def data_from_db(TABLE_NAME, toGet, getBy=[]):
     db.close()  
     return dataOut
 
-def read_file(fileName, rmnl=False):
+def read_file(file_name, rmnl=False):
+    '''read specified file and remove newlines depend on "rmnl" parameter'''
     path = os.path.realpath(os.path.dirname(sys.argv[0]))
-    path = os.path.join(path, fileName)
+    path = os.path.join(path, file_name)
     try:
         with open(path, "r") as file:
             if rmnl:
@@ -80,6 +78,7 @@ def read_file(fileName, rmnl=False):
     return fileContent    
 
 def parse_config(config):
+    '''parse config file, to get table name, and additional data'''
     config = [item.lower() for item in config]      #get it to the floor
     if config:
         table_name = config[0]
@@ -111,6 +110,7 @@ def parse_config(config):
         return "", []
 
 def update_db(file, interactive=False):
+    '''update database with specified file. Interactive mode is optional'''
     if not os.path.isfile(file):
         print("<db> you specified wrong file: {}".format(file))
         return False
@@ -202,11 +202,3 @@ https://en.wikipedia.org/wiki/List_of_most_common_surnames_in_South_America
 https://en.wikipedia.org/wiki/List_of_most_popular_given_names#Americas
 
 '''
-
-
-
-
-   
-    
-    
-    

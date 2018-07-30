@@ -18,8 +18,9 @@ import sqlite_use as sql
 from random_data import get_email, random_date, get_age, random_phone
 
 def download_flags():
+    '''download flags and save it to some dir'''
     #just run this function to get flags & countries
-    flagsUrl = "https://www.nationsonline.org"
+    flags_url = "https://www.nationsonline.org"
     urls = ["https://www.nationsonline.org/oneworld/flags_of_africa.htm",
             "https://www.nationsonline.org/oneworld/flags_of_the_americas.htm",
             "https://www.nationsonline.org/oneworld/flags_of_asia.htm",
@@ -38,57 +39,56 @@ def download_flags():
     simple_write("countries.txt", "\n".join(countries))     #write countries to .txt
 
     #write gifs to flags dir
-    gifsDir = "flags"
-    if not os.path.exists(gifsDir):
-        os.makedirs(gifsDir)
-    path = os.path.join(path, gifsDir)
+    gifs_dir = "flags"
+    if not os.path.exists(gifs_dir):
+        os.makedirs(gifs_dir)
+    path = os.path.join(path, gifs_dir)
     for gif in gifs:
-        gifUrl = flagsUrl + gif
-        gifPath = os.path.join(path, gif[7:])               #need to cut gif subpath
-        print(gifUrl)
-        download_image(gifUrl, gifPath)
+        gif_url = flags_url + gif
+        gif_path = os.path.join(path, gif[7:])               #need to cut gif subpath
+        print(gif_url)
+        download_image(gif_url, gif_path)
     return gifs, countries
 
-def download_image(url, fileName="image.png"):
+def download_image(url, file_name="image.png"):
+    '''download image from specified url and save it to specified file_name'''
     try:
         response = requests.get(url, stream=True)
-        with open(fileName, 'wb') as out_file:
+        with open(file_name, 'wb') as out_file:
             shutil.copyfileobj(response.raw, out_file)
     except:
         pass
     del response
     return True
 
-def script_path(fileName=''):
+def script_path():
+    '''change current path to script one'''
     path = os.path.realpath(os.path.dirname(sys.argv[0]))
     os.chdir(path)  #it seems to be quite important
-    if fileName:
-        fullPath = os.path.join(path, fileName)
-        return fullPath
     return path
 
-def remove_duplicates(someList, sort=True):
-    return list(set(someList))
-
-def simple_write(file, strContent):
+def simple_write(file, str_content):
+    '''simple_write data to .txt file, with specified strContent'''
     with open(file, "w") as f:
-        f.write(strContent + "\n")
+        f.write(str_content + "\n")
         f.close()
     return True
 
-def read_file(fileName, rmnl=False):
-    path = os.path.join(script_path(), fileName)
+def read_file(file_name, rmnl=False):
+    '''read specified file and remove newlines depend on "rmnl" parameter'''
+    path = os.path.join(script_path(), file_name)
     try:
         with open(path, "r") as file:
             if rmnl:
-                fileContent = file.read().splitlines()
+                file_content = file.read().splitlines()
             else:
-                fileContent = file.readlines()
+                file_content = file.readlines()
     except:
-        fileContent = []
-    return fileContent
+        file_content = []
+    return file_content
 
 def csv_writer(personList):
+    '''write list of data to csv'''
     path = os.path.join(script_path(), "persons.csv")
     with open(path, "w", newline='') as csv_file:
         writer = csv.writer(csv_file, delimiter=",")
@@ -97,19 +97,20 @@ def csv_writer(personList):
         print("--< person data written to csv file")
     return True
 
-def write_file(file_name, content, endline="\n", overWrite=False, response=True):
+def write_file(file_name, content, endline="\n", over_write=False, response=True):
+    '''write file with parameters'''
     if not content:
         return False
-    contentType = type(content)
-    if contentType in (list, tuple):
+    content_type = type(content)
+    if content_type in (list, tuple):
         pass
-    elif contentType in (int, str):
+    elif content_type in (int, str):
         content = [str(content)]
-    elif contentType is (dict):
+    elif content_type is (dict):
         content = list(content.items())
     else:
         return False
-    if overWrite:
+    if over_write:
         mode = "w"
     else:
         mode = "a"
@@ -122,23 +123,23 @@ def write_file(file_name, content, endline="\n", overWrite=False, response=True)
             file.writelines(str(item)+endline)
         file.close()
         if response:
-            print("--< written to: {0} | contentType: {1}".format(file_name, contentType))
+            print("--< written to: {0} | content_type: {1}".format(file_name, content_type))
     return True
 
 def write_names(names):
+    '''write names into single files'''
     for key, item in enumerate(names):
-        write_file(file_name="name" + str(key) + ".txt", content=item, addNewline=True, overWrite=True, subPath="")
+        write_file(file_name="name" + str(key) + ".txt", content=item, addNewline=True, over_write=True, subPath="")
     return 0
 
 def get_data(key, personDictio):
-    #return specified data with using proper functions
-    #data = "Random"
+    '''return specified data with using proper functions'''
     if key == "Nationality":
-        nationalList = sql.data_from_db("names", "national") + sql.data_from_db("surnames", "national")
-        nationalList = list(set(nationalList))
-        if not nationalList:
-            nationalList = ["Random"]
-        data = random.choice(nationalList)
+        national_list = sql.data_from_db("names", "national") + sql.data_from_db("surnames", "national")
+        national_list = list(set(national_list))
+        if not national_list:
+            national_list = ["Random"]
+        data = random.choice(national_list)
     elif key == "Name":
         national = personDictio["Nationality"]
         sex = personDictio["Sex"]
@@ -167,6 +168,7 @@ def get_data(key, personDictio):
     return data
 
 def capitalize_dictio(dictio):
+    '''iter through dictio parameters and capitalize their values'''
     for key, val in dictio.items():
         if key == "Email":
             continue
@@ -175,39 +177,26 @@ def capitalize_dictio(dictio):
             dictio[key] = val.capitalize()
     return dictio
 
-def usage():
-    print("usage:")
-    print("-u <fileName> - update db with specified file")
-    print("-i <fileName> - interactive update")
-    print("-n <nationality> - nationality of person to generate [default=england]")
-    print("-s <sex> - gender of person to generate [default=male]")
-    print("-q <quantity> - the number of persons(s) to generate [default=1]")
-    print("-a <age> - age of person(s)")
-    print("-r - random nationality and sex")
-    print("-g - gui output")
-    print("-l - print list of all nationalities")
-    print("-h - this usage help")
-    print("--"*35)
-    return True
-
 def generate_person(national="Random", sex="Random", age=0):
-    personData = {}
+    '''will generate person data depends on parameters'''
+    person_data = {}
     if national == "Random":
-        personData["Nationality"] = get_data("Nationality", personData)
+        person_data["Nationality"] = get_data("Nationality", person_data)
     else:
-        personData["Nationality"] = national
+        person_data["Nationality"] = national
     if sex == "Random":
-        personData["Sex"] = random.choice(["male", "female"])
+        person_data["Sex"] = random.choice(["male", "female"])
     else:
-        personData["Sex"] = sex
-    personData["Birthdate"] = random_date(age=age)
+        person_data["Sex"] = sex
+    person_data["Birthdate"] = random_date(age=age)
     otherData = ["Name", "Surname", "Age", "Email", "Phone"]
     for key in otherData:
-        personData[key] = get_data(key, personData)
-    personData = capitalize_dictio(personData)
-    return personData
+        person_data[key] = get_data(key, person_data)
+    person_data = capitalize_dictio(person_data)
+    return person_data
 
 def show_data(dictio, dataType=0):
+    '''show data from dictio in different way, depends on dataType'''
     email = "random"
     if dataType == 0:
         email = "\n".join(dictio.values())
@@ -222,7 +211,9 @@ def show_data(dictio, dataType=0):
     return email
 
 class Application(tk.Frame):
+    '''gui of person generator'''
     def __init__(self, master, data):
+        '''initialize object'''
         super().__init__(master)
         self.pack()
         self.data = data
@@ -238,6 +229,7 @@ class Application(tk.Frame):
         self.create_widgets()
 
     def create_widgets(self):
+        '''create widgets with initialized data'''
         self.info_phone = tk.Label(text="Phone: {}".format(self.phone)).pack(expand="yes", fill="both", side="bottom")
         self.info_email = tk.Label(text="Email: {}".format(self.email)).pack(expand="yes", fill="both", side="bottom")
         self.info_age = tk.Label(text="Age: {}".format(self.age)).pack(expand="yes", fill="both", side="bottom")
@@ -266,7 +258,8 @@ class Application(tk.Frame):
         self.panel = tk.Label(self.root, image=self.image)
         self.panel.pack(side="right")
 
-def gui_app(person):        
+def gui_app(person):
+    '''gui app of person data'''
     root = tk.Tk()
     root.geometry('{}x{}'.format(600, 500))
     root.resizable(width=False, height=False)
@@ -274,7 +267,24 @@ def gui_app(person):
     app = Application(master=root, data=person)
     app.mainloop()
 
+def usage():
+    '''all parameters of person generator'''
+    print("usage:")
+    print("-u <fileName> - update db with specified file")
+    print("-i <fileName> - interactive update")
+    print("-n <nationality> - nationality of person to generate [default=england]")
+    print("-s <sex> - gender of person to generate [default=male]")
+    print("-q <quantity> - the number of persons(s) to generate [default=1]")
+    print("-a <age> - age of person(s)")
+    print("-r - random nationality and sex")
+    print("-g - gui output")
+    print("-l - print list of all nationalities")
+    print("-h - this usage help")
+    print("--"*35)
+    return True
+
 def get_opt(argv):
+    '''get argv and return final options'''
     try:
         opts, arg = getopt.getopt(argv, "hrglu:n:s:q:a:i:")
     except getopt.GetoptError as err:
@@ -300,10 +310,10 @@ def get_opt(argv):
         elif opt in '-g':
             gui = True
         elif opt in '-l':
-            nationalList = sql.data_from_db("names", "national") + sql.data_from_db("surnames", "national")
-            nationalList = list(set(nationalList))
-            nationalList.sort()
-            print("--< list of nationalities:\n{}".format("\n".join(nationalList)))
+            national_list = sql.data_from_db("names", "national") + sql.data_from_db("surnames", "national")
+            national_list = list(set(national_list))
+            national_list.sort()
+            print("--< list of nationalities:\n{}".format("\n".join(national_list)))
             return False
         elif opt in '-u':
             if arg in os.listdir():
@@ -327,16 +337,16 @@ def get_opt(argv):
                 print("no such file: '{}'".format(arg))
             return False
         elif opt in "-n":
-            #nationalList = ["english", "polish", "ukrainian"]
-            nationalList = sql.data_from_db("names", "national") + sql.data_from_db("surnames", "national")
-            nationalList = list(set(nationalList))
-            if not nationalList:
+            #national_list = ["english", "polish", "ukrainian"]
+            national_list = sql.data_from_db("names", "national") + sql.data_from_db("surnames", "national")
+            national_list = list(set(national_list))
+            if not national_list:
                 print("--< empty national list. Please update your database")
                 return False
-            if arg.lower() in nationalList:
+            if arg.lower() in national_list:
                 national = arg
             else:
-                national = random.choice(nationalList)
+                national = random.choice(national_list)
                 print("--< wrong nationality choice. Auto choose -> {}".format(national))
         elif opt in "-s":
             if arg.lower() in ("male", "female"):
@@ -358,6 +368,7 @@ def get_opt(argv):
     return national, sex, quantity, age, gui
 
 def main(argv):
+    '''main function of zperson_generator'''
     #check if db exists and
     tables = sql.get_tables("zperson_stuff.db")
     if tables != [("names",), ("surnames",)]:
@@ -373,15 +384,14 @@ def main(argv):
 
     personList = [["Name", "Surname", "Sex", "Nationality", "Birthdate", "Age", "Email", "Phone"]]
     for _ in range(quantity):
-        personData = generate_person(national=national, sex=sex, age=age)
-        showPerson = show_data(personData, 2)
-        print("---"*10 + "\n" + showPerson)
-        personList.append(show_data(personData, 3))
+        person_data = generate_person(national=national, sex=sex, age=age)
+        show_person = show_data(person_data, 2)
+        print("---"*10 + "\n" + show_person)
+        personList.append(show_data(person_data, 3))
 
-    #write data to csv
-    csv_writer(personList)
+    csv_writer(personList)              #write data to csv
     if gui:
-        gui_app(personData)           #to show data and flag, map, photo 
+        gui_app(person_data)             #to show data and flag, map, photo
 
 
 if __name__ == "__main__":
