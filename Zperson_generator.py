@@ -229,24 +229,30 @@ def show_data(dictio, dataType=0):
         return "\n".join(dictio.values())
 
 class Application(tk.Frame):
-    def __init__(self, master=None, diaryName="DIARY.txt", sex="male"):
+    def __init__(self, master=None, data=[]):
         super().__init__(master)
         self.pack()
-        self.sex = sex
-        self.name = diaryName
+        self.data = data
+        self.sex = data["Sex"]
+        self.name = data["Name"]
+        self.surname = data["Surname"]
+        self.birth = data["Birthdate"]
+        self.natio = data["Nationality"]
+        self.age = data["Age"]
+        self.email = data["Email"]
+        self.phone = data["Phone"]
         self.root = master
         self.create_widgets()
 
     def create_widgets(self):     
-        self.info_natio = tk.Label(text="Nationality: Random").pack(expand="yes", fill="both", side="bottom")
+        self.info_phone = tk.Label(text="Phone: {}".format(self.phone)).pack(expand="yes", fill="both", side="bottom")     
+        self.info_email = tk.Label(text="Mail: {}".format(self.email)).pack(expand="yes", fill="both", side="bottom")
+        self.info_age = tk.Label(text="Age: {}".format(self.age)).pack(expand="yes", fill="both", side="bottom")
+        self.info_birth = tk.Label(text="Birthdate: {}".format(self.birth)).pack(expand="yes", fill="both", side="bottom")
         self.info_sex = tk.Label(text="Sex: {}".format(self.sex)).pack(expand="yes", fill="both", side="bottom")
-        self.info_birth = tk.Label(text="Birthdate: {}".format(self.sex)).pack(expand="yes", fill="both", side="bottom")
-        self.info_age = tk.Label(text="Age: {}".format(self.sex)).pack(expand="yes", fill="both", side="bottom")
-        self.info_name = tk.Label(text="Name: {}".format(self.sex)).pack(expand="yes", fill="both", side="bottom")
-        self.info_surname = tk.Label(text="Surname: {}".format(self.sex)).pack(expand="yes", fill="both", side="bottom")
-        self.info_mail = tk.Label(text="Mail: {}".format(self.sex)).pack(expand="yes", fill="both", side="bottom")
-        self.info_phone = tk.Label(text="Phone: {}".format(self.sex)).pack(expand="yes", fill="both", side="bottom")
-          
+        self.info_natio = tk.Label(text="Nationality: {}".format(self.natio)).pack(expand="yes", fill="both", side="bottom")
+        self.info_surname = tk.Label(text="Surname: {}".format(self.surname)).pack(expand="yes", fill="both", side="bottom")
+        self.info_name = tk.Label(text="Name: {}".format(self.name)).pack(expand="yes", fill="both", side="bottom")
 
         self.save = tk.Button(self)
         self.save["text"] = "OK"
@@ -278,12 +284,12 @@ class Application(tk.Frame):
         self.panel.pack(side = "right")
         
         
-def gui_app():        
+def gui_app(person):        
     root = tk.Tk()
     root.geometry('{}x{}'.format(500, 400))
     root.resizable(width=False, height=False)
-    root.wm_title("diary app by stranger")
-    app = Application(master=root, diaryName="DIARY.txt", sex="male")
+    root.wm_title("zperson")
+    app = Application(master=root, data=person)
     app.mainloop()
 
 def get_opt(argv):
@@ -391,10 +397,10 @@ def main(argv):
         print("---"*10 + "\n" + showPerson)        
         personList.append(show_data(personData, 3))
 
-
+        
     #write data to csv
     csv_writer(personList)
-    #gui_app()           #to show data and flag, map, photo 
+    gui_app(personData)           #to show data and flag, map, photo 
 
 if __name__ == "__main__":
     global PATH; PATH = script_path()
