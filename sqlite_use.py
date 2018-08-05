@@ -157,9 +157,9 @@ def update_db(file, interactive=False):
         else:
             columnNo = int(columnNo)
         if appendLast:
-            data = [" ".join([item.split()[columnNo], item.split()[-1]]) for item in data if item]
+            data = [" ".join([item.split()[columnNo], item.split()[-1]]) for item in data if item.strip()]
         else:
-            data = [item.split()[columnNo] for item in data if item]    #'if item' helps with empty lines
+            data = [item.split()[columnNo] for item in data if item.strip()]    #'if item' helps with empty lines
             
     db = sqlite3.connect("zperson_stuff.db") #if 1st time it creates new db
     c = db.cursor()
@@ -174,19 +174,24 @@ def update_db(file, interactive=False):
         #replaced synonims
         new_data = []
         for item in data:
-           if item[2].lower() in ("boy", "male"):
-               new_data.append(tuple(list(item[:2]) + ["male"]))
-           elif item[2].lower() in ("girl", "female"):
-               new_data.append(tuple(list(item[:2]) + ["female"]))
-           else:
+            #print(item, item[-1].lower(),end="")
+            #input()
+            if item[-1].lower() in ("boy", "male"):
+                new_data.append(tuple(list(item[:-1]) + ["male"]))
+                #print("male appended:", tuple(list(item[:-1]) + ["male"]))
+            elif item[-1].lower() in ("girl", "female"):
+                new_data.append(tuple(list(item[:-1]) + ["female"]))
+                #print("female appended:", tuple(list(item[:-1]) + ["female"]))
+            else:
                 pass
+            #print()
+            #print()
         data = new_data
         #data = [tuple(item[:2] + "male") if item[2].lower() in ("boy", "male") elif item[2].lower() in ("girl", "female") tuple(item[:2] + "female") else (,) for item in data]
         #print(data)
         #return False
     else:
         data = [tuple([item.strip()] + additional) for item in data if item]        
-    
     data = [tuple([item.capitalize() for item in line[:-1]] + [line[-1]]) for line in data]     #capitalize data except the last one
     print("<db> data to update:\n{}".format(data))
     if input("<db> do you want to update with? (y/n)\n").lower() in "y":

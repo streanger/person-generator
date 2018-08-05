@@ -1,0 +1,15 @@
+names,ethiopia, both
+Abai	The Nile River	Girl	
+Belkis	She is the Queen of Sheba	Girl	
+Benaim	Son of the right hand.	Boy	
+Boreda	One of the woreds in Ethiopia	Unisex	
+Eremias	God will uplift	Boy	
+Hadlea	variation of the name hadley	Girl	
+Hakiem	Doctor	Boy	
+Kees	Kess means The Priest of an Ethiopian Church	Girl	
+Makeda	One who achived Greatness	Girl	
+Mekeda	Vastness, Magnitude in size, greater than anything	Girl	
+Misgana	A truthful person, who speaks truth.	Girl	
+Najjash	A serpent from Rio Negro	Boy	
+Ras	A leader, duke	Boy	
+Tariku	Events surrounding his birth	Boy

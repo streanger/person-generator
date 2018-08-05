@@ -327,13 +327,15 @@ def get_opt(argv):
             return False
         elif opt in '-i':
             #if arg in os.listdir():
-            try:
+            #try:
+            if 1:
                 status = sql.update_db(arg, interactive=True)
                 if status:
                     print("--< database updated succesfully")
                 else:
-                    raise Error
-            except:
+                    raise Exception
+            #except:
+            else:
                 print("--< failed to update database with: '{}'".format(arg))
             return False
         elif opt in "-n":
@@ -427,4 +429,7 @@ todo:
 30.07.18
 to_do:
 -need to add africa surnames and names for all continents
+
+6.08.18
+-much more rubbish than before :)
 '''
