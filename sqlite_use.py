@@ -86,7 +86,7 @@ def parse_config(config):
             if len(config) > 2:
                 national = config[1]
                 sex = config[2]
-                if not sex in ("male", "female"):
+                if not sex in ("male", "female", "both"):
                     print("<db> wrong sex: {} should be 'male' or 'female'".format(table_name))
                     return "", []
                 additional = [national, sex]
@@ -115,14 +115,23 @@ def update_db(file, interactive=False):
         print("<db> you specified wrong file: {}".format(file))
         return False
     content = read_file(file, True)
+    content = [item.lower() for item in content]        #every line as lowercase
     if not content:
         print("<db> wrong file specified, or empty one")
         return False
     else:
-        config = content[0].split(",")
+        config = [item.strip() for item in content[0].split(",")]
         data = content[1:]
+    table_name, additional = parse_config(config)
+    if not table_name or not additional:
+        print("<db> wrong config file")
+        print("<db> write 1st line, and other data like in example below")
+        print("\tnames,poland,male")
+        print("\tZenon")
+        print("\tLudwik")
+        return False
     #replace rubbish:
-    toReplace = [",", ".", "/"]
+    toReplace = [",", ".", "/", "\t"]
     for sign in toReplace:
         data = [item.replace(sign, " ") for item in data] 
     
@@ -139,38 +148,53 @@ def update_db(file, interactive=False):
                 break                
         print("<db> columns number:", columns)
         columnNo = input("<db> choose column to update with: 0-{}\n".format(columns))
+        appendLast = False
+        if additional[-1] == "both":
+            appendLast = True
         if not str(columnNo) in [str(x) for x in range(columns)]:
             print("<db> wrong column specified")
             return False
         else:
             columnNo = int(columnNo)
-        data = [item.split()[columnNo] for item in data if item]    #'if item' helps with empty lines
-        print("<db> data to update:", data)
-        if input("<db> do you want to update with? (y/n)\n").lower() in "y":
-            pass
+        if appendLast:
+            data = [" ".join([item.split()[columnNo], item.split()[-1]]) for item in data if item]
         else:
-            return False
-        
+            data = [item.split()[columnNo] for item in data if item]    #'if item' helps with empty lines
+            
     db = sqlite3.connect("zperson_stuff.db") #if 1st time it creates new db
     c = db.cursor()
     c.execute('CREATE TABLE IF NOT EXISTS {}(data TEXT, national TEXT, sex TEXT)'.format("names"))
     c.execute('CREATE TABLE IF NOT EXISTS {}(data TEXT, national TEXT)'.format("surnames"))
     
-  
-    table_name, additional = parse_config(config)
     #print("--< table_name: {}\n--< additional: {}".format(table_name, additional))
-    if not table_name or not additional:
-        print("<db> wrong config file")
-        print("<db> write 1st line, and other data like in example below")
-        print("\tnames,poland,male")
-        print("\tZenon")
-        print("\tLudwik")
-        return False
+
+    #remove whitespaces and join additional
+    if additional[-1] == "both":
+        data = [tuple([item.strip().split()[0], additional[0], item.strip().split()[-1]]) for item in data if item]
+        #replaced synonims
+        new_data = []
+        for item in data:
+           if item[2].lower() in ("boy", "male"):
+               new_data.append(tuple(list(item[:2]) + ["male"]))
+           elif item[2].lower() in ("girl", "female"):
+               new_data.append(tuple(list(item[:2]) + ["female"]))
+           else:
+                pass
+        data = new_data
+        #data = [tuple(item[:2] + "male") if item[2].lower() in ("boy", "male") elif item[2].lower() in ("girl", "female") tuple(item[:2] + "female") else (,) for item in data]
+        #print(data)
+        #return False
     else:
-        #remove whitespaces and join additional
         data = [tuple([item.strip()] + additional) for item in data if item]        
-        print("<db> data to update:\n{}".format(data))       
     
+    data = [tuple([item.capitalize() for item in line[:-1]] + [line[-1]]) for line in data]     #capitalize data except the last one
+    print("<db> data to update:\n{}".format(data))
+    if input("<db> do you want to update with? (y/n)\n").lower() in "y":
+        pass
+    else:
+        return False
+
+    #return False    #just for debug
     if table_name == "names":
         c.executemany('INSERT INTO %s VALUES (?,?,?)' % table_name, data)
     elif table_name == "surnames":

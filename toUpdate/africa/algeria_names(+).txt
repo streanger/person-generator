@@ -1,0 +1,19 @@
+names,algeria,both
+Basem	boy
+Khalil	boy
+Said	boy
+Farid	boy
+Hakim	boy
+Sami	boy
+Mustafa	boy
+Zuthimalin	boy
+
+Basira	girl
+Samia	girl
+Gazala	girl
+Imane	girl
+Maisah	girl
+Aarfah	girl
+Hamia	girl
+
+

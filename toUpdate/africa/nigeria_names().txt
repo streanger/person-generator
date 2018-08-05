@@ -1,0 +1,396 @@
+names,nigeria,both
+Abaeze	Branch of the kings	Boy	
+Abayomrunkoje	God won't allow humiliation.	Boy	
+Abebi	We asked for a girl child.	Girl	
+Abegunde	One born during the holiday.	Boy	
+Abeo	The bringer of happiness .	Boy	
+Abidugun	One born before the war.	Boy	
+Abiodun	One born at the time of festival.	Boy	
+Achojah	Rise up to challenge	Boy	
+Adaego	Daughter of wealth	Girl	
+Adaeze	Princess, daughter of the king.	Girl	
+Adaku	A girl born into wealthy family or the one who brings wealth to the family.	Girl	
+Adankwo	One born on fourth day.	Girl	
+Adaobi	The first daughter in the family compound.	Girl	
+Adaolisa	God's daughter.	Girl	
+Adaoma	A good and virtuous lady.	Girl	
+Adaora	Daughter of all	Girl	
+Adaugo	Beautiful daughter or daughter of an eagle.	Girl	
+Adaure	Daughter of Uruala, a town in Imo State.	Girl	
+Adebamgbe	A Nigerian term meaning royalty dwells within me.	Boy	
+Adebiyi	The royal one.	Boy	
+Adebowale	Return of the crown; refers to a child born after many years of waiting	Boy	
+Adedayo	The crown has turned to joy.	Boy	
+Adefolake	Your wealth supports us.	Girl	
+Aderiyike	The pampered crown.	Girl	
+Afamefuna	My name will not be lost.	Boy	
+Agbarha	Born in Agbarha	Boy	
+Ahunna	One with the body of her father.	Girl	
+Ahwinahwi	A really black or dark individual	Boy	
+Akachukwu	The hand of God.	Boy	
+Akin	Yoruban - Brave, Heroic ; Hebrew - Man	Boy	
+Akpenvwoghene	Praise God	Unisex	
+Akpobome	My own life	Unisex	
+Akpofure	Life is now peaceful	Boy	
+Akporovwovwo	Good life in later years	Unisex	
+Akuada	A girl born into a wealthy family.	Girl	
+Akunna	Father's wealth.	Boy	
+Amaechi	Who knows tomorrow?	Boy	
+Amandi	Trust no one, one who doesn't trust anyone easily.	Boy	
+Amobi	Who knows the heart of man?	Boy	
+Anaborhi	The one who is born with good destiny	Unisex	
+Anozie	We are now settled or well positioned.	Boy	
+Anwilichukwu	God' s joy.	Girl	
+Anwuli	Joy, a joyous and happy girl.	Girl	
+Anwulichukwu	Joy of the lord.	Girl	
+Anwulika	My joy is great or joy is greater.	Girl	
+Apunanwu	A precious and beautiful girl untainted by the sun.	Girl	
+Aretta	A charming and enchanting woman.	Girl	
+Arinzechukwu	Thanks be to God.	Boy	
+Aruegodore	We have come home	Boy	
+Asaroyoma	Comfort zones	Girl	
+Ataikiru	Talk or plan before taking action	Boy	
+Avwunudiogba	Those who profess strength with mere talk	Unisex	
+Azi	Youth	Boy	
+Azubuike	Strength gained from experiences of the past.	Boy	
+Bako	A Nigerian term meaning guest.	Boy	
+Banjoko	Don't ever leave me.	Boy	
+Binyelum	Stay with me.	Girl	
+Bolanile	The wealth of this house.	Girl	
+Bunkechukwu	The one who belongs to God.	Boy	
+Chetachi	One who always remembers God.	Boy	
+Chetachukwu	One who always remembers God.	Boy	
+Chiagozie	God has blessed me.	Girl	
+Chiasoka	God is too sweet.	Girl	
+Chiazokam	God has saved me well.	Girl	
+Chibarameze	God has made me a king.	Girl	
+Chibinobim	God dwells in my heart.	Girl	
+Chibuike	God is strength.	Boy	
+Chibundo	God is my shelter	Girl	
+Chibundu	God is life	Boy	
+Chibunna	God is my father	Boy	
+Chibuogu	God is my strength.	Girl	
+Chibuzor	God first or God leads	Boy	
+Chichima	A sweet and precious girl.	Girl	
+Chidiadi	There is God	Boy	
+Chidiebere	God is merciful	Boy	
+Chidiebube	God is glorious and great.	Boy	
+Chidozie	May God fix it and make it good for me.	Boy	
+Chiekezie	God has made it good for me.	Boy	
+Chiemeka	God has done well.	Boy	
+Chiemelie	God has won.	Boy	
+Chiemezie	God has made it good for me.	Boy	
+Chikanma	God is better than any other thing.	Boy	
+Chikezie	May God appease.	Boy	
+Chimankpa	God know my wants.	Boy	
+Chimaobi	God knows the heart.	Boy	
+Chimezie	Let God do it.	Boy	
+Chinaka	God decides or God schedules.	Boy	
+Chinara	Received by God	Girl	
+Chinecherem	God thinks and worries on my behalf.	Boy	
+Chinechezirim	God thinks good of me.	Girl	
+Chisimdi	God says I shall live.	Girl	
+Chuk	The Supreme divine; the one beyond everything	Boy	
+Chukwudumaga	God leads me.	Boy	
+Chukwuemerie	God has won.	Boy	
+Chukwuma	God knows, God knows better than anyone.	Boy	
+Chuwudubem	Lead me, oh God.	Boy	
+Daberechi	Lean on God, one who is dependent on God.	Girl	
+Daluchi	Thank God.	Girl	
+Daraja	One who is valuable and important to everyone.	Girl
+Dayo	Arrival of joy	Unisex
+Debare	One born during good times.	Boy	
+Diarachukwundu	Live for God	Boy	
+Durojaiye	One who waits for the joy of life.	Boy	
+Ebhaleleme	A term meaning 'you won't follow my lead'.	Boy	
+Ebhaleleme	A term meaning "you won't follow my lead"	Boy	
+Ebubechukwu	The glory and greatness of God.	Boy	
+Ebunoluwa	The God's gift	Girl	
+Echezonanna	Don't forget your God and your father.	Boy	
+Edaferierhi	The rich have good destiny	Boy	
+Edafetanure	The wealthy have spoken	Boy	
+Edemirukaye	The day I did them a favor	Boy	
+Edewor	Sacred day of worship in traditional religion	Boy	
+Edosio	Rainy day	Boy	
+Efemena	Here is my wealth	Unisex	
+Efemuaye	Those intoxicated with riches	Boy	
+Efetobo	Wealth is achieved	Unisex	
+Efetobore	Wealth has now been achieved	Boy	
+Egbo	Forest	Boy	
+Egharevba	One who is not bothered of enemies.	Boy	
+Eghwrudjakpor	I have come to stay	Unisex	
+Eguono	Love	Unisex	
+Ejaife	Let them be rich	Boy	
+Ejaita	Let them say	Unisex	
+Ejikeme	It's not by power.	Boy	
+Ejiroghene	Praise God	Unisex	
+Ejokparoghene	Let's trust in God	Unisex	
+Ejomafuvwe	Let peace reign in my life	Unisex	
+Ejoyovwi	Let it be good	Unisex	
+Ekemma	One who was born on Eke market day.	Girl	
+Ekenedilichukwu	Thanks be to God	Boy	
+Ekong	War or battle.	Boy	
+Elochukwu	God's will	Boy	
+Emarejedje	The elderly also run for life	Unisex	
+Emenike	It's not by might or power.	Boy	
+Emerho	A special type of catfish	Boy	
+Emetemedia	I will always remain a lady	Girl	
+Emeterhire	Girls have arrived	Girl	
+Emetitiri	Mine is famous	Boy	
+Emilohi	Only God is great.	Girl	
+Emudiaga	Let's stand firmly	Boy	
+Emuobosa	Your own thing is precious	Unisex	
+Emuvoke	Everything has time	Unisex	
+Enajemete	These are also girls	Girl	
+Enakpodia	The way life should to be	Boy	
+Enitekiru	Think before you act	Boy	
+Enivwenaye	Compare my success with those of my enemies	Unisex	
+Enofe	One who is rich.	Boy	
+Enohor	Blessing	Girl	
+Enyinnaya	His father's friend.	Boy	
+Epkereamaka	One who finds prayer is good and wonderful.	Girl
+Erhiaganoma	Guardian spirit overpowers the body	Boy	
+Erhimeyoma	My guardian spirit (God) is good	Unisex	
+Erhinyoja	God hears our prayers	Unisex	
+Erhinyuse	God answers our prayers	Unisex	
+Erhiroghene	The spirit of God	Unisex	
+Erhue	A special breed of cow used for traditional ceremonies	Boy	
+Erhuvwun	Beauty	Unisex	
+Erukainure	We have helped them	Unisex	
+Eseoghene	God's gift	Unisex	
+Eserovwe	God's grace	Unisex	
+Esomchi	Walking with the lord or one who follows God	Boy	
+Etaidaferua	Words of the wealthy are more acceptable	Boy	
+Etanomare	Freed from blame or despair	Boy	
+Etaredafe	Words of the wealthy	Boy	
+Ewelike	It's not by power	Boy	
+Ezesinachi	The chief is from God.	Boy	
+Ezeudo	King of peace.	Boy	
+Eziamaka	One who believes that good things are obtained by going out.	Girl	
+Ezichi	Good God!	Girl	
+Ezinne	The good mother.	Girl	
+Folade	The honor arrives.	Girl	
+Folashade	Honor bestows a crown.	Girl	
+Ganiru	Good luck	Boy	
+Ginika	What can be greater than God?	Girl	
+Ginikanwa	What is greater than a child?	Girl	
+Golibe	Rejoice, a joyous fellow.	Boy	
+Gosifechukwu	Show the light of God to all.	Boy	
+Hanyechukwu	Leave it for God.	Boy	
+Hassana	Twin Girl (Nigerian)	Girl	
+Ibironke	The family will love this child.	Girl	
+Idaramfon	Happiness is free.	Girl	
+Idogbe	The second child born after twins.	Boy	
+Ifeanyichukwu	God is most powerful or no one is greater than God.	Boy	
+Ifechi	The light of God.	Boy	
+Ifechiluru	What God has done.	Girl	
+Ifechukwu	The light of God.	Girl	
+Ifechukwude	What God has written.	Boy	
+Ifedimma	Something good	Girl	
+Ifekristi	The light of Christ.	Unisex	
+Ifemyolunna	What I asked of the lord.	Boy	
+Ifeoluwapo	God's love is plenty.	Girl	
+Ifeyinwa	Nothing can be compared to a child.	Girl	
+Ifunanya	Love	Girl	
+Igberaharha	The poor take the blame	Boy	
+Ighomuedafe	Money intoxicates the wealthy	Boy	
+Ighovavwerhe	There is joy in riches	Boy	
+Igitioluwotilaiye	The tree of God is rooted and strong.	Unisex	
+Igwebuike	Strength in numbers.	Boy	
+Iheanacho	Precious or what everyone seeks.	Boy	
+Ihuoma	One who is favored.	Girl
+Ihuomachukwu	God's favor.	Girl	
+Ijeawele	A smooth journey.	Girl	
+Ijemma	A good journey.	Girl	
+Ijeoma	A good journey in life.	Girl	
+Ikechukwu	The power of God.	Boy	
+Ikemba	Strength of the nation.	Boy	
+Ikponmwosa	Thank God, one who is thankful to God for everything.	Unisex	
+Ileara	A healthy child.	Girl	
+Ilozumba	Nigerian term meaning, our distant home is forgotten.	Boy	
+Ilozumba	Nigerian term meaning, our distant home is forgotten.	Boy	
+Imbiana	Title of a unity song in Nigeria.	Girl	
+Inegbedion	Nigerian term meaning family supports me.	Boy	
+Inegbedion	Nigerian term meaning family supports me.	Boy	
+Iretomiwa	Blessing has come to me, a girl who has brought blessings to her family.	Girl	
+Irikefe	First to become wealthy	Boy	
+Isamotu Olalekan	Without God I'm destitute.	Boy	
+Isinachi	One who is sent from God.	Boy	
+Isioma	One who is fortunate and blessed.	Girl	
+Isoken	One who is contented with her destiny.	Girl	
+Iyawa	Ability or skill. A skillful woman.	Girl	
+Jachike	Give praise to God or Hail God.	Boy	
+Jaiyesimi	One who believes in enjoying the life.	Unisex	
+Jayamma	Praise to the lord.	Boy	
+Jideofor	Nigerian term meaning, you are justified.	Boy	
+Jol	Great lover of art and culture	Girl	
+Kachisicho	God's desire	Boy	
+Kachiside	As God has written it or the will of God.	Boy	
+Kaetochukwu	May God be praised.	Boy	
+Kainyechukwuekene	Let's praise the Lord.	Boy	
+Kairaluchukwu	Let's leave it to God.	Girl	
+Kaisoluchukwu	Let's follow God.	Girl	
+Kambili	Let me live or I shall live.	Boy	
+Kamdilichukwu	Let me live for God.	Boy	
+Kamfeechi	Let me worship God.	Boy	
+Kamfeechukwu	Let's worship God or let me praise God	Girl	
+Kamharida	I shall not fall.	Girl	
+Kamsiyonna	God has granted my request.	Girl	
+Kamtochukwu	Let me praise God.	Girl	
+Kanayochukwu	Let's keep begging from the lord.	Boy	
+Kanyinulia	Let's rejoice and have fun.	Girl	
+Kaodinakachi	Leave your destiny to God.	Boy	
+Karaluchukwu	Let's leave it for God.	Girl	
+Kasarachukwu	Tell it to God, one who always confides in God.	Girl	
+Kasiemobi	Comfort me or console me.	Girl	
+Kelechi	Glorify God.	Boy	
+Kentoroabasi	I am glorifying God.	Boy	
+Kesandu	One who spreads life to all.	Girl	
+Kosarachi	Tell it to God.	Girl	
+Kristibueze	Christ is the king.	Boy	
+Kufreabasi	Do not forget God, one who always remembers God.	Unisex	
+Kwento	One who protects the family name from destruction	Unisex	
+Lebechi	Look unto God.	Girl	
+Lotachukwu	Remember God	Boy	
+Lotachukwu	Remember your God.	Girl	
+Lotanna	Remember the father or the God	Boy	
+Machie	Replacement of a lost gem.	Unisex	
+Maduenu	A term meaning The impermanence of life.	Unisex	
+Maduenu	A term meaning The impermanence of life.	Unisex	
+Maduka	People are worth more than riches.	Boy	
+Makuachukwu	Embrace God.	Girl	
+Mfoniso	Nigerian term, meaning good luck.	Boy	
+Miriodere	I now have a name	Unisex	
+Mitaire	I have achieved their match	Unisex	
+Mkpulunma	A thing of beauty.	Girl	
+Mmasichukwu	The will of God.	Girl	
+Mobo	Freedom	Boy	
+Modupeore	Thank you God for this gift.	Unisex	
+Mofoluwakemi	Given for the Lord's blessing.	Girl	
+Mongo	A famous man.	Boy	
+Monjolaoluwa	Enjoying the wealth of God.	Unisex	
+Morenikeji	This child resembles me.	Unisex	
+Munachimso	One who always agrees with God.	Boy	
+Nagodeallah	I thank God.	Unisex	
+Naija	The one from the Niger river	Girl	
+Nasha	In Nigerian it means born during the rainy season. In Persian it means Judge	Unisex	
+Nchedochukwu	God's protection.	Boy	
+Nchekwube	Trust in God.	Girl	
+Ndidi	One who is patient.	Girl	
+Ndulue	Nigerian term meaning hope this one makes it.	Boy	
+Ndulue	Nigerian term meaning hope this one makes it.	Boy	
+Ngozichukwuka	God's blessings are best.	Girl	
+Niyilolawa	The wealth is here.	Unisex	
+Nneka	My mother is the best in the world.	Girl	
+Nnenne	Resembles mother's mother.	Girl	
+Norioghene	Look at God's judgment	Unisex	
+Nwabueze	Child is the king	Boy	
+Oba	The king	Boy	
+Obasi	A Sikh that means a person who is very attractive or very charming.	Boy	
+Obiageli	One who is born into wealth.	Girl	
+Obiajulu	My heart is at peace.	Boy	
+Obiefune	Nigerian word meaning do not lose hope.	Boy	
+Obiefune	Nigerian word meaning do not lose hope.	Boy	
+Obinna	Combination of Sanskrit words "Moh" and "Under" that means the charm of a King.	Boy	
+Obioma	The Charm of a King that wins over the hearts of others, One who can win with his charm.	Girl	
+Oboganriemu	Be strong to survive	Boy	
+Ochuko	Hindu name of deity Lord Krishna.	Boy	
+Odafe	Rich individual	Boy	
+Odavwaro	I am contented	Unisex	
+Ogbamremu	The brave meets a lot of challenges	Boy	
+Ogechukwukana	The time spent worshiping God is the best.	Unisex
+Oghenebrume	God decided in my favor	Unisex	
+Oghenechovwe	God aided me	Unisex	
+Oghenefejiro	God is praiseworthy	Unisex	
+Oghenegaren	God is great	Unisex	
+Oghenekevwe	God gave me	Unisex	
+Ogheneme	My God	Unisex	
+Oghenemine	I look up to God	Unisex	
+Oghenerukevwe	God did this for me	Unisex	
+Ogheneruno	God has done so much	Unisex	
+Oghenetega	God is worship worthy	Unisex	
+Oghenochuko	God provides my support	Unisex	
+Oghomena	Here is my respect	Unisex	
+Oghonoro	Respect is greater than money	Unisex	
+Ogoro	Frog	Boy	
+Ohwahwa	Cold season	Boy	
+Ohwofasa	A person's status should be defined by his achievement	Boy	
+Ohwonigho	A person is greater than riches	Boy	
+Ojakorotu	This is a group challenge	Boy	
+Ojanomare	I have met the challenge	Unisex	
+Okagbare	I have all styles and skills	Boy	
+Okoro	Man	Boy	
+Okpara	One who is born in Okpara	Boy	
+Okpogoro	A big toad	Boy	
+Oladele	Persons of success, pupil of triumph.	Unisex	
+Olayemi	One who is worthy of wealth.	Unisex	
+Olorunyomi	God has saved me	Unisex	
+Oluchi	The work of god.	Girl	
+Oluebube	Miracle.	Girl	
+Olumoroti	I stand with God	Unisex	
+Olusola	God has blessed me	Unisex	
+Oluwabusola	God adds to my wealth.	Girl	
+Oluwadunmininu	God has gladden my heart.	Unisex	
+Oluwafunbi	God gave this to me.	Girl	
+Oluwagbenga	God has lifted me up.	Unisex	
+Oluwatoke	God is worthy to be adored.	Unisex	
+Ometeko	Girl born in Lagos	Girl	
+Omolade	Child of the crown.	Girl	
+Omonigho	Child is greater than money	Unisex	
+Omonoro	Child is greater than gold	Unisex	
+Omorinsola	The child who walks into wealth.	Girl	
+Omotejohwo	A girl is also a human being	Girl	
+Omotekoro	A girl is like gold	Girl	
+Omotore	Girl's birth brings festivity	Girl	
+Omotughele	Girl from Ughelli	Girl	
+Omotukane	Girl born in diaspora	Girl	
+Onajite	This is sufficient	Unisex	
+Onanojah	This is a challenge	Boy	
+Onochie	The one who can replace the status of father.	Boy	
+Onogaganmue	One who is intoxicated with power	Boy	
+Onoharhese	Who blames good deeds?	Unisex
+Onoharhigho	Who blames riches?	Boy	
+Orisa	An angelic manifestation.	Girl	
+Orodena	The great one	Boy	
+Osarogie	God is the king.	Girl	
+Ovie	King	Boy	
+Oviereya	Queen	Girl	
+Oyibonanarhoro	A white skinned individual	Boy	
+Oyiborhoro	He who is fair or white skinned	Boy	
+Oyiborode	A big and fair person	Boy	
+Oyinlola	Nigerian term, meaning wealth is sweet.	Girl	
+Oyovwikerhi	May my guardian spirit be blessed	Unisex	
+Rayowa	Life	Girl	
+Sade	Honor bestowes the crown	Girl	
+Sapele	A boy who is born in Sapele	Boy	
+Somtochukwu	Praise God with me.	Girl	
+Tambara	A girl who is at ease.	Girl	
+Tayo	Boy full of happiness	Boy	
+Tejumola	One who looks forward to better days.	Unisex	
+Temidire	Mine has turned to blessings.	Unisex	
+Timilehin	God is with you.	Girl	
+Tujuka	Cheerful	Girl	
+Udumebraye	My presence gives them heartache	Boy	
+Udumelue	Crowned with honor and pride	Girl	
+Ugoulo	Pride of a home.	Girl	
+Uhwokori	The one who is born in Uhwokori	Boy	
+Uloaku	Nigerian term for bank or house of wealth.	Girl	
+Uloho	Iroko tree	Boy	
+Umukoko	Young woman	Girl	
+Umukoro	Young man	Boy	
+Umuto	Woman	Girl	
+Urhie	River	Boy	
+Uvo	Dry or sunny season	Boy	
+Uzoma	One born during a journey	Boy	
+Yejide	One who looks like her mother.	Girl	
+Yoruba	Peace	Girl	
+Zauna	To be alive	Girl	
+Zikoranachidinma	Show the world that Lord is good.	Girl	
+Zinachidinma	Show that the Lord is good.	Girl	
+Zoputan	The protector	Girl
+	
+
+
+
+
+

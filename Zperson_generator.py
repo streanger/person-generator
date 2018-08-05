@@ -174,7 +174,7 @@ def capitalize_dictio(dictio):
             continue
         #if type(val) is str:
         if isinstance(val, str):
-            dictio[key] = val.capitalize()
+            dictio[key] = " ".join([item.capitalize() for item in val.split("_")])
     return dictio
 
 def generate_person(national="Random", sex="Random", age=0):
@@ -332,9 +332,9 @@ def get_opt(argv):
                 if status:
                     print("--< database updated succesfully")
                 else:
-                    print("--< failed to update database")
+                    raise Error
             except:
-                print("no such file: '{}'".format(arg))
+                print("--< failed to update database with: '{}'".format(arg))
             return False
         elif opt in "-n":
             #national_list = ["english", "polish", "ukrainian"]

@@ -35,9 +35,15 @@ if __name__ == "__main__":
                  "Lithuania", "Luxembourg", "Malta", "Macedonia", "Moldova", "Netherlands", "Norway", "Poland",
                  "Portugal", "Romania", "Russia", "Serbia", "Slovakia", "Slovenia", "Spain", "Canary Islands", "Sweden",
                  "Switzerland", "Turkey", "Ukraine", "United Kingdom", "United Kingdom"]  #europe
-    filesList = []  #africa
-    filesList = []  #empty list to not write a rubbish stuff all around
+    filesList = ['Nigeria', 'Ethiopia', 'Egypt', 'Democratic Republic of the Congo', 'South Africa', 'Tanzania', 'Kenya', 'Sudan', 'Algeria', 'Uganda',
+                 'Morocco', 'Mozambique', 'Ghana', 'Angola', 'Ivory Coast', 'Madagascar', 'Cameroon', 'Niger', 'Burkina Faso', 'Mali',
+                 'Malawi', 'Zambia', 'Somalia', 'Senegal', 'Chad', 'Zimbabwe', 'South Sudan', 'Rwanda', 'Tunisia', 'Guinea', 'Benin',
+                 'Burundi', 'Togo', 'Eritrea', 'Sierra Leone', 'Libya', 'Republic of the Congo', 'Central African Republic', 'Liberia', 'Mauritania', 'Namibia',
+                 'Botswana', 'Gambia', 'Equatorial Guinea', 'Lesotho', 'Gabon', 'Guinea-Bissau', 'Mauritius', 'Swaziland', 'Djibouti',
+                 'Réunion', 'Comoros', 'Cape', 'Western Sahara', 'Mayotte', 'Sao Tomé and Príncipe', 'Seychelles', 'Saint Helena']  #africa
+    #filesList = []  #empty list to not write a rubbish stuff all around
     filesList = [item.lower().replace(" ", "_") for item in filesList]
-    content = "surnames"
+    #content = "surnames"
+    content = "names"
     main(filesList, content)
     
