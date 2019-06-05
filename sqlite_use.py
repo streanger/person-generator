@@ -3,15 +3,18 @@ import sqlite3
 import os
 import sys
 
+
 def sql_help():
     print("<db> import it rather than use...")
     print("<db> put some useful things here")
-
+    
+    
 def script_path():
     path = os.path.realpath(os.path.dirname(sys.argv[0]))
     os.chdir(path)  #it seems to be quite important
     return path
-
+    
+    
 def clear_db(dbName="zperson_stuff.db"):
     #it will remove all data and create new db
     try:
@@ -34,7 +37,8 @@ def clear_db(dbName="zperson_stuff.db"):
     except:
         print("failed to remove db file: {}".format(dbName))
         return False
-    
+        
+        
 def get_tables(database):
     conn = sqlite3.connect(database)
     c = conn.cursor()
@@ -45,6 +49,7 @@ def get_tables(database):
         return False
     tables = c.fetchall()
     return tables
+    
     
 def data_from_db(TABLE_NAME, toGet, getBy=[]):
     db = sqlite3.connect("zperson_stuff.db")
@@ -62,7 +67,8 @@ def data_from_db(TABLE_NAME, toGet, getBy=[]):
     c.close()
     db.close()  
     return dataOut
-
+    
+    
 def read_file(file_name, rmnl=False):
     '''read specified file and remove newlines depend on "rmnl" parameter'''
     path = os.path.realpath(os.path.dirname(sys.argv[0]))
@@ -75,8 +81,9 @@ def read_file(file_name, rmnl=False):
                 fileContent = file.readlines()
     except:
         fileContent = []
-    return fileContent    
-
+    return fileContent
+    
+    
 def parse_config(config):
     '''parse config file, to get table name, and additional data'''
     config = [item.lower() for item in config]      #get it to the floor
@@ -108,7 +115,8 @@ def parse_config(config):
     else:
         print("<db> no config to parse: {}".format(config))
         return "", []
-
+        
+        
 def update_db(file, interactive=False):
     '''update database with specified file. Interactive mode is optional'''
     if not os.path.isfile(file):
@@ -231,3 +239,5 @@ https://en.wikipedia.org/wiki/List_of_most_common_surnames_in_South_America
 https://en.wikipedia.org/wiki/List_of_most_popular_given_names#Americas
 
 '''
+
+

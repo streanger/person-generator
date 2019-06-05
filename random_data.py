@@ -9,7 +9,8 @@ def rm_pl_signs(plString):
         if key in plString:
             plString = plString.replace(key, val)
     return plString
-
+    
+    
 def get_email(personData):
     #make some algoritms
     post = random.choice(["gmail.com", "wp.pl", "o2.pl", "yahoo.com", "hotmail"])
@@ -29,7 +30,8 @@ def get_email(personData):
     else:
         fakeEmail = (personData["Name"]).lower() + "_" + (personData["Surname"]).lower() + "@" + post
     return rm_pl_signs(fakeEmail)
-
+    
+    
 def random_date(age=0):
     if not age:
         age = random.randrange(18,51)
@@ -42,13 +44,15 @@ def random_date(age=0):
     date = (datetime.datetime.strptime(randomTime, format) - relativedelta(years=age)).strftime("%d-%m-%Y")
     return date
     
+    
 def get_age(start):
     today = time.strftime("%d-%m-%Y")
     d1 = datetime.datetime.strptime(start, "%d-%m-%Y")
     d2 = datetime.datetime.strptime(today, "%d-%m-%Y")
     diffYears = relativedelta(d2, d1).years
     return str(diffYears)
-
+    
+    
 def random_phone():
     firstDigit = random.randrange(1,9)
     phoneNumber = str(firstDigit)
@@ -61,3 +65,6 @@ if __name__ == "__main__":
     print("import this rather than use")
     print(random_date())
 
+
+    
+    

@@ -17,6 +17,7 @@ from PIL import ImageTk, Image
 import sqlite_use as sql
 from random_data import get_email, random_date, get_age, random_phone
 
+
 def download_flags():
     '''download flags and save it to some dir'''
     #just run this function to get flags & countries
@@ -49,7 +50,8 @@ def download_flags():
         print(gif_url)
         download_image(gif_url, gif_path)
     return gifs, countries
-
+    
+    
 def download_image(url, file_name="image.png"):
     '''download image from specified url and save it to specified file_name'''
     try:
@@ -60,20 +62,23 @@ def download_image(url, file_name="image.png"):
         pass
     del response
     return True
-
+    
+    
 def script_path():
     '''change current path to script one'''
     path = os.path.realpath(os.path.dirname(sys.argv[0]))
     os.chdir(path)  #it seems to be quite important
     return path
-
+    
+    
 def simple_write(file, str_content):
     '''simple_write data to .txt file, with specified strContent'''
     with open(file, "w") as f:
         f.write(str_content + "\n")
         f.close()
     return True
-
+    
+    
 def read_file(file_name, rmnl=False):
     '''read specified file and remove newlines depend on "rmnl" parameter'''
     path = os.path.join(script_path(), file_name)
@@ -86,7 +91,8 @@ def read_file(file_name, rmnl=False):
     except:
         file_content = []
     return file_content
-
+    
+    
 def csv_writer(personList):
     '''write list of data to csv'''
     path = os.path.join(script_path(), "persons.csv")
@@ -96,7 +102,8 @@ def csv_writer(personList):
             writer.writerow(person)
         print("--< person data written to csv file")
     return True
-
+    
+    
 def write_file(file_name, content, endline="\n", over_write=False, response=True):
     '''write file with parameters'''
     if not content:
@@ -125,13 +132,15 @@ def write_file(file_name, content, endline="\n", over_write=False, response=True
         if response:
             print("--< written to: {0} | content_type: {1}".format(file_name, content_type))
     return True
-
+    
+    
 def write_names(names):
     '''write names into single files'''
     for key, item in enumerate(names):
         write_file(file_name="name" + str(key) + ".txt", content=item, addNewline=True, over_write=True, subPath="")
     return 0
-
+    
+    
 def get_data(key, personDictio):
     '''return specified data with using proper functions'''
     if key == "Nationality":
@@ -166,7 +175,8 @@ def get_data(key, personDictio):
     else:
         data = "Random"
     return data
-
+    
+    
 def capitalize_dictio(dictio):
     '''iter through dictio parameters and capitalize their values'''
     for key, val in dictio.items():
@@ -176,7 +186,8 @@ def capitalize_dictio(dictio):
         if isinstance(val, str):
             dictio[key] = " ".join([item.capitalize() for item in val.split("_")])
     return dictio
-
+    
+    
 def generate_person(national="Random", sex="Random", age=0):
     '''will generate person data depends on parameters'''
     person_data = {}
@@ -194,7 +205,8 @@ def generate_person(national="Random", sex="Random", age=0):
         person_data[key] = get_data(key, person_data)
     person_data = capitalize_dictio(person_data)
     return person_data
-
+    
+    
 def show_data(dictio, dataType=0):
     '''show data from dictio in different way, depends on dataType'''
     email = "random"
@@ -209,7 +221,8 @@ def show_data(dictio, dataType=0):
     else:
         email = "\n".join(dictio.values())
     return email
-
+    
+    
 class Application(tk.Frame):
     '''gui of person generator'''
     def __init__(self, master, data):
@@ -254,10 +267,11 @@ class Application(tk.Frame):
         self.quit = tk.Button(self, text="QUIT", fg="red", command=self.root.destroy).pack(side="left")
 
         #create image
-        self.image = ImageTk.PhotoImage(Image.open(self.sex + ".png"))
+        self.image = ImageTk.PhotoImage(Image.open(os.path.join('images', self.sex + ".png")))
         self.panel = tk.Label(self.root, image=self.image)
         self.panel.pack(side="right")
-
+        
+        
 def gui_app(person):
     '''gui app of person data'''
     root = tk.Tk()
@@ -266,7 +280,8 @@ def gui_app(person):
     root.wm_title("zperson")
     app = Application(master=root, data=person)
     app.mainloop()
-
+    
+    
 def usage():
     '''all parameters of person generator'''
     print("usage:")
@@ -282,7 +297,8 @@ def usage():
     print("-h - this usage help")
     print("--"*35)
     return True
-
+    
+    
 def get_opt(argv):
     '''get argv and return final options'''
     try:
@@ -311,6 +327,7 @@ def get_opt(argv):
             gui = True
         elif opt in '-l':
             national_list = sql.data_from_db("names", "national") + sql.data_from_db("surnames", "national")
+            national_list = [item.lower() for item in national_list]
             national_list = list(set(national_list))
             national_list.sort()
             print("--< list of nationalities:\n{}".format("\n".join(national_list)))
@@ -341,6 +358,7 @@ def get_opt(argv):
         elif opt in "-n":
             #national_list = ["english", "polish", "ukrainian"]
             national_list = sql.data_from_db("names", "national") + sql.data_from_db("surnames", "national")
+            national_list = [item.lower() for item in national_list]
             national_list = list(set(national_list))
             if not national_list:
                 print("--< empty national list. Please update your database")
@@ -368,8 +386,9 @@ def get_opt(argv):
             usage()
             return False
     return national, sex, quantity, age, gui
-
-def main(argv):
+    
+    
+def main(args):
     '''main function of zperson_generator'''
     #check if db exists and
     tables = sql.get_tables("zperson_stuff.db")
@@ -377,28 +396,40 @@ def main(argv):
         print("--< incorrect tables: {}\n--< check if database file exists".format(tables))
         return False
 
-    correctOpts = get_opt(argv)
+    correctOpts = get_opt(args)
     if correctOpts:
-        #national, sex, quantity, age = get_opt(argv)
+        #national, sex, quantity, age = get_opt(args)
         national, sex, quantity, age, gui = correctOpts
     else:
         return False
-
+        
+    # header
     personList = [["Name", "Surname", "Sex", "Nationality", "Birthdate", "Age", "Email", "Phone"]]
+    
+    # ***************** generate persons data *****************
     for _ in range(quantity):
         person_data = generate_person(national=national, sex=sex, age=age)
         show_person = show_data(person_data, 2)
         print("---"*10 + "\n" + show_person)
         personList.append(show_data(person_data, 3))
-
+    return personList
+        
+    # ***************** write persons data *****************
     csv_writer(personList)              #write data to csv
+    
+    
+    # ***************** show data in gui *****************
     if gui:
         gui_app(person_data)             #to show data and flag, map, photo
-
-
+    return True
+    
+    
 if __name__ == "__main__":
     PATH = script_path()
-    main(sys.argv[1:])
+    args = sys.argv[1:]
+    # args = ['-l']
+    args = ['-a', '22', '-n', 'nepal', '-q', '10']
+    out = main(args)
 
 
 '''
@@ -432,4 +463,34 @@ to_do:
 
 6.08.18
 -much more rubbish than before :)
+
+
+
+
+
+How the zperson_generaton app works?
+    -user puts args in cmd
+    -verify parameters and decide what to do
+    -generate person(s) data
+    -decide how to show data(as text or as gui) and where to store it(.txt or csv)
+    -
+
+    
+    
+    
+Values:
+    "Name"
+    "Surname"
+    "Sex"
+    "Nationality"
+    "Birthdate"
+    "Age"
+    "Email"
+    "Phone"
+    
+    
+    
+    
 '''
+
+
