@@ -16,6 +16,7 @@ from PIL import ImageTk, Image
 #own modules
 import sqlite_use as sql
 from random_data import get_email, random_date, get_age, random_phone
+import juster
 
 
 def download_flags():
@@ -218,6 +219,8 @@ def show_data(dictio, dataType=0):
         email = "\n".join("{}: {}".format(key, item) for key, item in dictio.items())
     elif dataType == 3:
         email = [dictio["Name"], dictio["Surname"], dictio["Sex"], dictio["Nationality"], dictio["Birthdate"], dictio["Age"], dictio["Email"], dictio["Phone"]]
+    elif dataType == 4:
+        email = ", ".join(dictio.values())
     else:
         email = "\n".join(dictio.values())
     return email
@@ -327,7 +330,7 @@ def get_opt(argv):
             gui = True
         elif opt in '-l':
             national_list = sql.data_from_db("names", "national") + sql.data_from_db("surnames", "national")
-            national_list = [item.lower() for item in national_list]
+            national_list = [item.lower().replace('_', ' ') for item in national_list]
             national_list = list(set(national_list))
             national_list.sort()
             print("--< list of nationalities:\n{}".format("\n".join(national_list)))
@@ -358,7 +361,7 @@ def get_opt(argv):
         elif opt in "-n":
             #national_list = ["english", "polish", "ukrainian"]
             national_list = sql.data_from_db("names", "national") + sql.data_from_db("surnames", "national")
-            national_list = [item.lower() for item in national_list]
+            national_list = [item.lower().replace('_', ' ') for item in national_list]
             national_list = list(set(national_list))
             if not national_list:
                 print("--< empty national list. Please update your database")
@@ -390,12 +393,16 @@ def get_opt(argv):
     
 def main(args):
     '''main function of zperson_generator'''
-    #check if db exists and
+    
+    
+    # ***************** check if db exists and *****************
     tables = sql.get_tables("zperson_stuff.db")
     if tables != [("names",), ("surnames",)]:
         print("--< incorrect tables: {}\n--< check if database file exists".format(tables))
         return False
-
+        
+        
+    # ***************** parse arguments *****************
     correctOpts = get_opt(args)
     if correctOpts:
         #national, sex, quantity, age = get_opt(args)
@@ -403,17 +410,22 @@ def main(args):
     else:
         return False
         
-    # header
-    personList = [["Name", "Surname", "Sex", "Nationality", "Birthdate", "Age", "Email", "Phone"]]
+        
+    personList = [["Name", "Surname", "Sex", "Nationality", "Birthdate", "Age", "Email", "Phone"]]      # header
     
     # ***************** generate persons data *****************
     for _ in range(quantity):
         person_data = generate_person(national=national, sex=sex, age=age)
-        show_person = show_data(person_data, 2)
-        print("---"*10 + "\n" + show_person)
+        show_person = show_data(person_data, 4)     # 2 vs 4
+        # print("---"*10 + "\n" + show_person)
+        # print(show_person)
         personList.append(show_data(person_data, 3))
-    return personList
-        
+    strPersonList = '\n'.join([';'.join(item) for item in personList])
+    tableForm = juster.justify(strPersonList)
+    print(tableForm)
+    # return personList
+    
+    
     # ***************** write persons data *****************
     csv_writer(personList)              #write data to csv
     
@@ -428,10 +440,12 @@ if __name__ == "__main__":
     PATH = script_path()
     args = sys.argv[1:]
     # args = ['-l']
-    args = ['-a', '22', '-n', 'nepal', '-q', '10']
+    args = ['-a', '22', '-n', 'Bangladesh', '-q', '10']
+    # args = ['-r', '-a', '22', '-q', '40']
     out = main(args)
-
-
+    
+    
+    
 '''
 18.09.17
 maybe we need to use some database
