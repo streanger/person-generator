@@ -65,6 +65,17 @@ def download_image(url, file_name="image.png"):
     return True
     
     
+def countries_by_continent(continent):
+    data = {
+        'africa' : ['thing', 'here'],
+        'asia' : ['thing', 'here'],
+        'europe' : ['thing', 'here'],
+        'north_america' : ['thing', 'here'],
+        'oceania' : ['thing', 'here'],
+        'south_america' : ['thing', 'here'],
+    }
+    
+    
 def script_path():
     '''change current path to script one'''
     path = os.path.realpath(os.path.dirname(sys.argv[0]))
@@ -440,8 +451,9 @@ if __name__ == "__main__":
     PATH = script_path()
     args = sys.argv[1:]
     # args = ['-l']
-    args = ['-a', '22', '-n', 'Bangladesh', '-q', '10']
+    args = ['-a', '22', '-n', 'netherlands', '-q', '10']
     # args = ['-r', '-a', '22', '-q', '40']
+    # args = []
     out = main(args)
     
     
@@ -481,7 +493,7 @@ to_do:
 
 
 
-
+06.06.2019
 How the zperson_generaton app works?
     -user puts args in cmd
     -verify parameters and decide what to do
@@ -489,6 +501,13 @@ How the zperson_generaton app works?
     -decide how to show data(as text or as gui) and where to store it(.txt or csv)
     -
 
+    
+todo:
+    -make some dict with continents and coutries in there
+    -each country need to have names(male/female) and surnames(the same for male and females), which means it have to be 3 .txt files for each country, which need to be updated to database
+    -think of some automation of above. Lets say put .txt files with proper header in some dir and update every single of it with using script and after all copy/paste this .txt to directory with updated files(as renamed file --> ...(+).txt)
+    -
+    
     
     
     
