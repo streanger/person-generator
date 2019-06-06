@@ -316,7 +316,7 @@ def usage():
 def get_opt(argv):
     '''get argv and return final options'''
     try:
-        opts, arg = getopt.getopt(argv, "hrglu:n:s:q:a:i:")
+        opts, arg = getopt.getopt(argv, "hrgltu:n:s:q:a:i:")
     except getopt.GetoptError as err:
         print(str(err))
         return False
@@ -355,6 +355,11 @@ def get_opt(argv):
                     print("--< failed to update database")
             else:
                 print("no such file: '{}'".format(arg))
+            return False
+        elif opt in '-t':
+            ''' return table with number of data for every country '''
+            strTableData = sql.get_number_of_data()
+            print(strTableData)
             return False
         elif opt in '-i':
             #if arg in os.listdir():
@@ -451,10 +456,11 @@ if __name__ == "__main__":
     PATH = script_path()
     args = sys.argv[1:]
     # args = ['-l']
-    args = ['-a', '22', '-n', 'netherlands', '-q', '10']
+    # args = ['-a', '22', '-n', 'netherlands', '-q', '10']
     # args = ['-r', '-a', '22', '-q', '40']
-    # args = []
-    out = main(args)
+    # args = ['-u']
+    args = ['-t']
+    main(args)
     
     
     
@@ -521,6 +527,10 @@ Values:
     "Email"
     "Phone"
     
+    
+    
+    
+-think of add something more than countries, e.g. fantasy world names, or gothic one
     
     
     

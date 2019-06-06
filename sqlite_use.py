@@ -2,7 +2,9 @@
 import sqlite3
 import os
 import sys
-
+from collections import Counter
+import pprint
+import juster
 
 def sql_help():
     print("<db> import it rather than use...")
@@ -51,7 +53,7 @@ def get_tables(database):
     return tables
     
     
-def data_from_db(TABLE_NAME, toGet, getBy=[]):
+def data_from_db(TABLE_NAME, toGet, getBy=False):
     db = sqlite3.connect("zperson_stuff.db")
     c = db.cursor()
     if not getBy:
@@ -67,6 +69,47 @@ def data_from_db(TABLE_NAME, toGet, getBy=[]):
     c.close()
     db.close()  
     return dataOut
+    
+    
+def get_number_of_data():
+    ''' return str table which shows the number of items in whole db '''
+    db = sqlite3.connect("zperson_stuff.db")
+    c = db.cursor()
+    namesList = c.execute('SELECT LOWER({0}), {1} FROM {2}'.format('national', 'sex' , 'names'))
+    namesList = [x for x in namesList]
+    surnamesList = c.execute('SELECT {0} FROM {1}'.format('national', 'surnames'))
+    surnamesList = [x[0] for x in surnamesList]
+    
+    # make str content using juster
+    
+    # surnamesList
+    one = [(*item[0], item[1]) for item in sorted(list(Counter(namesList).items()))]
+    two = sorted(list(Counter(surnamesList).items()))
+    
+    # need to be done
+    countries = list(set([item[0] for item in one] + [item[0] for item in two]))
+    dataDict = {key: {'male names': '0', 'female names': '0', 'surnames': '0'} for key in countries}
+    
+    for national, sex, value in one: 
+        dataDict[national][sex + ' names'] = str(value)
+        
+    for national, value in two:
+        dataDict[national]['surnames'] = str(value)
+    
+    data = [(key, *item.values()) for key, item in dataDict.items()]
+    
+    # need to sort for now
+    data = sorted(data)
+    data.insert(0, ['NATIONAL', 'MALE NAMES', 'FEMALE NAMES', 'SURNAMES'])
+    
+    dataStr = '\n'.join([';'.join(item) for item in data])
+    justified = juster.justify(dataStr, frame=True)             # here we need to use juster
+    
+    db.commit()
+    c.close()
+    db.close()
+    # return namesList, surnamesList
+    return justified
     
     
 def read_file(file_name, rmnl=False):
@@ -237,6 +280,10 @@ https://en.wikipedia.org/wiki/List_of_most_common_surnames_in_Oceania
 https://en.wikipedia.org/wiki/List_of_most_common_surnames_in_South_America
 
 https://en.wikipedia.org/wiki/List_of_most_popular_given_names#Americas
+
+
+tips:
+    -sqlite got LOWER function, to convert all selected items to lowercase characters
 
 '''
 
