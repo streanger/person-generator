@@ -17,7 +17,7 @@ from PIL import ImageTk, Image
 import sqlite_use as sql
 from random_data import get_email, random_date, get_age, random_phone
 import juster
-
+import pprint
 
 def download_flags():
     '''download flags and save it to some dir'''
@@ -316,7 +316,7 @@ def usage():
 def get_opt(argv):
     '''get argv and return final options'''
     try:
-        opts, arg = getopt.getopt(argv, "hrgltu:n:s:q:a:i:")
+        opts, arg = getopt.getopt(argv, "hrgltdu:n:s:q:a:i:")
     except getopt.GetoptError as err:
         print(str(err))
         return False
@@ -360,6 +360,10 @@ def get_opt(argv):
             ''' return table with number of data for every country '''
             strTableData = sql.get_number_of_data()
             print(strTableData)
+            return False
+        elif opt in '-d':
+            ''' remove duplicates '''
+            sql.remove_dubles()
             return False
         elif opt in '-i':
             #if arg in os.listdir():
@@ -455,14 +459,33 @@ def main(args):
 if __name__ == "__main__":
     PATH = script_path()
     args = sys.argv[1:]
-    # args = ['-l']
-    # args = ['-a', '22', '-n', 'netherlands', '-q', '10']
-    # args = ['-r', '-a', '22', '-q', '40']
-    # args = ['-u']
-    args = ['-t']
-    main(args)
+    if True:
+        # args = ['-l']
+        # args = ['-a', '22', '-n', 'netherlands', '-q', '10']
+        # args = ['-r', '-a', '26', '-q', '99']
+        args = ['-t']
+        # args = ['-d']
+        main(args)
     
-    
+    else:
+        # update with many files
+        filesPath = r'C:\Users\quiter\Desktop\person_generator\person_generator\scripts_for_use'
+        files = [item for item in os.listdir(filesPath) if item.endswith('.txt')]
+        fullPaths = [os.path.join(filesPath, file) for file in files]
+        # pprint.pprint(fullPaths)
+        
+        for item in fullPaths:
+            if '(+)' in item:
+                print("file: {} was updated".format(item))
+                continue
+            args = ['-i', item]
+            main(args)
+            os.rename(item, '(+)'.join(item.split('()')))
+            
+        # args = ['-i', r'C:\Users\quiter\Desktop\person_generator\person_generator\scripts_for_use\iran_names().txt']
+        
+        
+        
     
 '''
 18.09.17
@@ -532,7 +555,12 @@ Values:
     
 -think of add something more than countries, e.g. fantasy world names, or gothic one
     
-    
+-describe, how to define file to update ->
+    header ->   names,kosovo,both
+    lines:
+                Altin female
+                Arian male
+                Aron male
     
 '''
 

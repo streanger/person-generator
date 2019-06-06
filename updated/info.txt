@@ -1,3 +1,4 @@
--make here directory of all continents
--put there updated .txt files automatically
--
+info odnoœnie plików:
+	plik z zapisem "some_thing().txt" posiada wszystkie niezbêdne dane, ale jego zawartoœæ nie zosta³a zapisana w bazie danych
+	plik z zapisem "some_thing(+).txt" posiada wszystkie dane, a tak¿e zosta³ zapisany do bazy danych
+	plik z zapisem "some_thing.txt" informuje nas tylko o tym, ¿e wymagane jest uzupe³nienie jego danych i wgranie ich do bazy

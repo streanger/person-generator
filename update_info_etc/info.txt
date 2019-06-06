@@ -1,0 +1,3 @@
+-make here directory of all continents
+-put there updated .txt files automatically
+-

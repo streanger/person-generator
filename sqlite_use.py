@@ -17,6 +17,7 @@ def script_path():
     return path
     
     
+'''
 def clear_db(dbName="zperson_stuff.db"):
     #it will remove all data and create new db
     try:
@@ -26,7 +27,7 @@ def clear_db(dbName="zperson_stuff.db"):
         c = db.cursor()
         #for table in tables:
         #    print(table[0])
-        #    c.execute('''DROP TABLE {}'''.format(table[0]))
+        #    c.execute("DROP TABLE {}".format(table[0]))
         c.execute('CREATE TABLE IF NOT EXISTS {}(data TEXT, national TEXT, sex TEXT)'.format("names"))
         c.execute('CREATE TABLE IF NOT EXISTS {}(data TEXT, national TEXT)'.format("surnames"))
         tables = get_tables(dbName)
@@ -39,8 +40,21 @@ def clear_db(dbName="zperson_stuff.db"):
     except:
         print("failed to remove db file: {}".format(dbName))
         return False
-        
-        
+'''
+
+
+def clear_db():
+    conn = sqlite3.connect("zperson_stuff.db")
+    c = conn.cursor()
+    tables = ['names', 'surnames']
+    for table in tables:
+        c.execute("DROP TABLE {}".format(table))
+    db.commit()
+    c.close()
+    db.close()
+    return True
+    
+    
 def get_tables(database):
     conn = sqlite3.connect(database)
     c = conn.cursor()
@@ -69,6 +83,42 @@ def data_from_db(TABLE_NAME, toGet, getBy=False):
     c.close()
     db.close()  
     return dataOut
+    
+    
+def remove_dubles():
+    ''' get all data from both tables; remove duplicates; clear db, update db '''
+    db = sqlite3.connect("zperson_stuff.db")
+    c = db.cursor()
+    
+    allNames = c.execute('SELECT LOWER({0}), LOWER({1}), LOWER({2}) FROM {3}'.format('data', 'national', 'sex' , 'names'))
+    allNames = [item for item in allNames]
+    allSurnames = c.execute('SELECT LOWER({0}), LOWER({1}) FROM {2}'.format('data', 'national', 'surnames'))
+    allSurnames = [item for item in allSurnames]
+    print("before: len(allNames): {}, len(allSurnames): {}".format(len(allNames), len(allSurnames)))
+    
+    allNamesNoDupli = list(set(allNames))
+    allSurnamesNoDupli = list(set(allSurnames))
+    print("after: len(allNamesNoDupli): {}, len(allSurnamesNoDupli): {}".format(len(allNamesNoDupli), len(allSurnamesNoDupli)))
+    
+    
+    # clear whole db, table after table
+    tables = ['names', 'surnames']
+    for table in tables:
+        c.execute("DELETE FROM {}".format(table))
+    print("clear db made with status: {}".format(True))    
+    
+    
+    # update db with no duplicates data
+    c.executemany('INSERT INTO %s VALUES (?,?,?)' % 'names', allNamesNoDupli)
+    c.executemany('INSERT INTO %s VALUES (?,?)' % 'surnames', allSurnamesNoDupli)
+    print("update db done with status: {}".format(True))
+    
+    
+    db.commit()
+    c.close()
+    db.close()
+    return True
+    
     
     
 def get_number_of_data():
@@ -268,6 +318,7 @@ if __name__ == "__main__":
     #path = script_path()
     #clear_db()
     sql_help()
+    # tables = get_tables("zperson_stuff.db")
     
    
 '''names & surnames:
@@ -285,6 +336,10 @@ https://en.wikipedia.org/wiki/List_of_most_popular_given_names#Americas
 tips:
     -sqlite got LOWER function, to convert all selected items to lowercase characters
 
+todo:
+    -make tool for merging similar countries like "bosnia-herzegovina" and "bosnia_and_herzegovina", which are the same
+    
+    
 '''
 
 
