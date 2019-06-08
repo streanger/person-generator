@@ -67,6 +67,41 @@ def get_tables(database):
     return tables
     
     
+def remove_national(database):
+    ''' remove single national if added in wrong way or something '''
+    return True
+    
+    
+def merge_nationals(main, other):
+    ''' merge two rows, to one --> "other" will be replaced with "main"'''
+    db = sqlite3.connect("zperson_stuff.db")
+    c = db.cursor()
+    
+    
+    # ************** get tables **************
+    try:
+        c.execute("SELECT name FROM sqlite_master WHERE type='table';")
+    except sqlite3.DatabaseError as err:
+        print("file is not a database...")
+        return False
+        
+    tables = c.fetchall()
+    tables = [table for tup in tables for table in tup]
+    print(tables)
+    
+    # ************** do the stuff, iter through tables **************
+    for table in tables:
+        # replace elements in column nationals --> other, to main, for each table
+        sql = 'UPDATE {} SET national = "{}" WHERE national = "{}"'.format(table, main, other)
+        print(sql)
+        c.execute(sql)
+        
+    db.commit()
+    c.close()
+    db.close()
+    return True
+    
+    
 def data_from_db(TABLE_NAME, toGet, getBy=False):
     db = sqlite3.connect("zperson_stuff.db")
     c = db.cursor()

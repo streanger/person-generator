@@ -316,7 +316,7 @@ def usage():
 def get_opt(argv):
     '''get argv and return final options'''
     try:
-        opts, arg = getopt.getopt(argv, "hrgltdu:n:s:q:a:i:")
+        opts, arg = getopt.getopt(argv, "hrgltmdu:n:s:q:a:i:")
     except getopt.GetoptError as err:
         print(str(err))
         return False
@@ -332,13 +332,16 @@ def get_opt(argv):
         if opt in "-h":
             usage()
             return False
+            
         elif opt in '-r':
             national = "Random"
             sex = "Random"
             #quantity = 1
             #break
+            
         elif opt in '-g':
             gui = True
+            
         elif opt in '-l':
             national_list = sql.data_from_db("names", "national") + sql.data_from_db("surnames", "national")
             national_list = [item.lower().replace('_', ' ') for item in national_list]
@@ -346,6 +349,7 @@ def get_opt(argv):
             national_list.sort()
             print("--< list of nationalities:\n{}".format("\n".join(national_list)))
             return False
+            
         elif opt in '-u':
             if arg in os.listdir():
                 status = sql.update_db(arg)
@@ -356,15 +360,24 @@ def get_opt(argv):
             else:
                 print("no such file: '{}'".format(arg))
             return False
+            
         elif opt in '-t':
             ''' return table with number of data for every country '''
             strTableData = sql.get_number_of_data()
             print(strTableData)
             return False
+            
         elif opt in '-d':
             ''' remove duplicates '''
             sql.remove_dubles()
             return False
+            
+        elif opt in '-m':
+            # status = sql.merge_nationals('bosnia_and_herzegovina', 'bosnia-herzegovina')
+            status = sql.merge_nationals('azerbaijan', 'azerbajan')
+            print("national merge status: {}".format(status))
+            return False
+            
         elif opt in '-i':
             #if arg in os.listdir():
             #try:
@@ -378,6 +391,7 @@ def get_opt(argv):
             else:
                 print("--< failed to update database with: '{}'".format(arg))
             return False
+            
         elif opt in "-n":
             #national_list = ["english", "polish", "ukrainian"]
             national_list = sql.data_from_db("names", "national") + sql.data_from_db("surnames", "national")
@@ -391,23 +405,28 @@ def get_opt(argv):
             else:
                 national = random.choice(national_list)
                 print("--< wrong nationality choice. Auto choose -> {}".format(national))
+                
         elif opt in "-s":
             if arg.lower() in ("male", "female"):
                 sex = arg
             else:
                 sex = random.choice(["male", "female"])
                 print("--< wrong sex choice. Random set to: {}".format(sex))
+                
         elif opt in "-q":
             if arg.isdigit():
                 quantity = int(arg)
             else:
                 print("--< put numeric type argument")
+                
         elif opt in "-a":
             if arg.isdigit():
                 age = int(arg)
+                
         else:
             usage()
             return False
+            
     return national, sex, quantity, age, gui
     
     
@@ -461,13 +480,15 @@ if __name__ == "__main__":
     args = sys.argv[1:]
     if True:
         # args = ['-l']
-        # args = ['-a', '22', '-n', 'netherlands', '-q', '10']
+        # args = ['-a', '26', '-n', 'macedonia', '-q', '10']
         # args = ['-r', '-a', '26', '-q', '99']
         args = ['-t']
         # args = ['-d']
+        # args = ['-m']       # merge aka update two nationals
         main(args)
     
     else:
+        # ****************** THIS IS JUST FOR CREATING DB ******************
         # update with many files
         filesPath = r'C:\Users\quiter\Desktop\person_generator\person_generator\scripts_for_use'
         files = [item for item in os.listdir(filesPath) if item.endswith('.txt')]
