@@ -3,12 +3,23 @@ import datetime
 import random
 from dateutil.relativedelta import relativedelta
 
+import unicodedata      # for normalize email string
+import unidecode        # for normalize email string(it works better, than package above)
+
+
 def rm_pl_signs(plString):
     plSigns = {'ą':'a', 'ć':'c', 'ę':'e', 'ł':'l', 'ń':'n', 'ó':'o', 'ś':'s', 'ź':'z', 'ż':'z'}
     for key, val in plSigns.items():
         if key in plString:
             plString = plString.replace(key, val)
     return plString
+    
+    
+def normalize_email(text):
+    ''' it will remove special characters from text parameter '''
+    # out = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('utf-8')
+    out = unidecode.unidecode(text)
+    return out
     
     
 def get_email(personData):
@@ -29,7 +40,8 @@ def get_email(personData):
         fakeEmail = ((personData["Surname"]).lower())[::-1] + "@" + post
     else:
         fakeEmail = (personData["Name"]).lower() + "_" + (personData["Surname"]).lower() + "@" + post
-    return rm_pl_signs(fakeEmail)
+    # return rm_pl_signs(fakeEmail)
+    return normalize_email(fakeEmail)
     
     
 def random_date(age=0):

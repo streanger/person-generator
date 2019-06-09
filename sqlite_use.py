@@ -72,6 +72,25 @@ def remove_national(database):
     return True
     
     
+def national_db(national):
+    ''' get all info about specified national from db '''
+    national = national.lower().replace(' ', '_')
+    maleNames = data_from_db(TABLE_NAME="names", toGet="data", getBy=[national, "male"])
+    maleNames = sorted([item.capitalize() for item in maleNames])
+    femaleNames = data_from_db(TABLE_NAME="names", toGet="data", getBy=[national, "female"])
+    femaleNames = sorted([item.capitalize() for item in femaleNames])
+    surnames = data_from_db(TABLE_NAME="surnames", toGet="data", getBy=[national])
+    surnames = sorted([item.capitalize() for item in surnames])
+    data = [maleNames, femaleNames, surnames]
+    maxLen = len(max(data, key=len))
+    dataExtended = [item + (maxLen-len(item))*[""] for item in data]
+    data = list(zip(*dataExtended))
+    strData = juster.justify(data, frame=True, enumerator=True, topbar=national.upper())
+    
+    # use juster with no-grid, and with frame; update juster with "list-of-lists" and with enumerator as parameter; ad also header option
+    return strData
+    
+    
 def merge_nationals(main, other):
     ''' merge two rows, to one --> "other" will be replaced with "main"'''
     db = sqlite3.connect("zperson_stuff.db")

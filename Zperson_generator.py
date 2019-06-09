@@ -3,6 +3,7 @@
 #11.02.18 -> it still need a lot of work :(
 import csv
 import os
+import time
 import getopt
 #import logging
 import random
@@ -18,6 +19,16 @@ import sqlite_use as sql
 from random_data import get_email, random_date, get_age, random_phone
 import juster
 import pprint
+
+def timer(func):
+    def f(*args, **kwargs):
+        before = time.time()
+        val = func(*args, **kwargs)
+        after = time.time()
+        print("elapsed time: {}s".format(after-before))
+        return val
+    return f
+    
 
 def download_flags():
     '''download flags and save it to some dir'''
@@ -163,6 +174,8 @@ def get_data(key, personDictio):
         data = random.choice(national_list)
     elif key == "Name":
         national = personDictio["Nationality"]
+        national = national.replace(' ', '_')       # decide which value is better -> ' ' or '_'
+        national = national.lower()                 # all db records are lowercase (put this line in function above that)(put this line in function above that)
         sex = personDictio["Sex"]
         names = sql.data_from_db(TABLE_NAME="names", toGet="data", getBy=[national, sex])
         if not names:
@@ -171,6 +184,8 @@ def get_data(key, personDictio):
         data = random.choice(names)
     elif key == "Surname":
         national = personDictio["Nationality"]
+        national = national.replace(' ', '_')       # decide which value is better -> ' ' or '_'
+        national = national.lower()                 # all db records are lowercase (put this line in function above that)
         surnames = sql.data_from_db(TABLE_NAME="surnames", toGet="data", getBy=[national])
         if not surnames:
             surnames = ["Random"]
@@ -196,7 +211,7 @@ def capitalize_dictio(dictio):
             continue
         #if type(val) is str:
         if isinstance(val, str):
-            dictio[key] = " ".join([item.capitalize() for item in val.split("_")])
+            dictio[key] = " ".join([item.capitalize() for item in val.replace(" ", "_").split("_")])
     return dictio
     
     
@@ -316,7 +331,7 @@ def usage():
 def get_opt(argv):
     '''get argv and return final options'''
     try:
-        opts, arg = getopt.getopt(argv, "hrgltmdu:n:s:q:a:i:")
+        opts, arg = getopt.getopt(argv, "hrgltmdu:f:n:s:q:a:i:")
     except getopt.GetoptError as err:
         print(str(err))
         return False
@@ -360,6 +375,12 @@ def get_opt(argv):
             else:
                 print("no such file: '{}'".format(arg))
             return False
+        elif opt in '-f':
+            ''' print full information about specified nationality '''
+            national = arg
+            fullData = sql.national_db(national)
+            print(fullData)
+            return False
             
         elif opt in '-t':
             ''' return table with number of data for every country '''
@@ -393,6 +414,7 @@ def get_opt(argv):
             return False
             
         elif opt in "-n":
+            ''' decide which character to use: " " or "_" '''
             #national_list = ["english", "polish", "ukrainian"]
             national_list = sql.data_from_db("names", "national") + sql.data_from_db("surnames", "national")
             national_list = [item.lower().replace('_', ' ') for item in national_list]
@@ -400,7 +422,7 @@ def get_opt(argv):
             if not national_list:
                 print("--< empty national list. Please update your database")
                 return False
-            if arg.lower() in national_list:
+            if arg.lower().replace('_', ' ') in national_list:
                 national = arg
             else:
                 national = random.choice(national_list)
@@ -429,7 +451,7 @@ def get_opt(argv):
             
     return national, sex, quantity, age, gui
     
-    
+@timer
 def main(args):
     '''main function of zperson_generator'''
     
@@ -466,7 +488,8 @@ def main(args):
     
     
     # ***************** write persons data *****************
-    csv_writer(personList)              #write data to csv
+    if False:
+        csv_writer(personList)              #write data to csv
     
     
     # ***************** show data in gui *****************
@@ -480,9 +503,13 @@ if __name__ == "__main__":
     args = sys.argv[1:]
     if True:
         # args = ['-l']
+        # args = ['-n', 'bosnia_and herzegovina', '-q', '10']
+        # args = ['-n', 'POLAnd', '-q', '10']
+        # args = ['-n', 'burkina faso', '-q', '20']
         # args = ['-a', '26', '-n', 'macedonia', '-q', '10']
-        # args = ['-r', '-a', '26', '-q', '99']
-        args = ['-t']
+        # args = ['-r', '-s', 'female', '-a', '26', '-q', '100']
+        # args = ['-t']
+        args = ['-f', 'thailand']
         # args = ['-d']
         # args = ['-m']       # merge aka update two nationals
         main(args)
@@ -506,8 +533,6 @@ if __name__ == "__main__":
         # args = ['-i', r'C:\Users\quiter\Desktop\person_generator\person_generator\scripts_for_use\iran_names().txt']
         
         
-        
-    
 '''
 18.09.17
 maybe we need to use some database
@@ -541,8 +566,6 @@ to_do:
 -much more rubbish than before :)
 
 
-
-
 06.06.2019
 How the zperson_generaton app works?
     -user puts args in cmd
@@ -551,15 +574,11 @@ How the zperson_generaton app works?
     -decide how to show data(as text or as gui) and where to store it(.txt or csv)
     -
 
-    
 todo:
     -make some dict with continents and coutries in there
     -each country need to have names(male/female) and surnames(the same for male and females), which means it have to be 3 .txt files for each country, which need to be updated to database
     -think of some automation of above. Lets say put .txt files with proper header in some dir and update every single of it with using script and after all copy/paste this .txt to directory with updated files(as renamed file --> ...(+).txt)
     -
-    
-    
-    
     
 Values:
     "Name"
@@ -572,8 +591,6 @@ Values:
     "Phone"
     
     
-    
-    
 -think of add something more than countries, e.g. fantasy world names, or gothic one
     
 -describe, how to define file to update ->
@@ -583,6 +600,19 @@ Values:
                 Arian male
                 Aron male
     
+09.06.2019
+time for 1000 random persons:
+    ['-r', '-a', '26', '-q', '1000']
+    elapsed time: 101.13889217376709s
+    
+-its such poor because of opening and closing db each time
+-think of reduce time. For now its about 100ms for one person
+-random country could cause this weakness
+
+14:59:
+-normalize email added
+
+20:41
+-parameter '-f' added --> full info about specified nationality
+
 '''
-
-
