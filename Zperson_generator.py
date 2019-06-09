@@ -313,8 +313,7 @@ def gui_app(person):
     
 def usage():
     '''all parameters of person generator'''
-    print("usage:")
-    print("-u <fileName> - update db with specified file")
+    print("generate person usage")
     print("-i <fileName> - interactive update")
     print("-n <nationality> - nationality of person to generate [default=england]")
     print("-s <sex> - gender of person to generate [default=male]")
@@ -322,8 +321,15 @@ def usage():
     print("-a <age> - age of person(s)")
     print("-r - random nationality and sex")
     print("-g - gui output")
-    print("-l - print list of all nationalities")
-    print("-h - this usage help")
+    print("sql database usage:(it will be a different part or subfunction)")
+    print("\t-l - print list of all nationalities")
+    print("\t-u <fileName> - update db with specified file")
+    print("\t-f <nationality> - print full information about specified nationality")
+    print("\t-t - return table with number of data for every country")
+    print("\t-d - remove duplicates")
+    print("\t-m - merge two nationals in one")
+    print()
+    print("\t-h - this usage help")
     print("--"*35)
     return True
     
@@ -358,6 +364,7 @@ def get_opt(argv):
             gui = True
             
         elif opt in '-l':
+            ''' print list of all nationalities '''
             national_list = sql.data_from_db("names", "national") + sql.data_from_db("surnames", "national")
             national_list = [item.lower().replace('_', ' ') for item in national_list]
             national_list = list(set(national_list))
@@ -366,6 +373,7 @@ def get_opt(argv):
             return False
             
         elif opt in '-u':
+            ''' <fileName> - update db with specified file '''
             if arg in os.listdir():
                 status = sql.update_db(arg)
                 if status:
@@ -375,11 +383,20 @@ def get_opt(argv):
             else:
                 print("no such file: '{}'".format(arg))
             return False
+            
         elif opt in '-f':
             ''' print full information about specified nationality '''
             national = arg
             fullData = sql.national_db(national)
-            print(fullData)
+            if not fullData:
+                # national_list = sql.data_from_db("names", "national") + sql.data_from_db("surnames", "national")
+                # national_list = [item.lower().replace('_', ' ') for item in national_list]
+                # national_list = list(set(national_list))
+                # national_list.sort()
+                # print("no records found for specified country: << {} >>\nTry one of these:\n{}".format(national, national_list))
+                print("no records found for specified country: << {} >>".format(national))
+            else:
+                print(fullData)
             return False
             
         elif opt in '-t':
@@ -394,6 +411,7 @@ def get_opt(argv):
             return False
             
         elif opt in '-m':
+            ''' merge two nationals in one '''
             # status = sql.merge_nationals('bosnia_and_herzegovina', 'bosnia-herzegovina')
             status = sql.merge_nationals('azerbaijan', 'azerbajan')
             print("national merge status: {}".format(status))
@@ -451,7 +469,7 @@ def get_opt(argv):
             
     return national, sex, quantity, age, gui
     
-@timer
+# @timer
 def main(args):
     '''main function of zperson_generator'''
     
@@ -488,13 +506,13 @@ def main(args):
     
     
     # ***************** write persons data *****************
-    if False:
+    if True:
         csv_writer(personList)              #write data to csv
     
     
     # ***************** show data in gui *****************
     if gui:
-        gui_app(person_data)             #to show data and flag, map, photo
+        gui_app(person_data)                #to show data and flag, map, photo
     return True
     
     
@@ -504,12 +522,13 @@ if __name__ == "__main__":
     if True:
         # args = ['-l']
         # args = ['-n', 'bosnia_and herzegovina', '-q', '10']
-        # args = ['-n', 'POLAnd', '-q', '10']
+        # args = ['-n', 'russia', '-s', 'female', '-q', '10']
         # args = ['-n', 'burkina faso', '-q', '20']
         # args = ['-a', '26', '-n', 'macedonia', '-q', '10']
-        # args = ['-r', '-s', 'female', '-a', '26', '-q', '100']
+        args = ['-r', '-a', '26', '-q', '99']
         # args = ['-t']
-        args = ['-f', 'thailand']
+        # args = ['-f', 'vietnam']
+        # args = ['-f', 'ivory coast']
         # args = ['-d']
         # args = ['-m']       # merge aka update two nationals
         main(args)
@@ -615,4 +634,10 @@ time for 1000 random persons:
 20:41
 -parameter '-f' added --> full info about specified nationality
 
+
+todo:
+    -think of log data with "logging" module
+    -think of use "https://matplotlib.org/basemap/" module, to show country position
+    
+    
 '''

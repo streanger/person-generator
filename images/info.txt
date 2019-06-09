@@ -1,2 +1,2 @@
 
-person_car.png is just a preview of card. It may contain image instaed of sex logo.
+person_card.png is just a preview of card. It may contain image instaed of sex logo.

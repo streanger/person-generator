@@ -82,10 +82,14 @@ def national_db(national):
     surnames = data_from_db(TABLE_NAME="surnames", toGet="data", getBy=[national])
     surnames = sorted([item.capitalize() for item in surnames])
     data = [maleNames, femaleNames, surnames]
+    if not any(data):
+        # no record for this nationality
+        return False
     maxLen = len(max(data, key=len))
     dataExtended = [item + (maxLen-len(item))*[""] for item in data]
     data = list(zip(*dataExtended))
-    strData = juster.justify(data, frame=True, enumerator=True, topbar=national.upper())
+    data.insert(0, ["MALE NAMES", "FEMALE NAMES", "SURNAMES"])
+    strData = juster.justify(data, frame=True, enumerator=True, header=True, topbar=national.upper(), justsize=8)
     
     # use juster with no-grid, and with frame; update juster with "list-of-lists" and with enumerator as parameter; ad also header option
     return strData
